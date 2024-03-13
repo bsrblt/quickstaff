@@ -27,13 +27,13 @@ const PremiumPage = () => {
         <div className="flex flex-col justify-center items-center">
           <MainTitle
             textBig={
-              <h1 className="lg:text-[6rem] xl:text-[rem] md:text-7xl pt-[1rem] sm:text-6xl text-5xl mt-0 m-3 font-bold drop-shadow-xl backdrop-blur-[2px] fontpop-2">
+              <h1 className="lg:text-[6rem] xl:text-[rem] md:text-7xl pt-[1rem] sm:text-6xl text-5xl mt-0 m-3 font-bold drop-shadow-xl backdrop-blur-[2px] fontpop-3">
                 Enjoy the{" "}
-                <span className="text-bubblegum/90 fontpop-2 ">privilege.</span>
+                <span className="text-bubblegum/90 fontpop-4 ">privilege.</span>
               </h1>
             }
             textSmall={
-              <h1 className="lg:text-[2.5rem] md:text-3xl text-xl font-bold  backdrop-blur-[2px] drop-shadow-xl  m-3 md:pb-[4rem] pb-[2.3rem] antialiased fontpop-2 mt-6">
+              <h1 className="lg:text-[2.5rem] md:text-3xl text-xl font-bold  backdrop-blur-[2px] drop-shadow-xl  m-3 md:pb-[4rem] pb-[2.3rem] antialiased fontpop-3 mt-6">
                 Get premium benefits today!
               </h1>
             }
