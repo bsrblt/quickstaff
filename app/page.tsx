@@ -23,7 +23,7 @@ const Home = () => {
   return (
     <main className="">
       <section
-        className=" min-w-screen h-full bg-cover bg-fixed bg-center justify-center items-center fadeIn005 overflow-hidden "
+        className=" min-w-screen h-full bg-container bg-fixed bg-center justify-center items-center fadeIn005 overflow-hidden "
         style={{
           backgroundImage: "url(/jj.jpg)",
         }}
