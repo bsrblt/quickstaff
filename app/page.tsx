@@ -23,9 +23,10 @@ const Home = () => {
   return (
     <main className="">
       <section
-        className=" min-w-screen h-full bg-container bg-fixed bg-center justify-center items-center fadeIn005 overflow-hidden "
+        className=" min-w-screen h-full bg-fixed bg-center bg-no-repeat justify-center items-center fadeIn005 overflow-hidden "
         style={{
           backgroundImage: "url(/jj.jpg)",
+          backgroundSize: "cover",
         }}
       >
         <div className="min-h-screen relative">
@@ -41,7 +42,7 @@ const Home = () => {
                         pros
                       </span>
                     </h1>
-                    <h1 className="pb-1 fontpop-2">handle it.</h1>
+                    <h1 className="pb-1 text-white fontpop-2">handle it.</h1>
                   </div>
                 }
                 textSmall={

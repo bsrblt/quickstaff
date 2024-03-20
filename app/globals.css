@@ -122,10 +122,10 @@ header {
 }
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
 }
-.bg-container {
+/* .bg-container {
   min-width: 100%;
   min-height: 100%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-}
+} */
