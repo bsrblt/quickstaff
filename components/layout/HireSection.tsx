@@ -28,7 +28,7 @@ const HireSection: React.FC<HireSectionProps> = ({
               <span className="text-silver">
                 <ConditionalText type="roleaction" />
               </span>{" "}
-              <span className="">{hireWord}</span>
+              <span className="text-white">{hireWord}</span>
             </h1>
           }
           textSmall={

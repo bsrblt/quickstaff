@@ -33,13 +33,13 @@ const WelcomePro = () => {
         >
           <MainTitle
             textBig={
-              <h1 className="lg:text-[6rem] xl:text-[rem] md:text-7xl pt-[1rem] sm:text-6xl text-5xl mt-20 font-bold drop-shadow-xl backdrop-blur-[2px] fontpop-2">
+              <h1 className="text-white lg:text-[6rem] xl:text-[rem] md:text-7xl pt-[1rem] sm:text-6xl text-5xl mt-20 font-bold drop-shadow-xl backdrop-blur-[2px] fontpop-2">
                 Do it <span className="text-bubblegum/90 fontpop-2 ">your</span>{" "}
                 way.
               </h1>
             }
             textSmall={
-              <h1 className="lg:text-[2.5rem] md:text-3xl text-xl font-bold  backdrop-blur-[2px] drop-shadow-xl  m-1 md:pb-[4rem] pb-[2.3rem] antialiased fontpop-2">
+              <h1 className="text-white lg:text-[2.5rem] md:text-3xl text-xl font-bold  backdrop-blur-[2px] drop-shadow-xl  m-1 md:pb-[4rem] pb-[2.3rem] antialiased fontpop-2">
                 Choose your work terms, be your own boss.
               </h1>
             }

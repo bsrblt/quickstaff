@@ -23,14 +23,15 @@ const Home = () => {
   return (
     <main className="">
       <section
-        className=" min-w-screen h-full bg-fixed bg-center bg-no-repeat justify-center items-center fadeIn005 overflow-hidden "
+        className=" max-w-screen h-full bg-center bg-no-repeat justify-center items-center fadeIn005 overflow-hidden "
         style={{
           backgroundImage: "url(/jj.jpg)",
           backgroundSize: "cover",
+          backgroundAttachment: "fixed",
         }}
       >
         <div className="min-h-screen relative">
-          <div className="sticky sm:top-10 flex flex-col h-screen mt-[8rem] items-center">
+          <div className="sticky sm:top-10 flex flex-col h-screen mt-[6rem] items-center">
             <div id="maintitle" className="max-h-[20%] mx-3">
               <MainTitle
                 textBig={

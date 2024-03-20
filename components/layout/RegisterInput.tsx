@@ -32,7 +32,7 @@ const RegisterInput = () => {
             : "/"
         }
       >
-        <button className="px-8 w-full rounded-b-lg bg-color1 hover:bg-color2 duration-300 text-white-600 font-bold p-4 uppercase">
+        <button className="px-8 w-full rounded-b-lg bg-color1 hover:bg-color2 duration-300 text-white font-bold p-4 uppercase">
           Next step
         </button>
       </Link>
