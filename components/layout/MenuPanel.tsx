@@ -15,9 +15,7 @@ const MenuPanel: React.FC<MenuPanelProps> = ({ isOpen }) => {
         backdropFilter: "20px",
       }}
     >
-      {/* <section className=" sm:mx-3 "> */}
       <Links />
-      {/* </section> */}
     </div>
   );
 };

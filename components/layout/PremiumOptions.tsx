@@ -58,7 +58,7 @@ const PremiumOptions = () => {
           </label>
         </fieldset>
       </div> */}
-      <div className=" mx-2 mt-1 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+      <div className="text-white mx-2 mt-1 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
         <GlassCard>
           <div
             id="tier-freelancer"
