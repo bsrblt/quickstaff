@@ -32,9 +32,21 @@ const getInputClasses = (authCtx: any) => {
         ? validInputClass
         : invalidInputClass,
 
+    phoneNumberInputClass:
+      authCtx &&
+      (!authCtx.phoneNumberTouched ||
+        (authCtx.phoneNumberTouched && authCtx?.phoneNumberValid))
+        ? validInputClass
+        : invalidInputClass,
+
     registerInputClass:
       authCtx &&
       (!authCtx.mailTouched || (authCtx.mailTouched && authCtx?.mailValid))
+        ? validRInputClass
+        : invalidRInputClass,
+    regularInputClass:
+      authCtx &&
+      (!authCtx.inputTouched || (authCtx.inputTouched && authCtx?.inputValid))
         ? validRInputClass
         : invalidRInputClass,
   };

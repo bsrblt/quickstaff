@@ -34,30 +34,6 @@ const svgIconWhite = (
 const PremiumOptions = () => {
   return (
     <div className="mx-auto max-w-[81rem] px-5 lg:px-8 bg-transparent fadeIn035">
-      {/* <div className="mt-8 flex justify-center">
-        <fieldset className="grid grid-cols-2 gap-x-1 rounded-full p-1 text-center text-xs font-semibold leading-5 ring-1 ring-inset ring-color2">
-          <GlassCard>
-            <label className="cursor-pointer rounded-full px-2.5 py-1">
-              <input
-                type="radio"
-                name="frequency"
-                value="monthly"
-                className="sr-only"
-              />
-              <span>Monthly</span>
-            </label>
-          </GlassCard>
-          <label className="cursor-pointer rounded-full px-2.5 py-1">
-            <input
-              type="radio"
-              name="frequency"
-              value="annually"
-              className="sr-only"
-            />
-            <span>Annually</span>
-          </label>
-        </fieldset>
-      </div> */}
       <div className="text-white mx-2 mt-1 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
         <GlassCard>
           <div
@@ -105,13 +81,13 @@ const PremiumOptions = () => {
               id="tier-business"
               className="text-xl font-semibold leading-8 text-bubblegum fontpop-3"
             >
-              Business
+              Agency
             </h3>
             <p className="mt-4 text-sm leading-6 text-white fontpop-3">
               A plan that scales with your rapidly growing business.
             </p>
             <p className="mt-6 flex items-baseline gap-x-1">
-              <span className="text-4xl font-bold tracking-tight text-color1 fontpop-1">
+              <span className="text-4xl font-bold tracking-tight text-bubblegum/90 fontpop-3">
                 $25
               </span>
               <span className="text-sm font-semibold leading-6 text-bubblegum fontpop-3">
