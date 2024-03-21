@@ -1,12 +1,12 @@
 "use client";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import AuthContext from "../Ctx/AuthContext";
 import Redirecting from "./Redirecting";
 import DashboardContent from "./DashboardContent";
 
 const Dashboard = () => {
   const authCtx = useContext(AuthContext);
-  // const [content, setContent] = useState<JSX.Element | null>(null);
+
   const content = (
     <section
       className=" min-w-screen h-full bg-cover bg-fixed bg-center justify-center items-center fadeIn005 overflow-hidden "
@@ -28,5 +28,4 @@ const Dashboard = () => {
   }
   return <div>{content}</div>;
 };
-
 export default Dashboard;

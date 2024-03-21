@@ -49,6 +49,9 @@ const getInputClasses = (authCtx: any) => {
       (!authCtx.inputTouched || (authCtx.inputTouched && authCtx?.inputValid))
         ? validRInputClass
         : invalidRInputClass,
+
+    baseInputClass,
+    validInputClass,
   };
 };
 

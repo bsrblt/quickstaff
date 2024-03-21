@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 
 interface ManagementItemProps {
@@ -15,7 +14,7 @@ const ManagementItem: React.FC<ManagementItemProps> = ({
   onClick,
 }) => (
   <div
-    className="flex flex-col justify-between items-center relative space-y-1 lg:space-y-6 cursor-pointer"
+    className="flex flex-col justify-between items-center relative space-y-1 lg:space-y-6 cursor-pointer  hover:shadow-xl duration-300 rounded-xl p-1"
     onClick={onClick}
   >
     <Image src={image} alt={alt} width={100} />

@@ -1,5 +1,12 @@
-import React, { useContext, useState, useCallback, useMemo } from "react";
-import { useRouter } from "next/navigation";
+import React, {
+  useContext,
+  useState,
+  useCallback,
+  useRef,
+  useEffect,
+  ChangeEvent,
+} from "react";
+import { useRouter, usePathname } from "next/navigation";
 import AuthContext from "../Ctx/AuthContext";
 import Button from "./Button";
 import InputField from "./InputField";
@@ -21,28 +28,47 @@ import getInputClasses from "../utils/inputClasses";
 
 const DashboardContent: React.FC = () => {
   const router = useRouter();
+  const pathname = usePathname();
   const authCtx = useContext(AuthContext);
   const inputClasses = getInputClasses(authCtx);
 
+  const [selectedCity, setSelectedCity] = useState("");
+  const [selectedExp, setSelectedExp] = useState("");
+  const [selectedJob, setSelectedJob] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
+  const ref = useRef<HTMLDivElement>(null);
 
   const toggleModal = useCallback(() => {
     setShowModal((prev) => !prev);
     setCurrentStep(1);
   }, []);
-
   const clickHandler = useCallback(() => {
     console.log("clicked");
   }, []);
 
   const handleNextStep = useCallback(() => {
-    setCurrentStep((prevStep) => prevStep + 1);
+    setCurrentStep((prev) => prev + 1);
   }, []);
   const handlePrevStep = useCallback(() => {
-    setCurrentStep((prevStep) => prevStep - 1);
+    setCurrentStep((prev) => prev - 1);
   }, []);
 
+  const cityChangeHandler: React.ChangeEventHandler<HTMLSelectElement> = (
+    e: ChangeEvent<HTMLSelectElement>
+  ) => {
+    setSelectedCity(e.target.value);
+  };
+  const jobChangeHandler: React.ChangeEventHandler<HTMLSelectElement> = (
+    e: ChangeEvent<HTMLSelectElement>
+  ) => {
+    setSelectedJob(e.target.value);
+  };
+  const expChangeHandler: React.ChangeEventHandler<HTMLSelectElement> = (
+    e: ChangeEvent<HTMLSelectElement>
+  ) => {
+    setSelectedExp(e.target.value);
+  };
   const firstNameInput = (
     <InputField
       className={inputClasses.firstNameInputClass}
@@ -82,91 +108,197 @@ const DashboardContent: React.FC = () => {
       className={inputClasses.phoneNumberInputClass}
     />
   );
+  const cityInput = (
+    <div>
+      <label
+        htmlFor="city selector"
+        className="block mb-2 sm:text-sm text-xs pl-[2px] text-gray-600 dark:text-gray-200"
+      >
+        City
+      </label>
+      <select
+        id="city selector"
+        value={selectedCity}
+        onChange={cityChangeHandler}
+        className={inputClasses.validInputClass}
+      >
+        <option value="">- select city -</option>
+        <option value="Istanbul">Istanbul</option>
+        <option value="London">London</option>
+        <option value="Paris">Paris</option>
+        <option value="Madrid">Madrid</option>
+      </select>
+    </div>
+  );
+  const jobInput = (
+    <div>
+      <label
+        htmlFor="job selector"
+        className="block mb-2 sm:text-sm text-xs pl-[2px] text-gray-600 dark:text-gray-200"
+      >
+        Job
+      </label>
+      <select
+        id="job selector"
+        value={selectedJob}
+        onChange={jobChangeHandler}
+        className={inputClasses.validInputClass}
+      >
+        <option value="">- select job -</option>
+        <option value="employer">Employer</option>
+        <option value="manager">Manager</option>
+        <option value="chef">Chef</option>
+        <option value="driver">Bartender</option>
+        <option value="ceo">Waiter</option>
+        <option value="cfo">Cleaner</option>
+        <option value="coo">Chauffeur</option>
+        <option value="coo">Performer</option>
+        <option value="coo">Technician</option>
+        <option value="coo">Other</option>
+      </select>
+    </div>
+  );
+  const expInput = (
+    <div>
+      <label
+        htmlFor="experience selector"
+        className="block mb-2 sm:text-sm text-xs pl-[2px] text-gray-600 dark:text-gray-200"
+      >
+        Experience
+      </label>
+      <select
+        id="experience selector"
+        value={selectedExp}
+        onChange={expChangeHandler}
+        className={inputClasses.validInputClass}
+      >
+        <option value="">- select experience -</option>
+        <option value="0-1 year">0-1 year</option>
+        <option value="2-5 years">2-5 years</option>
+        <option value="5-10 years">5-10 years</option>
+        <option value="10+ years">10+ years</option>
+      </select>
+    </div>
+  );
 
-  const renderModalContent = useMemo(() => {
-    switch (currentStep) {
-      case 1:
-        return (
-          <div className="grid gap-4">
-            <InputField
-              label="Input 1"
-              type="text"
-              id="input1"
-              placeholder="Enter input 1"
-              value={authCtx?.regularInput}
-              onChange={() => {}}
-              className={inputClasses.regularInputClass}
-            />
-            <InputField
-              label="Input 2"
-              type="text"
-              id="input2"
-              placeholder="Enter input 2"
-              value=""
-              onChange={() => {}}
-              className={inputClasses.regularInputClass}
-            />
-            <Button
-              type="button"
-              className=" text-white py-2 px-4 rounded-md"
-              onClick={handleNextStep}
-            >
-              Next
-            </Button>
-            <Button
-              type="button"
-              className=" text-white py-2 px-4 rounded-md"
-              onClick={toggleModal}
-            >
-              Cancel
-            </Button>
-          </div>
-        );
-      case 2:
-        return (
-          <div className="grid gap-4">
-            {firstNameInput}
-            {lastNameInput}
-            <Button type="button" onClick={handleNextStep}>
-              Next
-            </Button>
-            <Button type="button" onClick={handlePrevStep}>
-              Back
-            </Button>
-          </div>
-        );
-      case 3:
-        return (
-          <div className="grid gap-4">
-            {phoneNumberInput}
-            <InputField
-              label="Input 6"
-              type="text"
-              id="input6"
-              value=""
-              onChange={() => {}}
-              className={inputClasses.regularInputClass}
-            />
-            <Button
-              type="button"
-              className=" text-white py-2 px-4 rounded-md"
-              onClick={toggleModal}
-            >
-              Submit
-            </Button>
-            <Button
-              type="button"
-              className=" text-white py-2 px-4 rounded-md"
-              onClick={handlePrevStep}
-            >
-              Back
-            </Button>
-          </div>
-        );
-      default:
-        return null;
-    }
-  }, [currentStep, authCtx, handleNextStep, handlePrevStep, toggleModal]);
+  const renderModalContent = /* useMemo( */ () => {
+    if (pathname === "/employer/dashboard") {
+      switch (currentStep) {
+        case 1:
+          return (
+            <div className="grid gap-4">
+              {firstNameInput}
+              {lastNameInput}
+              <Button
+                type="button"
+                className=" text-white py-2 px-4 rounded-md"
+                onClick={handleNextStep}
+              >
+                Next
+              </Button>
+              <Button
+                type="button"
+                className=" text-white py-2 px-4 rounded-md"
+                onClick={toggleModal}
+              >
+                Cancel
+              </Button>
+            </div>
+          );
+        case 2:
+          return (
+            <div className="grid gap-4">
+              {phoneNumberInput}
+              {cityInput}
+              <Button type="button" onClick={toggleModal}>
+                Submit
+              </Button>
+              <Button type="button" onClick={handlePrevStep}>
+                Back
+              </Button>
+            </div>
+          );
+        default:
+          return null;
+      }
+    } else if (pathname === "/pro/dashboard") {
+      switch (currentStep) {
+        case 1:
+          return (
+            <div className="grid gap-4">
+              {firstNameInput}
+              {lastNameInput}
+              <Button
+                type="button"
+                className=" text-white py-2 px-4 rounded-md"
+                onClick={handleNextStep}
+              >
+                Next
+              </Button>
+              <Button
+                type="button"
+                className=" text-white py-2 px-4 rounded-md"
+                onClick={toggleModal}
+              >
+                Cancel
+              </Button>
+            </div>
+          );
+        case 2:
+          return (
+            <div className="grid gap-4">
+              {phoneNumberInput}
+              {cityInput}
+              <Button type="button" onClick={handleNextStep}>
+                Next
+              </Button>
+              <Button type="button" onClick={handlePrevStep}>
+                Back
+              </Button>
+            </div>
+          );
+        case 3:
+          return (
+            <div className="grid gap-4">
+              {jobInput}
+              {expInput}
+              <Button
+                type="button"
+                className=" text-white py-2 px-4 rounded-md"
+                onClick={toggleModal}
+              >
+                Submit
+              </Button>
+              <Button
+                type="button"
+                className=" text-white py-2 px-4 rounded-md"
+                onClick={handlePrevStep}
+              >
+                Back
+              </Button>
+            </div>
+          );
+        default:
+          return null;
+      }
+    } else return;
+  };
+
+  const handleOutsideClick = useCallback(
+    (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node) && showModal) {
+        toggleModal();
+      }
+    },
+    [toggleModal, showModal]
+  );
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, [handleOutsideClick]);
 
   const DashboardCards = [
     {
@@ -230,16 +362,17 @@ const DashboardContent: React.FC = () => {
   return (
     <section className="px-6  py-16 sm:mx-3 text-color2">
       <Modal
+        ref={ref}
         showModal={showModal}
-        renderModalContent={renderModalContent}
+        renderModalContent={renderModalContent()}
         toggleModal={toggleModal}
       />
       <div className="relative grid gap-5 md:grid-cols-6 fadeIn035">
         {DashboardCards.map((card, index) => (
           <DashboardCard key={index} {...card} />
         ))}
-        <div className="col-span-full lg:col-span-3 overflow-hidden relative p-8 rounded-xl bg-white border border-gray-200 text-color2 items-start">
-          <h2 className="my-3 text-center font-semibold text-gray-950 sm:text-2xl text-xl">
+        <div className="col-span-full lg:col-span-3 overflow-hidden relative p-8 rounded-xl bg-white items-start">
+          <h2 className="my-3 text-center font-semibold sm:text-2xl text-xl">
             {authCtx?.isLoggedInPro ? "Jobs" : "Events"}
           </h2>
           <div className="grid sm:grid-cols-3">
@@ -248,8 +381,8 @@ const DashboardContent: React.FC = () => {
             ))}
           </div>
         </div>
-        <div className="col-span-full lg:col-span-3 overflow-hidden relative p-8 rounded-xl bg-white border border-gray-200 text-color2 items-start">
-          <h2 className="my-3 text-center font-semibold text-gray-950 text-2xl">
+        <div className="col-span-full lg:col-span-3 overflow-hidden relative p-8 rounded-xl bg-white items-start">
+          <h2 className="my-3 text-center font-semibold sm:text-2xl text-xl">
             Management
           </h2>
           <div className="grid sm:grid-cols-4 grid-cols-2">
