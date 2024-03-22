@@ -15,7 +15,7 @@ const Dashboard = () => {
       }}
     >
       <div className="flex-col flex justify-center items-center bg-color2/70 fadeIn005">
-        <div className="lg:mt-16 mt-10 ">
+        <div className="lg:mt-16 mt-10 duration-300">
           <DashboardContent />
         </div>
       </div>

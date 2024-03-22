@@ -37,7 +37,10 @@ const Modal: React.ForwardRefRenderFunction<HTMLDivElement, ModalProps> = (
         ref={ref}
         className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm"
       >
-        <div ref={modalRef} className="bg-white p-8 rounded-lg fadeIn035">
+        <div
+          ref={modalRef}
+          className="bg-white p-8 rounded-lg fadeIn035 h-[25rem] w-[18rem]"
+        >
           <h2 className="mb-4 text-xl font-semibold">Edit Profile</h2>
           {renderModalContent}
         </div>

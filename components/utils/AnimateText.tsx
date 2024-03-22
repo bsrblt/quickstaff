@@ -1,4 +1,3 @@
-import React, { ReactHTMLElement } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const animateText = (

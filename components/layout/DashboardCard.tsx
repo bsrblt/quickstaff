@@ -20,7 +20,6 @@ const DashboardCard: React.FC<DashboardCardProps> = ({
     const handleResize = () => {
       setIsSmallScreen(window.innerWidth <= 540);
     };
-
     handleResize();
     window.addEventListener("resize", handleResize);
 
@@ -33,12 +32,12 @@ const DashboardCard: React.FC<DashboardCardProps> = ({
 
   return (
     <div
-      className="col-span-full md:col-span-2 overflow-hidden flex relative p-8 rounded-xl bg-white border border-gray-200 dark:border-gray-800 dark:bg-gray-900 cursor-pointer"
+      className="col-span-full md:col-span-2 overflow-hidden flex relative p-8 rounded-xl bg-white dark:bg-gray-900 cursor-pointer"
       onClick={onClick}
     >
       <div className="flex sm:flex-col size-fit m-auto relative items-center md:h-auto sm:h-[12rem] h-[4rem]  duration-300">
         <Image src={imageSrc} alt={altText} width={imageWidth} />
-        <h2 className="sm:mt-4 mt-3 text-center font-semibold text-gray-950 dark:text-white sm:text-2xl text-xl">
+        <h2 className="sm:mt-4 mt-3 text-center font-semibold sm:text-2xl text-xl">
           {title}
         </h2>
       </div>
