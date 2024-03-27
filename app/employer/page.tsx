@@ -42,7 +42,7 @@ const WelcomeEmployer = () => {
         </div>
 
         <div className="flex h-[50%] sm:-mt-[0.2rem] drop-shadow-lg">
-          <RegisterInput />
+          <RegisterInput buttonText="Next Step" />
         </div>
         <div id="howitworks" className="block h-11 -mt-20"></div>
       </section>

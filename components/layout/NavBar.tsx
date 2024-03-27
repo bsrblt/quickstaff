@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import logotransparent from "../../public/qq4.svg";
-import logobrandonly from "../../public/logobrandonly.png";
 import Image from "next/image";
 import Links from "./Links";
 import Hamburger from "./Hamburger";

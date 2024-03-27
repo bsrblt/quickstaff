@@ -9,6 +9,7 @@ interface AuthContextType {
   firstNameInput: string;
   lastNameInput: string;
   messageInput: string;
+  cvMessageInput: string;
   pwInput: string;
   mailInput: string;
   phoneNumberInput: string;
@@ -19,6 +20,7 @@ interface AuthContextType {
   emailChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   phoneNumberChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   messageChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  cvMessageChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   regularInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   clearInputs: () => void;
   validSignupAuth: boolean;
@@ -60,6 +62,7 @@ export const AuthContextProvider: React.FC<React.PropsWithChildren<{}>> = ({
   const [mailInput, setMailInput] = useState("");
   const [phoneNumberInput, setPhoneNumberInput] = useState("");
   const [messageInput, setMessageInput] = useState("");
+  const [cvMessageInput, setCvMessageInput] = useState("");
   const [firstNameValid, setFirstNameValid] = useState(true);
   const [lastNameValid, setLastNameValid] = useState(true);
   const [mailValid, setMailValid] = useState(true);
@@ -150,6 +153,12 @@ export const AuthContextProvider: React.FC<React.PropsWithChildren<{}>> = ({
   const messageChangeHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const entry = e.target.value;
     setMessageInput(entry);
+  };
+  const cvMessageChangeHandler = (
+    e: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
+    const entry = e.target.value;
+    setCvMessageInput(entry);
   };
   const regularInputChangeHandler = (
     e: React.ChangeEvent<HTMLInputElement>
@@ -322,6 +331,7 @@ export const AuthContextProvider: React.FC<React.PropsWithChildren<{}>> = ({
         pwInput,
         mailInput,
         messageInput,
+        cvMessageInput,
         phoneNumberInput,
         regularInput,
         firstNameChange: firstNameChangeHandler,
@@ -329,6 +339,7 @@ export const AuthContextProvider: React.FC<React.PropsWithChildren<{}>> = ({
         pwChange: pwChangeHandler,
         emailChange: emailChangeHandler,
         messageChange: messageChangeHandler,
+        cvMessageChange: cvMessageChangeHandler,
         phoneNumberChange: phoneNumberChangeHandler,
         regularInputChange: regularInputChangeHandler,
         forgotPwHandler,

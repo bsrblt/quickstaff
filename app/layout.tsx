@@ -1,3 +1,4 @@
+import React from "react";
 import { AuthContextProvider } from "@/components/Ctx/AuthContext";
 import type { Metadata } from "next";
 import { Comfortaa } from "next/font/google";
@@ -5,7 +6,6 @@ import Head from "next/head";
 import "./globals.css";
 import NavBar from "@/components/layout/NavBar";
 import Footer from "@/components/layout/Footer";
-import React from "react";
 
 const mainFont = Comfortaa({ subsets: ["latin"], weight: "400" });
 

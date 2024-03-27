@@ -46,7 +46,7 @@ const WelcomePro = () => {
           />
         </div>
         <div className="flex my-20 pb-5">
-          <RegisterInput />
+          <RegisterInput buttonText="Next Step" />
         </div>
         <div id="howitworks" className="block h-[4rem]"></div>
       </section>

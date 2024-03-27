@@ -5,7 +5,10 @@ import AuthContext from "../Ctx/AuthContext";
 import getInputClasses from "../utils/inputClasses";
 import { usePathname } from "next/navigation";
 
-const RegisterInput = () => {
+interface RegisterInputProps {
+  buttonText: string;
+}
+const RegisterInput: React.FC<RegisterInputProps> = ({ buttonText }) => {
   const authCtx = useContext(AuthContext);
   const pathname = usePathname();
   const inputClasses = getInputClasses(authCtx);
@@ -33,7 +36,7 @@ const RegisterInput = () => {
         }
       >
         <button className="px-8 w-full rounded-b-lg bg-color1 hover:bg-color2 duration-300 text-white font-bold p-4 uppercase">
-          Next step
+          {buttonText}
         </button>
       </Link>
     </div>

@@ -38,7 +38,7 @@ const Home = () => {
                   <div className="lg:text-[6rem] xl:text-[rem] md:text-7xl text-6xl font-bold my-1 pt-[1rem] px-1 drop-shadow-xl ">
                     <h1 className="text-white fontpop-2">
                       let
-                      <span className="text-bubblegum/80 backdrop-blur-[2px] fontpop-2">
+                      <span className="text-bubblegum/80 backdrop-blur-[2px] fontpop-4">
                         {" "}
                         pros
                       </span>

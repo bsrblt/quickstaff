@@ -120,12 +120,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
               className="w-full bg-white rounded-lg border border-gray-400 focus:border-color2 focus:ring-1 focus:ring-color2 sm:h-32 h-24 text-base outline-none text-gray-700 sm:py-1 sm:px-3 leading-6 transition-colors duration-200 ease-in-out"
             ></textarea>
           </div>
-          <Button
-            type="button"
-            className=""
-            text="Submit"
-            onClick={() => {}}
-          ></Button>
+          <Button type="button" text="Submit" onClick={() => {}}></Button>
           <p
             id="reminder"
             className="sm:text-sm text-xs text-gray-600 sm:mt-3 mt-1"
