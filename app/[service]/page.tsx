@@ -1,3 +1,4 @@
+"use client";
 import { useSearchParams } from "next/navigation";
 import HireSection from "@/components/layout/HireSection";
 import Redirecting from "@/components/layout/Redirecting";
@@ -26,6 +27,7 @@ const ServicePage: React.FC = () => {
     <HireSection
       backgroundUrl={`/${service.toLowerCase()}.jpg`}
       hireWord={service}
+      service={service}
     />
   );
 };

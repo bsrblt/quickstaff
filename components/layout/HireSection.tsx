@@ -1,4 +1,3 @@
-"use client";
 import Dater from "@/components/layout/Dater";
 import MainTitle from "./MainTitle";
 import ConditionalText from "./ConditionalText";
@@ -9,12 +8,14 @@ import getJobs from "../utils/hooks/jobListings";
 interface HireSectionProps {
   backgroundUrl: string;
   hireWord: string;
+  service: string;
   children?: React.ReactNode;
 }
 
 const HireSection: React.FC<HireSectionProps> = ({
   backgroundUrl,
   hireWord,
+  service,
 }) => {
   const authCtx = useContext(AuthContext);
   const eventWord = authCtx?.isLoggedInPro ? "available work" : "event";
