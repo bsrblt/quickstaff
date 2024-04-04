@@ -36,7 +36,7 @@ const AboutUs = () => {
         <div className="px-2 py-8 xl:w-[67%] bg-color1/10">
           <GlassCard>
             <section className="py-4 text-justify fontpop-4">
-              <div className="container mx-auto p-4">
+              <div className="container mx-auto p-4 text-white">
                 <h2 className="text-3xl font-bold mb-8 text-center">
                   About Us
                 </h2>
