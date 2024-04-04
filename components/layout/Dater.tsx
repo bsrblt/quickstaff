@@ -1,4 +1,3 @@
-"use client";
 import React, { useState, ChangeEvent, useContext } from "react";
 import { useRouter } from "next/navigation";
 import Button from "./Button";
@@ -8,23 +7,22 @@ import AuthContext from "../Ctx/AuthContext";
 const dateInputClass =
   "block sm:w-full sm:h-11 px-4 py-2 mt-2 landscape:mt-0 text-gray-700 placeholder-gray-400 border rounded-lg dark:placeholder-gray-600 dark:text-gray-300 dark:focus:border-color2 dark:outline-none focus:ring-color2 focus:outline-none focus:ring-1 transition-colors duration-200 ease-in-out cursor-pointer";
 
-const Dater = () => {
+interface DaterProps {
+  onDateSubmit: (startDate: string, endDate: string) => void;
+}
+const Dater: React.FC<DaterProps> = ({ onDateSubmit }) => {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const authCtx = useContext(AuthContext);
   const router = useRouter();
 
-  const submitHandler = (e: any) => {
+  const submitHandler = (e: React.FormEvent) => {
     e.preventDefault();
+    console.log("Start Date:", startDate);
+    console.log("End Date:", endDate);
     !(authCtx?.isLoggedInEmp || authCtx?.isLoggedInPro)
       ? router.replace("/employer/login")
-      : console.log("Dates submitted");
-
-    const dateTimeInputs = {
-      startDate,
-      endDate,
-    };
-    console.log(dateTimeInputs);
+      : onDateSubmit(startDate, endDate);
   };
 
   const changeHandler = (

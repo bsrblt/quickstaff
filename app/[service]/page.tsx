@@ -1,5 +1,3 @@
-"use client";
-import React from "react";
 import { useSearchParams } from "next/navigation";
 import HireSection from "@/components/layout/HireSection";
 import Redirecting from "@/components/layout/Redirecting";

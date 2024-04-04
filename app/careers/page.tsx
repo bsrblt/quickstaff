@@ -63,12 +63,12 @@ const Careers = () => {
   );
   const positionText = (
     <div className="grid">
-      <div className="sm:text-3xl text-md mt-1 py-2 fontpop-1 antialiased fontpop-1 p-1">
+      <div className="sm:text-3xl text-md mt-1 py-2 antialiased fontpop-3 p-1">
         No available positions at this time.
       </div>
       <div
         id="blog-content"
-        className="md:text-xl sm:text-lg text-sm text-justify leading-tight sm:py-4 mb-2 fontpop-1 antialiased fontpop-1 p-1"
+        className="md:text-xl sm:text-lg text-sm text-justify leading-tight sm:py-4 mb-2 fontpop-1 antialiased fontpop-3 p-1"
       >
         Why not send us your CV along with a message so that we know where to
         look for in case we need your qualities:
@@ -88,9 +88,9 @@ const Careers = () => {
           </h1>
         }
         textSmall={
-          <h1 className="text-white lg:text-[2.5rem] md:text-3xl text-xl font-bold  backdrop-blur-[2px] drop-shadow-xl mt-4 md:pb-[3.3rem] pb-[1.3rem] antialiased fontpop-2 tracking-tight pl-1 fontpop-4">
+          <h1 className="text-white lg:text-[2.5rem] md:text-3xl text-xl font-bold  backdrop-blur-[4px] drop-shadow-xl mt-4 md:pb-[3.3rem] pb-[1.3rem] antialiased fontpop-2 tracking-tight pl-1 fontpop-4">
             Check out job positions at
-            <span className="text-color2 fontpop-6"> QuickStaff</span>
+            <span className="text-color2 fontpop-7"> QuickStaff</span>
           </h1>
         }
       />
@@ -102,7 +102,7 @@ const Careers = () => {
     </div>
   );
   const cvForm = (
-    <div className="flex flex-col items-center justify-center text-black">
+    <div className="flex flex-col items-center justify-center ">
       <div className=" xl:w-7/12 w-[98%] justify-center gap-8 space-x-8 px-2 -mt-4">
         <GlassCard>
           <div className="grid sm:p-8 p-2">

@@ -58,8 +58,8 @@ const DashboardContent: React.FC = () => {
       setTimeout(() => {
         setSubmitted(false);
         setShowModal(false);
-      }, 500);
-    }, 500);
+      }, 1000);
+    }, 1000);
   };
 
   const nextStepHandler = useCallback(() => {

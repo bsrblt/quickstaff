@@ -30,7 +30,10 @@ export default function RootLayout({
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, user-scalable=0"
         />
       </Head>
-      <html lang="en" className="!scroll-smooth min-w-screen max-h-screen">
+      <html
+        lang="en"
+        className="!scroll-smooth min-w-screen max-h-screen text-white"
+      >
         <body suppressHydrationWarning={true} className={mainFont.className}>
           <NavBar />
           {children}
