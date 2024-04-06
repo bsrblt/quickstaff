@@ -9,6 +9,10 @@ const getInputClasses = (authCtx: any) => {
   const invalidCvMailInputClass = `${baseCvInputClass} bg-red-100 border-red-400 rounded-lg`;
   const validRInputClass = `${baseInputClass} bg-white border-gray-400 rounded-t-lg`;
   const invalidRInputClass = `${baseInputClass} bg-red-100 border-red-400 rounded-t-lg`;
+  const dateInputClass =
+    "block w-full h-[2.7rem] px-4 py-2 mt-2 font-semibold landscape:mt-0 text-gray-700 placeholder-gray-400 border rounded-lg dark:placeholder-gray-600 dark:text-gray-300 dark:focus:border-color2 dark:outline-none focus:ring-color2 focus:outline-none focus:ring-1 transition-colors duration-200 ease-in-out cursor-pointer";
+  const selectorClass =
+    "block w-[100%] h-[2.7rem] px-4 py-2 mt-2 font-semibold landscape:mt-0 text-gray-700 placeholder-gray-400 border rounded-lg dark:placeholder-gray-600 dark:text-gray-300 dark:focus:border-color2 dark:outline-none focus:ring-color2 focus:outline-none focus:ring-1 transition-colors duration-200 ease-in-out cursor-pointer";
 
   return {
     firstNameInputClass:
@@ -62,6 +66,8 @@ const getInputClasses = (authCtx: any) => {
 
     baseInputClass,
     validInputClass,
+    dateInputClass,
+    selectorClass,
   };
 };
 

@@ -30,7 +30,7 @@ const FileUploadInput: React.FC<{
 
   const handleButtonClick = () => {
     if (fileInputRef.current) {
-      fileInputRef.current.click(); // Trigger click event on file input element
+      fileInputRef.current.click();
     }
   };
 

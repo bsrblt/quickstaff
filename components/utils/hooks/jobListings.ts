@@ -1,6 +1,4 @@
-import exp from "constants";
-
-const getJobs = () => {
+const getJobs = (service: string) => {
   const jobListings = [
     {
       jobTitle: "Manager",
@@ -640,7 +638,192 @@ const getJobs = () => {
       description:
         "We are seeking a motivated individual to join our team as a junior manager for events in Paris.",
     },
+
+    {
+      jobTitle: "Chef",
+      startDate: "09/10/2024",
+      endDate: "10/10/2024",
+      location: "Madrid",
+      experience: "5-10 years",
+      description:
+        "Experienced chef needed to lead our kitchen team and create exceptional culinary experiences for events in Madrid.",
+    },
+    {
+      jobTitle: "Bartender",
+      startDate: "09/15/2024",
+      endDate: "10/15/2024",
+      location: "Madrid",
+      experience: "2-5 years",
+      description:
+        "Creative bartender wanted to craft innovative cocktails and provide excellent customer service in Madrid.",
+    },
+    {
+      jobTitle: "Waiter",
+      startDate: "09/20/2024",
+      endDate: "10/20/2024",
+      location: "Madrid",
+      experience: "0-1 year",
+      description:
+        "We are seeking enthusiastic individuals to join our team as waiters and deliver outstanding service at events in Madrid.",
+    },
+    {
+      jobTitle: "Cleaner",
+      startDate: "09/25/2024",
+      endDate: "10/25/2024",
+      location: "Madrid",
+      experience: "5-10 years",
+      description:
+        "Detail-oriented cleaner required to maintain cleanliness and hygiene standards at our event venues in Madrid.",
+    },
+    {
+      jobTitle: "Chauffeur",
+      startDate: "10/01/2024",
+      endDate: "11/01/2024",
+      location: "Madrid",
+      experience: "10+ years",
+      description:
+        "Experienced chauffeur needed to provide safe and reliable transportation services for VIPs in Madrid.",
+    },
+    {
+      jobTitle: "Performer",
+      startDate: "10/05/2024",
+      endDate: "11/05/2024",
+      location: "Madrid",
+      experience: "5-10 years",
+      description:
+        "Versatile performer sought to entertain and engage audiences with their talent at events in Madrid.",
+    },
+    {
+      jobTitle: "Technician",
+      startDate: "10/10/2024",
+      endDate: "11/10/2024",
+      location: "Madrid",
+      experience: "0-1 year",
+      description:
+        "Entry-level technician wanted to assist with technical setup and support for events in Madrid.",
+    },
+    {
+      jobTitle: "Technician",
+      startDate: "10/15/2024",
+      endDate: "11/15/2024",
+      location: "Madrid",
+      experience: "2-5 years",
+      description:
+        "Skilled technician required to handle audiovisual setups and technical equipment for events in Madrid.",
+    },
+    {
+      jobTitle: "Technician",
+      startDate: "10/20/2024",
+      endDate: "11/20/2024",
+      location: "Madrid",
+      experience: "10+ years",
+      description:
+        "Expert technician needed to manage complex technical setups and ensure event success in Madrid.",
+    },
+    {
+      jobTitle: "Technician",
+      startDate: "10/25/2024",
+      endDate: "11/25/2024",
+      location: "Madrid",
+      experience: "5-10 years",
+      description:
+        "Experienced technician wanted to provide technical support and troubleshooting for events in Madrid.",
+    },
+    {
+      jobTitle: "Chef",
+      startDate: "09/30/2024",
+      endDate: "10/30/2024",
+      location: "Paris",
+      experience: "10+ years",
+      description:
+        "Renowned chef sought to lead our culinary team and deliver exceptional dining experiences for events in Paris.",
+    },
+    {
+      jobTitle: "Bartender",
+      startDate: "10/05/2024",
+      endDate: "11/05/2024",
+      location: "Paris",
+      experience: "5-10 years",
+      description:
+        "Creative bartender wanted to craft artisanal cocktails and elevate the bar experience at events in Paris.",
+    },
+    {
+      jobTitle: "Waiter",
+      startDate: "10/10/2024",
+      endDate: "11/10/2024",
+      location: "Paris",
+      experience: "2-5 years",
+      description:
+        "Experienced waiter required to provide exceptional service and ensure guest satisfaction at events in Paris.",
+    },
+    {
+      jobTitle: "Cleaner",
+      startDate: "10/15/2024",
+      endDate: "11/15/2024",
+      location: "Paris",
+      experience: "0-1 year",
+      description:
+        "Detail-oriented cleaner wanted to maintain cleanliness and hygiene standards at our event venues in Paris.",
+    },
+    {
+      jobTitle: "Chauffeur",
+      startDate: "10/20/2024",
+      endDate: "11/20/2024",
+      location: "Paris",
+      experience: "5-10 years",
+      description:
+        "Experienced chauffeur needed to provide luxury transportation services for VIPs in Paris.",
+    },
+    {
+      jobTitle: "Performer",
+      startDate: "10/25/2024",
+      endDate: "11/25/2024",
+      location: "Paris",
+      experience: "2-5 years",
+      description:
+        "Talented performer wanted to entertain and engage audiences with their unique talents at events in Paris.",
+    },
+    {
+      jobTitle: "Technician",
+      startDate: "10/30/2024",
+      endDate: "11/30/2024",
+      location: "Paris",
+      experience: "10+ years",
+      description:
+        "Expert technician needed to manage technical setups and ensure flawless execution of events in Paris.",
+    },
+    {
+      jobTitle: "Technician",
+      startDate: "11/05/2024",
+      endDate: "12/05/2024",
+      location: "Paris",
+      experience: "5-10 years",
+      description:
+        "Skilled technician required to handle audiovisual setups and equipment maintenance for events in Paris.",
+    },
+    {
+      jobTitle: "Technician",
+      startDate: "11/10/2024",
+      endDate: "12/10/2024",
+      location: "Paris",
+      experience: "2-5 years",
+      description:
+        "Experienced technician wanted to provide technical support and troubleshooting for events in Paris.",
+    },
+    {
+      jobTitle: "Technician",
+      startDate: "11/15/2024",
+      endDate: "12/15/2024",
+      location: "Paris",
+      experience: "0-1 year",
+      description:
+        "Entry-level technician wanted to assist with technical setup and support for events in Paris.",
+    },
   ];
-  return jobListings;
+  const filteredJobs = jobListings.filter(
+    (job) => job.jobTitle.toLowerCase() === service.toLowerCase()
+  );
+
+  return filteredJobs;
 };
 export default getJobs;

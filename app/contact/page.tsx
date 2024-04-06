@@ -4,7 +4,7 @@ import OfficeMap from "@/components/layout/OfficeMap";
 import ContactForm from "@/components/layout/ContactForm";
 
 const ContactPage = () => {
-  const [selectedCity, setSelectedCity] = useState("Istanbul");
+  const [selectedCity, setSelectedCity] = useState("default");
 
   const cityChangeHandler = (city: string) => {
     setSelectedCity(city);

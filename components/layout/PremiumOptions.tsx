@@ -1,6 +1,7 @@
 import React from "react";
 import GlassCard from "./GlassCard";
 import Button from "./Button";
+import Link from "next/link";
 
 const svgIconSilver = (
   <svg
@@ -138,7 +139,10 @@ const PremiumOptions = () => {
                 Custom
               </span>
             </p>
-            <Button type="button">Contact sales</Button>
+            <Link href="/contact">
+              <Button type="button">Contact sales</Button>
+            </Link>
+
             <ul
               role="list"
               className="mt-8 space-y-3 text-sm leading-6 xl:mt-10 text-gray-300"

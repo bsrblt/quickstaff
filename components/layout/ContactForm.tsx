@@ -26,9 +26,10 @@ const ContactForm: React.FC<ContactFormProps> = ({
     onCityChange(e.target.value);
   };
 
-  const formShown =
+  const formShownClass =
     "h-auto visible opacity-100 transform scale-y-100 duration-700";
-  const formHidden = "h-0 invisible opacity-0 transform scale-y-0 duration-700";
+  const formHiddenClass =
+    "h-0 invisible opacity-0 transform scale-y-0 duration-700";
 
   const toggleFormHandler = () => setFormVisible((prev) => !prev);
 
@@ -69,7 +70,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
         </button>
         <div
           id="form"
-          className={formVisible ? `${formShown}` : `${formHidden} `}
+          className={formVisible ? `${formShownClass}` : `${formHiddenClass} `}
         >
           <div id="city-selector" className="relative sm:mb-4 mb-2">
             <label
@@ -84,10 +85,11 @@ const ContactForm: React.FC<ContactFormProps> = ({
               onChange={cityChangeHandler}
               className="w-full rounded-lg border border-gray-400 focus:border-color2 text-base text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
             >
-              <option>Istanbul</option>
-              <option>London</option>
-              <option>Paris</option>
-              <option>Madrid</option>
+              <option value="default">- Select City -</option>
+              <option value="Istanbul">Istanbul</option>
+              <option value="London">London</option>
+              <option value="Paris">Paris</option>
+              <option value="Madrid">Madrid</option>
             </select>
           </div>
           <div id="email">

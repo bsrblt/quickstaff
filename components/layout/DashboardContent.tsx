@@ -50,17 +50,6 @@ const DashboardContent: React.FC = () => {
   const clickHandler = useCallback(() => {
     console.log("clicked");
   }, []);
-  const submitHandler = () => {
-    setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitted(true);
-      setTimeout(() => {
-        setSubmitted(false);
-        setShowModal(false);
-      }, 1000);
-    }, 1000);
-  };
 
   const nextStepHandler = useCallback(() => {
     setCurrentStep((prev) => prev + 1);
@@ -123,7 +112,7 @@ const DashboardContent: React.FC = () => {
       className={inputClasses.phoneNumberInputClass}
     />
   );
-  const cityInput = (
+  const citySelector = (
     <div>
       <label
         htmlFor="city selector"
@@ -145,7 +134,7 @@ const DashboardContent: React.FC = () => {
       </select>
     </div>
   );
-  const jobInput = (
+  const jobSelector = (
     <div>
       <label
         htmlFor="job selector"
@@ -173,7 +162,7 @@ const DashboardContent: React.FC = () => {
       </select>
     </div>
   );
-  const expInput = (
+  const expSelector = (
     <div>
       <label
         htmlFor="experience selector"
@@ -195,7 +184,6 @@ const DashboardContent: React.FC = () => {
       </select>
     </div>
   );
-
   const spinner = (
     <svg
       aria-hidden="true"
@@ -214,6 +202,17 @@ const DashboardContent: React.FC = () => {
       />
     </svg>
   );
+  const submitHandler = () => {
+    setIsSubmitting(true);
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setShowModal(false);
+      }, 1000);
+    }, 1000);
+  };
 
   const renderModalContent = () => {
     if (pathname === "/employer/dashboard") {
@@ -245,7 +244,7 @@ const DashboardContent: React.FC = () => {
               {!isSubmitting && !submitted ? (
                 <>
                   {phoneNumberInput}
-                  {cityInput}
+                  {citySelector}
                 </>
               ) : isSubmitting ? (
                 <div className="block w-full px-[5.4rem] sm:py-12 py-[2.75rem] sm:mt-2 ">
@@ -308,7 +307,7 @@ const DashboardContent: React.FC = () => {
           return (
             <div className="grid gap-4">
               {phoneNumberInput}
-              {cityInput}
+              {citySelector}
               <Button type="button" onClick={nextStepHandler}>
                 Next
               </Button>
@@ -322,8 +321,8 @@ const DashboardContent: React.FC = () => {
             <div className="grid gap-4 ">
               {!isSubmitting && !submitted ? (
                 <>
-                  {jobInput}
-                  {expInput}
+                  {jobSelector}
+                  {expSelector}
                 </>
               ) : isSubmitting ? (
                 <div className="block w-full px-[5.4rem] sm:py-12 py-[2.75rem] sm:mt-2 ">
@@ -352,13 +351,15 @@ const DashboardContent: React.FC = () => {
                 >
                   {isSubmitting ? "Saving..." : submitted ? "Saved" : "Save"}
                 </Button>
-                <Button
-                  type="button"
-                  className=" text-white py-2 px-4 rounded-md"
-                  onClick={prevStepHandler}
-                >
-                  Back
-                </Button>
+                {!submitted && (
+                  <Button
+                    type="button"
+                    className=" text-white py-2 px-4 rounded-md"
+                    onClick={prevStepHandler}
+                  >
+                    Back
+                  </Button>
+                )}
               </div>
             </div>
           );
@@ -404,7 +405,6 @@ const DashboardContent: React.FC = () => {
       onClick: () => router.push("/premium"),
     },
   ];
-
   const JobItems = [
     {
       link: "/#staffselect",
@@ -430,11 +430,15 @@ const DashboardContent: React.FC = () => {
       onClick: clickHandler,
     },
   ];
-
   const ManagementItems = [
     { image: privacy, alt: "privacy", text: "Privacy" },
     { image: fingerprint, alt: "security", text: "Security" },
-    { image: support, alt: "support", text: "Support" },
+    {
+      image: support,
+      alt: "support",
+      text: "Support",
+      onclick: () => router.push("/"),
+    },
     {
       image: turnoff,
       alt: "logout",

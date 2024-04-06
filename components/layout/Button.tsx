@@ -6,14 +6,20 @@ interface ButtonProps {
   type: "button" | "reset" | "submit" | undefined;
   className?: string;
   onClick?: (e: any) => void;
+  height?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ children, text, type, onClick }) => {
+const Button: React.FC<ButtonProps> = ({
+  children,
+  text,
+  type,
+  onClick,
+  height = "sm:h-[2.85rem] h-10 ",
+}) => {
   return (
     <button
       type={type}
-      className="px-8 landscape:px-5 mt-2 w-full rounded-lg hover:shadow-2xl bg-color1 hover:bg-color2 duration-300 text-white font-bold p-3 uppercase antialiased tracking-wider
-    "
+      className={`px-8 landscape:px-5 mt-2 w-full rounded-lg hover:shadow-2xl bg-color1 hover:bg-color2 duration-300 text-white font-bold uppercase antialiased tracking-wider ${height}`}
       onClick={onClick}
     >
       {children}

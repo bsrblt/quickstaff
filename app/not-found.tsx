@@ -38,7 +38,7 @@ const ErrorPage: React.FC = () => {
           className="px-2 py-8 xl:max-w-[67%] items-center justify-center text-center absolute bottom-0 mb-8"
         >
           <GlassCard>
-            <section className="py-6 text-center fontpop-4">
+            <section className="py-6 text-center fontpop-4 bg-color1/10">
               <div className="container mx-auto px-4">
                 <h2 className="sm:text-3xl text-xl font-bold mb-4">
                   Error 404
