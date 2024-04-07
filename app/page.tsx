@@ -27,7 +27,7 @@ const Home = () => {
         style={{
           backgroundImage: "url(/jj.jpg)",
           backgroundSize: "cover",
-          backgroundAttachment: "initial",
+          backgroundAttachment: "fixed",
         }}
       >
         <div className="min-h-screen relative">
