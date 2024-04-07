@@ -44,7 +44,7 @@ const HowItWorks: React.FC<HowItWorksProps> = ({
           </p>
         </div>
       </div>
-      <div className="flex flex-col mx- items-center justify-center max-w-[93%] sm:max-w-[85%] gap-5 sm:gap-6 md:gap-4 lg:gap-5 xl:gap-8 md:max-w-[95%] lg:max-w-[80%] xl:max-w-[65%]">
+      <div className="flex flex-col mx- items-center justify-center max-w-[85%] sm:max-w-[85%] gap-5 sm:gap-6 md:gap-4 lg:gap-5 xl:gap-8 md:max-w-[95%] lg:max-w-[80%] xl:max-w-[65%]">
         <div className="flex flex-col sm:flex-row xl:space-x-8 md:space-x-5 sm:space-x-5 sm:space-y-0 space-y-4 justify-center ">
           <Card textBig={textbig1} textSmall={textsm1} />
           <Card textBig={textbig2} textSmall={textsm2} />

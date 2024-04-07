@@ -19,7 +19,7 @@ const HomePageSelection: React.FC<homePageSelectionProps> = ({
   firstButtonText,
   secondButtonText,
 }) => (
-  <div className="backdrop-blur-[8px] shadow-xl bg-white/30 p-4 my-2 rounded-xl">
+  <div className="min-w-[17rem] sm:min-w-[21rem] backdrop-blur-[8px] shadow-xl bg-white/30 p-4 my-2 rounded-xl">
     <h2 className="md:text-3xl drop-shadow-xl text-2xl md:my-2 font-bold text-center text-white fontpop-3">
       {titleText}
     </h2>
@@ -67,8 +67,6 @@ const LoginSelect = () => {
           secondButtonText="go to dashboard"
         />
       );
-    } else {
-      setContent(null);
     }
   }, [authCtx?.isLoggedInPro, authCtx?.isLoggedInEmp]);
 

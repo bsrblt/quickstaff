@@ -65,7 +65,7 @@ const StaffSelection: React.FC = () => {
   return (
     <div className=" min-w-full sm:mt-[8rem] mt-[8.8rem] mb-5">
       <div id="staffselect" className="sm:h-8 h-12"></div>
-      <section className="w-full sm:py-[36px] px-4 lg:px-7 space-y-8 text-xl text-center bg-gradient-to-b from-color1/60  ...">
+      <section className="w-full sm:py-[36px] px-2 lg:px-7 space-y-8 text-xl text-center bg-gradient-to-b from-color1/60  ...">
         <div className="container mx-auto px-[12px] md:px-0 xl:px-12 lg:px-18 ">
           <Link href="#staffselect">
             <h1 className="text-white backdrop-blur-s block md:text-5xl sm:text-4xl text-xl font-bold text-center md:pb-6 md:my-6 pb-10 pt-4 sm:pt-0">
