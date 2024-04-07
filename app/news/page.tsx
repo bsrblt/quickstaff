@@ -52,9 +52,9 @@ const NewsPage: React.FC = () => {
         }}
       >
         {maintitle}
-        <div className="px-2 py-8 xl:w-[67%]">
+        <div className="px-2 pt-8 pb-3 xl:w-[67%]">
           <GlassCard>
-            <section className="py-6 text-justify fontpop-4 bg-color1/10">
+            <section className="py-6 fontpop-4 bg-color1/10">
               <div className="container mx-auto px-4">
                 <p className="text-lg text-gray-300 mb-8">
                   Stay tuned for the latest updates, announcements, and news
@@ -66,7 +66,9 @@ const NewsPage: React.FC = () => {
                     <h3 className="text-xl font-semibold mb-4">
                       {newsItem.title}
                     </h3>
-                    <p className="text-gray-100">{newsItem.content}</p>
+                    <p className="text-gray-100 text-justify ">
+                      {newsItem.content}
+                    </p>
                     <Link
                       href={`/news/${newsItem.title
                         .toLowerCase()

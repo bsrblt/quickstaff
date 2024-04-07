@@ -4,6 +4,9 @@ import Button from "./Button";
 import InputField from "./InputField";
 import AuthContext from "../Ctx/AuthContext";
 import getInputClasses from "../utils/inputClasses";
+import CitySelector from "./CitySelector";
+import ExpSelector from "./ExpSelector";
+import Checkbox from "./Checkbox";
 
 interface EventSetupFormProps {
   onSubmit: (startDate: string, endDate: string, selectedCity: string) => void;
@@ -38,11 +41,11 @@ const EventSetupForm: React.FC<EventSetupFormProps> = ({ onSubmit }) => {
   ) => {
     setter(e.target.value);
   };
-  const checkbox1ChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    setCheckbox1(e.target.checked);
-  };
-  const checkbox2ChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    setCheckbox2(e.target.checked);
+  const checkboxChangeHandler = (
+    e: ChangeEvent<HTMLInputElement>,
+    setter: React.Dispatch<React.SetStateAction<boolean>>
+  ) => {
+    setter(e.target.checked);
   };
 
   const startDateInputField = (
@@ -81,96 +84,6 @@ const EventSetupForm: React.FC<EventSetupFormProps> = ({ onSubmit }) => {
       />
     </div>
   );
-  const citySelector = (
-    <div className="grid text-xl font-semibold text-white drop-shadow-xl">
-      <div>
-        <label
-          htmlFor="city"
-          className="block ml-[2px] font-normal  sm:text-lg md:text-xl text-md mb-2"
-        >
-          City
-        </label>
-        <select
-          id="city"
-          value={selectedCity}
-          onChange={(e) =>
-            changeHandler(e as ChangeEvent<HTMLSelectElement>, setSelectedCity)
-          }
-          className={inputClass.selectorClass}
-        >
-          <option value="default">- select -</option>
-          <option value="Istanbul">Istanbul</option>
-          <option value="London">London</option>
-          <option value="Paris">Paris</option>
-          <option value="Madrid">Madrid</option>
-        </select>
-      </div>
-    </div>
-  );
-  const expSelector = (
-    <div className="grid text-xl text-white  drop-shadow-xl">
-      <label
-        htmlFor="experience"
-        className="ml-[2px] sm:text-lg md:text-xl text-md md:mb-2 sm:mb-0 mb-2"
-      >
-        Experience
-      </label>
-      <select
-        id="experience"
-        value={selectedExp}
-        onChange={(e) =>
-          changeHandler(e as ChangeEvent<HTMLSelectElement>, setSelectedExp)
-        }
-        className={inputClass.selectorClass}
-      >
-        <option value="">- any -</option>
-        <option value="0-1 year">0-1 year</option>
-        <option value="2-5 years">2-5 years</option>
-        <option value="5-10 years">5-10 years</option>
-        <option value="10+ years">10+ years</option>
-      </select>
-    </div>
-  );
-  const collabCheckboxes = (
-    <div className="space-y-[0.65rem] sm:mt-0 mt-4 mb-2">
-      <label
-        htmlFor="collab"
-        className="ml-[1px] sm:text-lg md:text-xl text-xl"
-      >
-        Collab
-      </label>
-      <div>
-        <label
-          htmlFor="solocheckbox"
-          className="text-white sm:text-lg md:text-xl text-md cursor-pointer"
-        >
-          <input
-            type="checkbox"
-            id="solocheckbox"
-            checked={checkbox1}
-            onChange={checkbox1ChangeHandler}
-            className="h-4 w-4 mr-1 rounded-sm border border-silver"
-          />{" "}
-          Solo
-        </label>
-      </div>
-      <div>
-        <label
-          htmlFor="teamcheckbox"
-          className="text-white sm:text-lg md:text-xl text-md cursor-pointer"
-        >
-          <input
-            type="checkbox"
-            id="teamcheckbox"
-            checked={checkbox2}
-            onChange={checkbox2ChangeHandler}
-            className="h-4 w-4 mr-1 rounded-sm border border-silver"
-          />{" "}
-          Teamwork
-        </label>
-      </div>
-    </div>
-  );
 
   return (
     <form
@@ -183,11 +96,41 @@ const EventSetupForm: React.FC<EventSetupFormProps> = ({ onSubmit }) => {
           {endDateInputField}
         </div>
         <div className="space-y-4">
-          {citySelector}
-          {expSelector}
+          <CitySelector
+            selectedCity={selectedCity}
+            inputClass={inputClass.selectorClass}
+            labelClass="block ml-[2px] font-normal  sm:text-lg md:text-xl text-md mb-2"
+            onChange={(e) => changeHandler(e, setSelectedCity)}
+          />
+          <ExpSelector
+            notChosenText="- any -"
+            labelClass="ml-[2px] sm:text-lg md:text-xl text-md md:mb-2 sm:mb-0 mb-2"
+            selectedExp={selectedExp}
+            inputClass={inputClass.selectorClass}
+            onChange={(e) => changeHandler(e, setSelectedExp)}
+          />
         </div>
         <div className="space-y-4 md:w-[14rem]">
-          {collabCheckboxes}
+          <div className="space-y-[0.65rem] sm:mt-0 mt-4 mb-2">
+            <label
+              htmlFor="collab"
+              className="ml-[1px] sm:text-lg md:text-xl text-xl"
+            >
+              Collab
+            </label>
+            <Checkbox
+              id="solo checkbox"
+              checkbox={checkbox1}
+              onChangeCheck={(e) => checkboxChangeHandler(e, setCheckbox1)}
+              checkboxText="Solo"
+            />
+            <Checkbox
+              id="team checkbox"
+              checkbox={checkbox2}
+              onChangeCheck={(e) => checkboxChangeHandler(e, setCheckbox2)}
+              checkboxText="Teamwork"
+            />
+          </div>
           <Button type="submit" text="Submit" />
         </div>
       </section>

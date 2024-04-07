@@ -1,6 +1,7 @@
 import React from "react";
 import GlassCard from "./GlassCard";
 import Button from "./Button";
+// import getJobsList from "../../lib/jobs";
 
 interface AvailableJobsProps {
   jobs: {
@@ -13,7 +14,8 @@ interface AvailableJobsProps {
   }[];
 }
 
-const AvailableJobs: React.FC<AvailableJobsProps> = ({ jobs }) => {
+const AvailableJobs: React.FC<AvailableJobsProps> = /* async */ ({ jobs }) => {
+  // const jobs = await getJobsList();
   console.log("Jobs in AvailableJobs:", jobs);
   return (
     <div className="grid items-center justify-center my-4">
@@ -26,9 +28,9 @@ const AvailableJobs: React.FC<AvailableJobsProps> = ({ jobs }) => {
       <section className="flex mt-5 px-3 justify-center">
         <div className="space-y-4 md:w-[44rem]">
           {jobs.length > 0 ? (
-            jobs.map((job, index) => (
+            jobs.map((job: any, index: any) => (
               <GlassCard key={index}>
-                <div className="bg-color1/10 rounded-xl p-3">
+                <div className="bg-color1/20 rounded-xl p-3">
                   <div className="sm:flex justify-between items-center sm:space-x-5 ">
                     <p className="text-white fontpop-3 sm:text-xl text-md ml-2">
                       {job.description}

@@ -4,6 +4,7 @@ import HireSection from "@/components/layout/HireSection";
 import Redirecting from "@/components/layout/Redirecting";
 import { useSearchParams } from "next/navigation";
 import getJobs from "@/components/utils/hooks/jobListings";
+import ErrorPage from "../not-found";
 
 interface Job {
   jobTitle: string;
@@ -17,7 +18,9 @@ interface Job {
 const ServicePage: React.FC = () => {
   const searchParams = useSearchParams();
   const service = searchParams.get("s") || "";
-
+  const [selectedCity, setSelectedCity] = useState<string>("");
+  const [selectedExp, setSelectedExp] = useState<string>("");
+  const [jobs, setJobs] = useState<Job[]>([]);
   const services = [
     "chef",
     "waiter",
@@ -31,12 +34,8 @@ const ServicePage: React.FC = () => {
 
   if (!services.includes(service.toLowerCase())) {
     console.log("Service not recognized. Redirecting.");
-    return <Redirecting />;
+    return <ErrorPage />;
   }
-
-  const [selectedCity, setSelectedCity] = useState<string>("");
-  const [selectedExp, setSelectedExp] = useState<string>("");
-  const [jobs, setJobs] = useState<Job[]>([]);
 
   useEffect(() => {
     const fetchedJobs = getJobs(service);

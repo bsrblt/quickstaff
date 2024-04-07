@@ -1,10 +1,12 @@
 import React from "react";
 import MainTitle from "@/components/layout/MainTitle";
 import GlassCard from "@/components/layout/GlassCard";
+import Button from "@/components/layout/Button";
+import Link from "next/link";
 
 const ErrorPage: React.FC = () => {
   const maintitle = (
-    <div className="flex h-[10%] sm:my-[1rem] my-1 -ml-[1.8rem] sm:ml-0 justify-end items-end">
+    <div className="flex h-[10%] sm:my-[1rem] my-1 -ml-[1.8rem] sm:ml-0 px-10 justify-end items-end">
       <MainTitle
         textBig={
           <h1 className="text-bubblegum lg:text-[6rem] xl:text-[rem] md:text-7xl sm:text-6xl text-5xl font-bold drop-shadow-xl fontpop-4 backdrop-blur-[6px]">
@@ -29,7 +31,7 @@ const ErrorPage: React.FC = () => {
         className="flex flex-col w-full min-h-screen bg-cover bg-fixed bg-center justify-start items-center relative"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/error.jpg)",
+            "linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url(/error.jpg)",
         }}
       >
         {maintitle}
@@ -49,6 +51,9 @@ const ErrorPage: React.FC = () => {
                 </p>
               </div>
             </section>
+            <Link href="/">
+              <Button type="button">Take me home</Button>
+            </Link>
           </GlassCard>
         </div>
       </section>

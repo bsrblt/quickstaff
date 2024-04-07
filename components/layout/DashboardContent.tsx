@@ -27,6 +27,9 @@ import turnoff from "../../public/turnoff.svg";
 import crown from "../../public/crown.svg";
 import usercheck from "../../public/usercheck.svg";
 import getInputClasses from "../utils/inputClasses";
+import CitySelector from "./CitySelector";
+import ExpSelector from "./ExpSelector";
+import JobSelector from "./JobSelector";
 
 const DashboardContent: React.FC = () => {
   const router = useRouter();
@@ -112,78 +115,7 @@ const DashboardContent: React.FC = () => {
       className={inputClasses.phoneNumberInputClass}
     />
   );
-  const citySelector = (
-    <div>
-      <label
-        htmlFor="city selector"
-        className="block mb-2 sm:text-sm text-xs pl-[2px] text-gray-600 dark:text-gray-200"
-      >
-        City
-      </label>
-      <select
-        id="city selector"
-        value={selectedCity}
-        onChange={cityChangeHandler}
-        className={inputClasses.validInputClass}
-      >
-        <option value="">- select city -</option>
-        <option value="Istanbul">Istanbul</option>
-        <option value="London">London</option>
-        <option value="Paris">Paris</option>
-        <option value="Madrid">Madrid</option>
-      </select>
-    </div>
-  );
-  const jobSelector = (
-    <div>
-      <label
-        htmlFor="job selector"
-        className="block mb-2 sm:text-sm text-xs pl-[2px] text-gray-600 dark:text-gray-200"
-      >
-        Job
-      </label>
-      <select
-        id="job selector"
-        value={selectedJob}
-        onChange={jobChangeHandler}
-        className={inputClasses.validInputClass}
-      >
-        <option value="">- select job -</option>
-        <option value="employer">Employer</option>
-        <option value="manager">Manager</option>
-        <option value="chef">Chef</option>
-        <option value="driver">Bartender</option>
-        <option value="ceo">Waiter</option>
-        <option value="cfo">Cleaner</option>
-        <option value="coo">Chauffeur</option>
-        <option value="coo">Performer</option>
-        <option value="coo">Technician</option>
-        <option value="coo">Other</option>
-      </select>
-    </div>
-  );
-  const expSelector = (
-    <div>
-      <label
-        htmlFor="experience selector"
-        className="block mb-2 sm:text-sm text-xs pl-[2px] text-gray-600 dark:text-gray-200"
-      >
-        Experience
-      </label>
-      <select
-        id="experience selector"
-        value={selectedExp}
-        onChange={expChangeHandler}
-        className={inputClasses.validInputClass}
-      >
-        <option value="">- select experience -</option>
-        <option value="0-1 year">0-1 year</option>
-        <option value="2-5 years">2-5 years</option>
-        <option value="5-10 years">5-10 years</option>
-        <option value="10+ years">10+ years</option>
-      </select>
-    </div>
-  );
+
   const spinner = (
     <svg
       aria-hidden="true"
@@ -244,7 +176,12 @@ const DashboardContent: React.FC = () => {
               {!isSubmitting && !submitted ? (
                 <>
                   {phoneNumberInput}
-                  {citySelector}
+                  <CitySelector
+                    labelClass="block mb-2 sm:text-sm text-xs pl-[2px] text-gray-600 dark:text-gray-200"
+                    selectedCity={selectedCity}
+                    onChange={cityChangeHandler}
+                    inputClass={inputClasses.validInputClass}
+                  />
                 </>
               ) : isSubmitting ? (
                 <div className="block w-full px-[5.4rem] sm:py-12 py-[2.75rem] sm:mt-2 ">
@@ -260,20 +197,14 @@ const DashboardContent: React.FC = () => {
                 </div>
               ) : null}
               <div className={submitted ? "grid gap-4 mt-[1px]" : "grid gap-4"}>
-                <Button
-                  type="button"
-                  className=" text-white py-2 px-4 rounded-md"
-                  onClick={submitHandler}
-                >
+                <Button type="button" onClick={submitHandler}>
                   {isSubmitting ? "Saving..." : submitted ? "Saved" : "Save"}
                 </Button>
-                <Button
-                  type="button"
-                  className=" text-white py-2 px-4 rounded-md"
-                  onClick={prevStepHandler}
-                >
-                  Back
-                </Button>
+                {!submitted && (
+                  <Button type="button" onClick={prevStepHandler}>
+                    Back
+                  </Button>
+                )}
               </div>
             </div>
           );
@@ -307,7 +238,12 @@ const DashboardContent: React.FC = () => {
           return (
             <div className="grid gap-4">
               {phoneNumberInput}
-              {citySelector}
+              <CitySelector
+                labelClass="block mb-2 sm:text-sm text-xs pl-[2px] text-gray-600 dark:text-gray-200"
+                selectedCity={selectedCity}
+                onChange={cityChangeHandler}
+                inputClass={inputClasses.validInputClass}
+              />
               <Button type="button" onClick={nextStepHandler}>
                 Next
               </Button>
@@ -321,8 +257,19 @@ const DashboardContent: React.FC = () => {
             <div className="grid gap-4 ">
               {!isSubmitting && !submitted ? (
                 <>
-                  {jobSelector}
-                  {expSelector}
+                  <JobSelector
+                    labelClass="block mb-2 sm:text-sm text-xs pl-[2px] text-gray-600 dark:text-gray-200"
+                    selectedJob={selectedJob}
+                    onJobChange={jobChangeHandler}
+                    className={inputClasses.validInputClass}
+                  />
+                  <ExpSelector
+                    labelClass="block mb-1 sm:text-sm text-xs pl-[2px] text-gray-600 dark:text-gray-200"
+                    selectedExp={selectedExp}
+                    onChange={expChangeHandler}
+                    inputClass={inputClasses.validInputClass}
+                    notChosenText="- select -"
+                  />
                 </>
               ) : isSubmitting ? (
                 <div className="block w-full px-[5.4rem] sm:py-12 py-[2.75rem] sm:mt-2 ">
@@ -437,7 +384,7 @@ const DashboardContent: React.FC = () => {
       image: support,
       alt: "support",
       text: "Support",
-      onclick: () => router.push("/"),
+      onClick: () => router.push("/error"),
     },
     {
       image: turnoff,

@@ -22,9 +22,9 @@ const BlogPostPage: React.FC = () => {
             <div className="sm:text-3xl text-md backdrop-blur-sm p-2 fontpop-1 antialiased">
               {title}
             </div>
-            <div
+            <p
               id="blog-content"
-              className=" backdrop-blur-sm md:text-xl sm:text-lg text-sm  leading-tight sm:p-3 p-2 fontpop-1 antialiased"
+              className=" backdrop-blur-sm md:text-xl text-justify sm:text-lg text-sm  leading-tight sm:p-3 p-2 fontpop-1 antialiased"
             >
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Perferendis repellat molestias perspiciatis maiores enim ex, a
@@ -42,7 +42,7 @@ const BlogPostPage: React.FC = () => {
               fugit beatae numquam porro sint perferendis possimus quo at
               doloremque, cumque perspiciatis incidunt ullam, odit dolorem
               praesentium aspernatur! Cupiditate architecto hic quidem velit.
-            </div>
+            </p>
           </div>
         </GlassCard>
       </div>

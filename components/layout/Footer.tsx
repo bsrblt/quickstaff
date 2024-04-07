@@ -7,7 +7,7 @@ const Footer = () => {
       title: "Navigation",
       links: [
         { text: "Home", url: "/" },
-        { text: "Staff List", url: "/staff-list" },
+        { text: "Staff", url: "/#staffselect" },
         { text: "Blog", url: "/blog" },
         { text: "FAQ", url: "/faq" },
       ],
