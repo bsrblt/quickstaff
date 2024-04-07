@@ -36,15 +36,20 @@ const DashboardContent: React.FC = () => {
   const pathname = usePathname();
   const authCtx = useContext(AuthContext);
   const inputClasses = getInputClasses(authCtx);
+  const ref = useRef<HTMLDivElement>(null);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [selectedCity, setSelectedCity] = useState("");
   const [selectedExp, setSelectedExp] = useState("");
   const [selectedJob, setSelectedJob] = useState("");
+  const [isSettingDates, setIsSettingDates] = useState(false);
+  const [isSubmittingDates, setIsSubmittingDates] = useState(false);
+  const [datesSubmitted, setDatesSubmitted] = useState(false);
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
-  const ref = useRef<HTMLDivElement>(null);
 
   const toggleModal = useCallback(() => {
     setShowModal((prev) => !prev);
@@ -53,7 +58,6 @@ const DashboardContent: React.FC = () => {
   const clickHandler = useCallback(() => {
     console.log("clicked");
   }, []);
-
   const nextStepHandler = useCallback(() => {
     setCurrentStep((prev) => prev + 1);
   }, []);
@@ -61,21 +65,38 @@ const DashboardContent: React.FC = () => {
     setCurrentStep((prev) => prev - 1);
   }, []);
 
-  const cityChangeHandler: React.ChangeEventHandler<HTMLSelectElement> = (
-    e: ChangeEvent<HTMLSelectElement>
+  const changeHandler = (
+    e:
+      | ChangeEvent<HTMLInputElement>
+      | ChangeEvent<HTMLSelectElement>
+      | ChangeEvent<HTMLTextAreaElement>,
+    setter: React.Dispatch<React.SetStateAction<string>>
   ) => {
-    setSelectedCity(e.target.value);
+    setter(e.target.value);
   };
-  const jobChangeHandler: React.ChangeEventHandler<HTMLSelectElement> = (
-    e: ChangeEvent<HTMLSelectElement>
-  ) => {
-    setSelectedJob(e.target.value);
+  const submitHandler = () => {
+    setIsSubmitting(true);
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setShowModal(false);
+      }, 1000);
+    }, 1000);
   };
-  const expChangeHandler: React.ChangeEventHandler<HTMLSelectElement> = (
-    e: ChangeEvent<HTMLSelectElement>
-  ) => {
-    setSelectedExp(e.target.value);
+  const dateSubmitHandler = () => {
+    setIsSubmittingDates(true);
+    setTimeout(() => {
+      setIsSubmittingDates(false);
+      setDatesSubmitted(true);
+      setTimeout(() => {
+        setDatesSubmitted(false);
+        setShowModal(false);
+      }, 1000);
+    }, 1000);
   };
+
   const firstNameInput = (
     <InputField
       className={inputClasses.firstNameInputClass}
@@ -115,7 +136,42 @@ const DashboardContent: React.FC = () => {
       className={inputClasses.phoneNumberInputClass}
     />
   );
-
+  const startDateInputField = (
+    <div className="grid text-xl font-semibold text-white drop-shadow-xl">
+      <label
+        htmlFor="startdate"
+        className="block ml-[2px] font-normal sm:text-lg md:text-xl text-md"
+      >
+        Starts @
+      </label>
+      <InputField
+        id="startdate"
+        type="date"
+        required
+        className={inputClasses.dateInputClass}
+        value={startDate}
+        onChange={(e) => changeHandler(e, setStartDate)}
+      />
+    </div>
+  );
+  const endDateInputField = (
+    <div className="grid text-xl font-semibold text-white drop-shadow-xl">
+      <label
+        htmlFor="enddate"
+        className="block ml-[2px] font-normal  sm:text-lg md:text-xl text-md"
+      >
+        Ends @
+      </label>
+      <InputField
+        id="enddate"
+        type="date"
+        required
+        className={inputClasses.dateInputClass}
+        value={endDate}
+        onChange={(e) => changeHandler(e, setEndDate)}
+      />
+    </div>
+  );
   const spinner = (
     <svg
       aria-hidden="true"
@@ -134,20 +190,9 @@ const DashboardContent: React.FC = () => {
       />
     </svg>
   );
-  const submitHandler = () => {
-    setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitted(true);
-      setTimeout(() => {
-        setSubmitted(false);
-        setShowModal(false);
-      }, 1000);
-    }, 1000);
-  };
 
   const renderModalContent = () => {
-    if (pathname === "/employer/dashboard") {
+    if (pathname === "/employer/dashboard" && !isSettingDates) {
       switch (currentStep) {
         case 1:
           return (
@@ -179,7 +224,7 @@ const DashboardContent: React.FC = () => {
                   <CitySelector
                     labelClass="block mb-2 sm:text-sm text-xs pl-[2px] text-gray-600 dark:text-gray-200"
                     selectedCity={selectedCity}
-                    onChange={cityChangeHandler}
+                    onChange={(e) => changeHandler(e, setSelectedCity)}
                     inputClass={inputClasses.validInputClass}
                   />
                 </>
@@ -211,7 +256,7 @@ const DashboardContent: React.FC = () => {
         default:
           return null;
       }
-    } else if (pathname === "/pro/dashboard") {
+    } else if (pathname === "/pro/dashboard" && !isSettingDates) {
       switch (currentStep) {
         case 1:
           return (
@@ -241,7 +286,7 @@ const DashboardContent: React.FC = () => {
               <CitySelector
                 labelClass="block mb-2 sm:text-sm text-xs pl-[2px] text-gray-600 dark:text-gray-200"
                 selectedCity={selectedCity}
-                onChange={cityChangeHandler}
+                onChange={(e) => changeHandler(e, setSelectedCity)}
                 inputClass={inputClasses.validInputClass}
               />
               <Button type="button" onClick={nextStepHandler}>
@@ -260,13 +305,13 @@ const DashboardContent: React.FC = () => {
                   <JobSelector
                     labelClass="block mb-2 sm:text-sm text-xs pl-[2px] text-gray-600 dark:text-gray-200"
                     selectedJob={selectedJob}
-                    onJobChange={jobChangeHandler}
+                    onJobChange={(e) => changeHandler(e, setSelectedJob)}
                     className={inputClasses.validInputClass}
                   />
                   <ExpSelector
-                    labelClass="block mb-1 sm:text-sm text-xs pl-[2px] text-gray-600 dark:text-gray-200"
+                    labelClass="block sm:text-sm text-xs pl-[2px] text-gray-600 dark:text-gray-200"
                     selectedExp={selectedExp}
-                    onChange={expChangeHandler}
+                    onChange={(e) => changeHandler(e, setSelectedExp)}
                     inputClass={inputClasses.validInputClass}
                     notChosenText="- select -"
                   />
@@ -313,31 +358,95 @@ const DashboardContent: React.FC = () => {
         default:
           return null;
       }
+    } else if (pathname === "/employer/dashboard" && isSettingDates) {
+      return (
+        <div className="grid gap-[0.08rem]">
+          {!isSubmittingDates && !datesSubmitted ? (
+            <>
+              {startDateInputField}
+              {endDateInputField}
+            </>
+          ) : isSubmittingDates ? (
+            <div className="block w-full px-[5.4rem] sm:py-12 py-[2.75rem] sm:mt-2 ">
+              {spinner}
+            </div>
+          ) : datesSubmitted ? (
+            <div className="block w-full px-[3.5rem] sm:py-[1.4rem] pt-[1rem] pb-[1.33rem] sm:mt-2 mb-[1px] ml-1 fadeIn035">
+              <Image
+                src={usercheck}
+                alt="submitted successfully"
+                height={105}
+              />
+            </div>
+          ) : null}
+          <div
+            className={datesSubmitted ? "grid gap-4 mt-[1px]" : "grid gap-4"}
+          >
+            <Button type="button" onClick={dateSubmitHandler}>
+              {isSubmittingDates
+                ? "Saving..."
+                : datesSubmitted
+                ? "Saved"
+                : "Save"}
+            </Button>
+            {!datesSubmitted && (
+              <Button type="button" onClick={toggleModal}>
+                Cancel
+              </Button>
+            )}
+          </div>
+        </div>
+      );
+    } else if (pathname === "/pro/dashboard" && isSettingDates) {
+      return (
+        <div className="grid gap-[0.08rem]">
+          {!isSubmittingDates && !datesSubmitted ? (
+            <>
+              {startDateInputField}
+              {endDateInputField}
+            </>
+          ) : isSubmittingDates ? (
+            <div className="block w-full px-[5.4rem] sm:py-12 py-[2.75rem] sm:mt-2 ">
+              {spinner}
+            </div>
+          ) : datesSubmitted ? (
+            <div className="block w-full px-[3.5rem] sm:py-[1.4rem] pt-[1rem] pb-[1.33rem] sm:mt-2 mb-[1px] ml-1 fadeIn035">
+              <Image
+                src={usercheck}
+                alt="submitted successfully"
+                height={105}
+              />
+            </div>
+          ) : null}
+          <div
+            className={datesSubmitted ? "grid gap-4 mt-[1px]" : "grid gap-4"}
+          >
+            <Button type="button" onClick={dateSubmitHandler}>
+              {isSubmittingDates
+                ? "Saving..."
+                : datesSubmitted
+                ? "Saved"
+                : "Save"}
+            </Button>
+            {!datesSubmitted && (
+              <Button type="button" onClick={toggleModal}>
+                Cancel
+              </Button>
+            )}
+          </div>
+        </div>
+      );
     } else return;
   };
-
-  const handleOutsideClick = useCallback(
-    (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node) && showModal) {
-        toggleModal();
-      }
-    },
-    [toggleModal, showModal]
-  );
-
-  useEffect(() => {
-    document.addEventListener("mousedown", handleOutsideClick);
-    return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
-    };
-  }, [handleOutsideClick]);
-
   const DashboardCards = [
     {
       imageSrc: profile,
       altText: "profile picture",
       title: "Profile",
-      onClick: toggleModal,
+      onClick: () => {
+        setIsSettingDates(false);
+        setShowModal(true);
+      },
     },
     {
       imageSrc: settings,
@@ -356,25 +465,28 @@ const DashboardContent: React.FC = () => {
     {
       link: "/#staffselect",
       image: jobsearch,
-      alt: "search jobs",
+      alt: "search jobs or staff",
       text: authCtx?.isLoggedInPro ? "Find New Job" : "Find Event Staff",
       onClick: undefined,
     },
     {
       link: "",
       image: completedjobs,
-      alt: "completed jobs",
+      alt: "completed events",
       text: authCtx?.isLoggedInPro ? "Completed Jobs" : "Completed Events",
       onClick: clickHandler,
     },
     {
       link: "",
       image: okdate,
-      alt: "security",
+      alt: "event availability",
       text: authCtx?.isLoggedInPro
         ? "Set Your Availability"
         : "Create New Event",
-      onClick: clickHandler,
+      onClick: () => {
+        setShowModal(true);
+        setIsSettingDates(true);
+      },
     },
   ];
   const ManagementItems = [
@@ -393,12 +505,14 @@ const DashboardContent: React.FC = () => {
       onClick: (e: React.MouseEvent) => authCtx?.logout(e),
     },
   ];
+  const modalPanelTitle = isSettingDates ? "Set Dates" : "Edit Profile";
 
   return (
     <section className="px-6  py-16 sm:mx-3 text-color2">
       <Modal
         ref={ref}
         showModal={showModal}
+        modalPanelTitle={modalPanelTitle}
         renderModalContent={renderModalContent()}
         toggleModal={toggleModal}
       />

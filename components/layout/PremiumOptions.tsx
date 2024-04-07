@@ -34,12 +34,12 @@ const svgIconWhite = (
 
 const PremiumOptions = () => {
   return (
-    <div className="mx-auto max-w-[81rem] px-5 lg:px-8 bg-transparent fadeIn035">
+    <div className="mx-auto sm:max-w-[81rem] px-1 lg:px-8 bg-transparent fadeIn035">
       <div className="text-white mx-2 mt-1 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
         <GlassCard>
           <div
             id="tier-freelancer"
-            className="rounded-3xl p-8 xl:p-10 bg-color1/40"
+            className="rounded-xl p-8 xl:p-10 bg-color1/40"
           >
             <h3 className="text-xl font-semibold leading-8 text-color2 fontpop-1">
               Freelancer
@@ -77,7 +77,7 @@ const PremiumOptions = () => {
           </div>
         </GlassCard>
         <GlassCard>
-          <div className="rounded-3xl p-8  xl:p-10 bg-color2/30">
+          <div className="rounded-xl p-8  xl:p-10 bg-color2/30">
             <h3
               id="tier-business"
               className="text-xl font-semibold leading-8 text-bubblegum fontpop-3"
@@ -124,7 +124,7 @@ const PremiumOptions = () => {
           </div>
         </GlassCard>
         <GlassCard>
-          <div className="rounded-3xl p-8 xl:p-10 bg-gray-800/50">
+          <div className="rounded-xl p-8 xl:p-10 bg-gray-800/50">
             <h3
               id="tier-enterprise"
               className="text-xl font-semibold leading-8 text-white fontpop-3"

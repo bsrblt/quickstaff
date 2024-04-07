@@ -19,11 +19,11 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       type={type}
-      className={`px-8 landscape:px-5 mt-2 w-full rounded-lg hover:shadow-2xl bg-color1 hover:bg-color2 duration-300 text-white font-bold uppercase antialiased tracking-wider ${height}`}
+      className={`flex justify-center items-center text-center px-8 landscape:px-5 mt-2 w-full rounded-lg hover:shadow-2xl bg-color1 hover:bg-color2 duration-300 text-white font-bold uppercase antialiased tracking-wider ${height}`}
       onClick={onClick}
     >
       {children}
-      {text}
+      <div className="mt-[0.1rem]">{text}</div>
     </button>
   );
 };

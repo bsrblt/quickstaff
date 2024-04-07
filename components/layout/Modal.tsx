@@ -4,12 +4,15 @@ interface ModalProps {
   showModal: boolean;
   renderModalContent: JSX.Element | null | undefined;
   toggleModal: () => void;
+  modalPanelTitle: string;
 }
 
-const Modal: React.ForwardRefRenderFunction<HTMLDivElement, ModalProps> = (
-  { showModal, renderModalContent, toggleModal },
-  ref
-) => {
+const Modal: React.ForwardRefRenderFunction<HTMLDivElement, ModalProps> = ({
+  showModal,
+  renderModalContent,
+  toggleModal,
+  modalPanelTitle,
+}) => {
   const modalRef = useRef<HTMLDivElement>(null);
 
   const handleOutsideClick = (event: MouseEvent) => {
@@ -33,15 +36,12 @@ const Modal: React.ForwardRefRenderFunction<HTMLDivElement, ModalProps> = (
     if (!showModal) return null;
 
     return (
-      <div
-        ref={ref}
-        className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm"
-      >
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm">
         <div
           ref={modalRef}
           className="bg-white p-8 rounded-lg fadeIn035 h-[25rem] w-[18rem]"
         >
-          <h2 className="mb-4 text-xl font-semibold">Edit Profile</h2>
+          <h2 className="mb-4 text-xl font-semibold">{modalPanelTitle}</h2>
           {renderModalContent}
         </div>
       </div>
