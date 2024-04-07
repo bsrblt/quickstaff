@@ -151,3 +151,13 @@ header {
   background-color: #501e98;
   color: #fff;
 }
+@media (hover: none) {
+  .homeHero {
+    background-attachment: initial;
+  }
+}
+@media (pointer: coarse) {
+  .homeHero {
+    background-attachment: initial;
+  }
+}

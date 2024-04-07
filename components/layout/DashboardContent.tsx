@@ -309,7 +309,7 @@ const DashboardContent: React.FC = () => {
                     className={inputClasses.validInputClass}
                   />
                   <ExpSelector
-                    labelClass="block sm:text-sm text-xs pl-[2px] text-gray-600 dark:text-gray-200"
+                    labelClass="block sm:text-sm sm:mb-0 mb-2 text-xs pl-[2px] text-gray-600 dark:text-gray-200"
                     selectedExp={selectedExp}
                     onChange={(e) => changeHandler(e, setSelectedExp)}
                     inputClass={inputClasses.validInputClass}
@@ -346,7 +346,7 @@ const DashboardContent: React.FC = () => {
                 {!submitted && (
                   <Button
                     type="button"
-                    className=" text-white py-2 px-4 rounded-md"
+                    className=" text-white py-2 px-4 rounded-md transition-all duration-300 "
                     onClick={prevStepHandler}
                   >
                     Back
