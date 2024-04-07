@@ -15,13 +15,13 @@ const Careers = () => {
 
   const cardTexts = {
     textbig1: "enter your email",
-    textbig2: "add any details",
+    textbig2: "add some details",
     textbig3: "send us your cv",
     textsm1: `Just give us a way to get back to you and kindly remember to mark our mails as "not spam"`,
     textsm2:
       "Include any details in a concise manner so that we have the essential info about your work",
     textsm3:
-      "Add your up-to-date cv and you're done. We'll keep it in our database and return to you should an available position shows up.",
+      "Add your up-to-date cv and we'll keep it in order to return to you should an opportunity comes up.",
   };
   const handleBrowse = (file: File) => console.log("Selected file:", file);
 
@@ -71,14 +71,14 @@ const Careers = () => {
         className="md:text-xl sm:text-lg text-sm text-justify leading-tight sm:py-4 mb-2 fontpop-1 antialiased fontpop-3 p-1"
       >
         Why not send us your CV along with a message so that we know where to
-        look for in case we need your qualities:
+        look for in case we need your qualities?
       </div>
     </div>
   );
   const mainTitle = (
     <div
       id="maintitle"
-      className="flex sm:my-[1rem] -mt-10 mx-2 justify-end items-end"
+      className="flex sm:my-[1rem] -mt-10 mx-3 justify-end items-end"
     >
       <MainTitle
         textBig={
@@ -102,8 +102,8 @@ const Careers = () => {
     </div>
   );
   const cvForm = (
-    <div className="flex flex-col items-center justify-center ">
-      <div className=" xl:w-7/12 w-[98%] justify-center gap-8 space-x-8 px-2 -mt-4">
+    <div className="flex flex-col items-center justify-center text-white">
+      <div className=" xl:w-[62%] lg:w-[70%] md:w-[98%] max-w-[93%] md:max-w-[95%] lg:max-w-[80%] xl:max-w-[65%] justify-center gap-8 space-x-8 -mt-4">
         <GlassCard>
           <div className="grid sm:p-8 p-2">
             {positionText}
