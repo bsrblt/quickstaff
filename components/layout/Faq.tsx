@@ -84,7 +84,7 @@ const Faq = () => {
                   id="choice"
                   className="text-white lg:text-[2.5rem] md:text-3xl text-xl font-bold   backdrop-blur-[2px] m-1 mb-1 md:pb-[4rem] pb-[2.3rem] px-6 fontpop-2 antialiased"
                 >
-                  we've got the information you need.
+                  we've got the answers.
                 </h1>
               }
             />
