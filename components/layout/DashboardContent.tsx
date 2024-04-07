@@ -438,7 +438,7 @@ const DashboardContent: React.FC = () => {
       );
     } else return;
   };
-  const DashboardCards = [
+  const DashboardCards: any = [
     {
       imageSrc: profile,
       altText: "profile picture",
@@ -517,7 +517,7 @@ const DashboardContent: React.FC = () => {
         toggleModal={toggleModal}
       />
       <div className="relative grid gap-5 md:grid-cols-6 fadeIn035">
-        {DashboardCards.map((card, index) => (
+        {DashboardCards.map((card: any, index: any) => (
           <DashboardCard key={index} {...card} />
         ))}
         <div className="col-span-full lg:col-span-3 overflow-hidden relative p-8 rounded-xl bg-white items-start">
