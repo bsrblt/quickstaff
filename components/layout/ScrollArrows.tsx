@@ -17,7 +17,7 @@ const ScrollArrows = () => {
     const currentPosition = window.scrollY;
     const maxScroll = document.documentElement.scrollHeight - windowHeight;
 
-    if (pathname === "/blog") {
+    if (pathname === "/blog" || "/news") {
       setShowArrowUp(currentPosition > 0);
       setShowArrowDown(currentPosition < maxScroll);
     } else if (!hasScrolled && currentPosition > 0) {

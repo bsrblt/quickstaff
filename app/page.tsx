@@ -1,11 +1,11 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import "./globals.css";
 import HowItWorks from "@/components/layout/HowItWorks";
 import StaffSelection from "@/components/layout/StaffSelection";
-import LoginSelect from "@/components/layout/LoginSelect";
 import MainTitle from "@/components/layout/MainTitle";
 import ScrollArrows from "@/components/layout/ScrollArrows";
-import ConditionalText from "@/components/layout/ConditionalText";
+import Button from "@/components/layout/Button";
+const LoginSelect = lazy(() => import("@/components/layout/LoginSelect"));
 
 const cardTexts = {
   textbig1: "quick sign-up",
@@ -23,7 +23,7 @@ const Home = () => {
   return (
     <main className="">
       <section
-        className=" max-w-screen h-full bg-center bg-no-repeat justify-center items-center fadeIn005 overflow-hidden "
+        className="relative max-w-screen h-full bg-center bg-no-repeat justify-center items-center fadeIn005 overflow-hidden "
         style={{
           backgroundImage: "url(/jj.jpg)",
           backgroundSize: "cover",
@@ -51,7 +51,7 @@ const Home = () => {
                     id="choice"
                     className="lg:text-[2.5rem] md:text-3xl text-xl font-bold  drop-shadow-xl m-1 mb-1 md:pb-[4rem] pb-[2.3rem] fontpop-4 backdrop-blur-[2px] text-white"
                   >
-                    <ConditionalText type="welcome" />
+                    <p>Welcome to our online staff booking system.</p>
                   </h1>
                 }
               />
@@ -60,7 +60,19 @@ const Home = () => {
               id="loginselect"
               className="flex min-h-[70%] justify-center items-center mx-3"
             >
-              <LoginSelect />
+              <Suspense
+                fallback={
+                  <div className="min-w-[17rem] sm:min-w-[21rem] backdrop-blur-[8px] shadow-xl bg-white/30 p-4 my-2 rounded-xl">
+                    <h2 className="md:text-3xl drop-shadow-xl text-2xl md:my-2 font-bold text-center text-white fontpop-3">
+                      loading
+                    </h2>
+                    <Button text="" type="button" className="" />
+                    <Button text="" type="button" className="" />
+                  </div>
+                }
+              >
+                <LoginSelect />
+              </Suspense>
             </div>
           </div>
         </div>

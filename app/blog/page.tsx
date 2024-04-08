@@ -56,14 +56,9 @@ const BlogPage = () => {
   ];
 
   return (
-    <section
-      className="flex flex-col h-full bg-cover bg-fixed bg-center justify-start  fadeIn005"
-      style={{
-        backgroundImage: "url(/chef1.jpg)",
-      }}
-    >
+    <section className="flex flex-col h-full bg-cover bg-fixed bg-center justify-start fadeIn005">
       <div className="relative">
-        {blogPosts.map((post, index) => (
+        {blogPosts.map((post) => (
           <BlogPost
             key={post.id}
             id={post.id}

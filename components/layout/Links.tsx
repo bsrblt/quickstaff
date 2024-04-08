@@ -33,7 +33,7 @@ const Links = () => {
   const linksData = [
     { href: "/", label: "Home" },
     { href: staffLink, label: staffLabel },
-    { href: "/blog", label: "Blog" },
+    { href: "/news", label: "News" },
     { href: "/faq", label: "FAQ" },
     { href: dashboardLink, label: dashboardLabel },
   ];

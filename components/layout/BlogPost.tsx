@@ -24,9 +24,9 @@ const BlogPost: React.FC<BlogPostProps> = ({ title, backgroundImage }) => {
         )}&title=${encodeURIComponent(title)}`}
         passHref
       >
-        <div className="hover:bg-white/40 shadow-md transition-all duration-300 rounded-xl">
+        <div className="hover:bg-white/40 shadow-md transition-all duration-300 rounded-xl mx-3">
           <GlassCard>
-            <h2 className="md:text-4xl sm:text-3xl text-2xl p-7 text-black fontpop-1 antialiased">
+            <h2 className="md:text-3xl sm:text-2xl text-xl p-7 text-black fontpop-1 antialiased">
               {title}
             </h2>
           </GlassCard>

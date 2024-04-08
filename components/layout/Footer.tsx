@@ -8,8 +8,8 @@ const Footer = () => {
       links: [
         { text: "Home", url: "/" },
         { text: "Staff", url: "/#staffselect" },
+        { text: "News", url: "/news" },
         { text: "Blog", url: "/blog" },
-        { text: "FAQ", url: "/faq" },
       ],
     },
     {
@@ -26,7 +26,7 @@ const Footer = () => {
       links: [
         { text: "About Us", url: "/about-us" },
         { text: "Careers", url: "/careers" },
-        { text: "News", url: "/news" },
+        { text: "FAQ", url: "/faq" },
         { text: "Contact", url: "/contact" },
       ],
     },

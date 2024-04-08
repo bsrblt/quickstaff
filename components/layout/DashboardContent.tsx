@@ -137,10 +137,10 @@ const DashboardContent: React.FC = () => {
     />
   );
   const startDateInputField = (
-    <div className="grid text-xl font-semibold text-white drop-shadow-xl">
+    <div className="grid text-xl font-semibold text-gray-700 drop-shadow-xl">
       <label
         htmlFor="startdate"
-        className="block ml-[2px] font-normal sm:text-lg md:text-xl text-md"
+        className="block ml-[2px] font-normal  sm:text-md md:text-lg text-sm"
       >
         Starts @
       </label>
@@ -155,10 +155,10 @@ const DashboardContent: React.FC = () => {
     </div>
   );
   const endDateInputField = (
-    <div className="grid text-xl font-semibold text-white drop-shadow-xl">
+    <div className="grid text-xl font-semibold text-gray-700 drop-shadow-xl">
       <label
         htmlFor="enddate"
-        className="block ml-[2px] font-normal  sm:text-lg md:text-xl text-md"
+        className="block ml-[2px] font-normal  sm:text-md md:text-lg text-sm"
       >
         Ends @
       </label>
@@ -401,10 +401,10 @@ const DashboardContent: React.FC = () => {
       return (
         <div className="grid gap-[0.08rem]">
           {!isSubmittingDates && !datesSubmitted ? (
-            <>
+            <div className="mt-[0.1rem]">
               {startDateInputField}
               {endDateInputField}
-            </>
+            </div>
           ) : isSubmittingDates ? (
             <div className="block w-full px-[5.4rem] sm:py-12 py-[2.75rem] sm:mt-2 ">
               {spinner}
