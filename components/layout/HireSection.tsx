@@ -3,6 +3,7 @@ import AvailableJobs from "./AvailableJobs";
 import EventSetupForm from "./EventSetupForm";
 import MainTitle from "./MainTitle";
 import ConditionalText from "./ConditionalText";
+import ParallaxBackground from "./ParallaxBackground";
 
 interface HireSectionProps {
   backgroundUrl: string;
@@ -59,11 +60,12 @@ const HireSection: React.FC<HireSectionProps> = ({
     <section
       className="flex flex-col w-full min-h-screen bg-cover bg-fixed bg-center justify-start items-center fadeIn"
       style={{
-        backgroundImage: `url(${backgroundUrl})`,
-        backgroundSize: "cover",
+        // backgroundImage: `url(${backgroundUrl})`,
+        // backgroundSize: "cover",
         animation: "fadeIn 0.1s ease-in-out",
       }}
     >
+      <ParallaxBackground imgSource={`${backgroundUrl}`} />
       <div className="mx-3 md:w-[44rem] sm:w-full sm:px-4">
         <MainTitle
           textBig={
@@ -81,7 +83,6 @@ const HireSection: React.FC<HireSectionProps> = ({
           }
         />
       </div>
-
       <EventSetupForm onSubmit={onFormSubmit} />
       <AvailableJobs jobs={filteredJobs} />
     </section>

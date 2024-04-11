@@ -42,7 +42,7 @@ const Footer = () => {
   ];
 
   const listedSections = (
-    <div className="sm:flex grid grid-cols-2 w-[69%] sm:w-[90%] xl:w-[68%] sm:justify-between justify-around lg:mx-[3rem] my-1">
+    <div className="sm:flex grid grid-cols-2 w-[69%] sm:w-[90%] xl:w-[68%] sm:justify-between justify-around lg:mx-[3rem] my-1 z-30">
       {sections.map((section, index) => (
         <div key={index} className="md:p-5 sm:p-1 -mt-3 sm:mt-0 mb-3 sm:mb-0">
           <div className="sm:text-xs text-[0.7rem] sm:mx-3 px-1 uppercase text-gray-400 font-medium mt-6 mb-3">
@@ -64,7 +64,7 @@ const Footer = () => {
   );
 
   const copyright = (
-    <div className="block w-[79%] sm:w-[88%]  xl:w-[65%] py-5 sm:mt-0 border-t border-gray-500 text-gray-400 sm:text-sm text-[0.7rem] ">
+    <div className="block w-[79%] sm:w-[88%]  xl:w-[65%] py-5 sm:mt-0 border-t border-gray-500 text-gray-400 sm:text-sm text-[0.7rem] z-30">
       <div className="flex flex-wrap mt-1 gap-1">
         <p>copyright © QuickStaff 2024. </p>
         <p>All rights reserved.</p>
@@ -75,7 +75,7 @@ const Footer = () => {
   return (
     <footer
       id="footer"
-      className="flex flex-col flex-wrap items-center w-screen bg-gradient-to-b from-color1/90 to-color2/90 pt-5 text-left"
+      className="relative flex flex-col flex-wrap items-center w-screen bg-gradient-to-b from-color1/90 to-color2/90 pt-5 text-left z-30"
     >
       {listedSections}
       {copyright}

@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import HireSection from "@/components/layout/HireSection";
-import Redirecting from "@/components/layout/Redirecting";
 import { useSearchParams } from "next/navigation";
 import getJobs from "@/components/utils/hooks/jobListings";
 import ErrorPage from "../not-found";

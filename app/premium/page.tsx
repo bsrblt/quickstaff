@@ -2,6 +2,7 @@ import React from "react";
 import HowItWorks from "@/components/layout/HowItWorks";
 import MainTitle from "@/components/layout/MainTitle";
 import PremiumOptions from "@/components/layout/PremiumOptions";
+import ParallaxBackground from "@/components/layout/ParallaxBackground";
 
 const cardTexts = {
   textbig1: "choose",
@@ -18,12 +19,8 @@ const PremiumPage = () => {
       id="parallaxBackground"
       className="flex flex-col min-h-screen items-center justify-center"
     >
-      <section
-        className="flex flex-col w-full min-h-screen bg-cover bg-fixed bg-center justify-start items-center"
-        style={{
-          backgroundImage: "url(/alevtakil.jpg)",
-        }}
-      >
+      <section className="flex flex-col w-full min-h-screen bg-cover bg-fixed bg-center justify-start items-center">
+        <ParallaxBackground imgSource="/alevtakil.jpg" />
         <div className="flex flex-col justify-center items-center">
           <MainTitle
             textBig={

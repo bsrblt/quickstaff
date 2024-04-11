@@ -2,6 +2,7 @@ import React from "react";
 import MainTitle from "@/components/layout/MainTitle";
 import GlassCard from "@/components/layout/GlassCard";
 import Link from "next/link";
+import ParallaxBackground from "@/components/layout/ParallaxBackground";
 
 const maintitle = (
   <div className="flex h-[10%] sm:my-[4rem] my-1 mx-2 justify-end items-end ">
@@ -28,10 +29,11 @@ const AboutUs = () => {
     >
       <section
         className="flex flex-col w-full min-h-screen bg-cover bg-fixed bg-center justify-start items-center"
-        style={{
-          backgroundImage: "url(/office3.jpg)",
-        }}
+        // style={{
+        //   backgroundImage: "url()",
+        // }}
       >
+        <ParallaxBackground imgSource="/office3.jpg" />
         {maintitle}
         <div className="px-2 pt-8 pb-3 xl:w-[67%] bg-color1/10">
           <GlassCard>

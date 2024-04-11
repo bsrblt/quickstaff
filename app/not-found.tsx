@@ -3,6 +3,7 @@ import MainTitle from "@/components/layout/MainTitle";
 import GlassCard from "@/components/layout/GlassCard";
 import Button from "@/components/layout/Button";
 import Link from "next/link";
+import ParallaxBackground from "@/components/layout/ParallaxBackground";
 
 const ErrorPage: React.FC = () => {
   const maintitle = (
@@ -31,9 +32,10 @@ const ErrorPage: React.FC = () => {
         className="flex flex-col w-full min-h-screen bg-cover bg-fixed bg-center justify-start items-center relative"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url(/error.jpg)",
+            "linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3))",
         }}
       >
+        <ParallaxBackground imgSource="/error.jpg" />
         {maintitle}
         <div
           id="error404"

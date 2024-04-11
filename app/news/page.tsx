@@ -3,6 +3,7 @@ import MainTitle from "@/components/layout/MainTitle";
 import ScrollArrows from "@/components/layout/ScrollArrows";
 import NewsItem from "@/components/layout/NewsItem";
 import newsData from "@/components/utils/newsData";
+import ParallaxBackground from "@/components/layout/ParallaxBackground";
 
 const NewsPage: React.FC = () => {
   const maintitle = (
@@ -23,12 +24,12 @@ const NewsPage: React.FC = () => {
       className="flex flex-col w-full min-h-screen bg-cover bg-fixed bg-center justify-start items-center mt-2"
       style={{
         backgroundImage:
-          "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(/news.jpg)",
-        backgroundPositionY: "90%",
+          "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5))",
       }}
     >
-      <section className=" flex flex-col h-full bg-cover bg-fixed bg-center justify-start fadeIn005">
-        <div className=" md:w-[79%] mx-auto">
+      <ParallaxBackground imgSource="/news.jpg" />
+      <section className=" flex flex-col h-full bg-cover bg-fixed bg-center justify-start ">
+        <div className=" md:w-[79%] mx-auto fadeIn005">
           {maintitle}
           {newsData.map((news) => (
             <NewsItem

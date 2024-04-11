@@ -1,10 +1,11 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, CSSProperties } from "react";
 import "./globals.css";
 import HowItWorks from "@/components/layout/HowItWorks";
 import StaffSelection from "@/components/layout/StaffSelection";
 import MainTitle from "@/components/layout/MainTitle";
 import ScrollArrows from "@/components/layout/ScrollArrows";
 import Button from "@/components/layout/Button";
+import ParallaxBackground from "@/components/layout/ParallaxBackground";
 const LoginSelect = lazy(() => import("@/components/layout/LoginSelect"));
 
 const cardTexts = {
@@ -22,14 +23,8 @@ const cardTexts = {
 const Home = () => {
   return (
     <main className="">
-      <section
-        className="relative max-w-screen h-full bg-center bg-no-repeat justify-center items-center fadeIn005 overflow-hidden "
-        style={{
-          backgroundImage: "url(/jj.jpg)",
-          backgroundSize: "cover",
-          backgroundAttachment: "fixed",
-        }}
-      >
+      <section className="relative max-w-screen h-full bg-center bg-no-repeat justify-center items-center fadeIn005 overflow-hidden ">
+        <ParallaxBackground imgSource="/jj.jpg" />
         <div className="min-h-screen relative">
           <div className="sticky sm:top-10 flex flex-col h-screen mt-[6rem] items-center">
             <div id="maintitle" className="max-h-[20%] mx-3">

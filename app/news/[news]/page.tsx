@@ -6,6 +6,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 import newsData from "@/components/utils/newsData";
 import Button from "@/components/layout/Button";
 import ErrorPage from "@/app/not-found";
+import ParallaxBackground from "@/components/layout/ParallaxBackground";
 
 const NewsPostPage: React.FC = () => {
   const searchParams = useSearchParams();
@@ -60,11 +61,11 @@ const NewsPostPage: React.FC = () => {
     <div className="h-full ">
       <section
         className="sticky top-0 min-h-screen flex flex-col bg-cover bg-fixed items-center justify-center text-black backdrop-blur-lg rounded-t-[6rem] border-t-4  "
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundPositionY: "50%",
-        }}
+        // style={{
+        //   backgroundPositionY: "50%",
+        // }}
       >
+        <ParallaxBackground imgSource={`${backgroundImage}`} />
         <div className="grid sm:w-[69%] w-11/12 justify-center gap-8 space-x-8 p-2 mt-14 fadeIn035">
           <GlassCard>
             <div className="grid gap-8 bg-gray-200/60 rounded-xl">

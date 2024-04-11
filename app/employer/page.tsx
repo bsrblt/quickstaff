@@ -2,6 +2,7 @@ import React from "react";
 import HowItWorks from "@/components/layout/HowItWorks";
 import RegisterInput from "@/components/layout/RegisterInput";
 import MainTitle from "@/components/layout/MainTitle";
+import ParallaxBackground from "@/components/layout/ParallaxBackground";
 
 const cardTexts = {
   textbig1: "quick sign-up",
@@ -22,10 +23,11 @@ const WelcomeEmployer = () => {
     >
       <section
         className="flex flex-col w-full h-screen bg-cover bg-fixed bg-center justify-start items-center"
-        style={{
-          backgroundImage: "url(/i-9.jpg)",
-        }}
+        // style={{
+        //   backgroundImage: "url()",
+        // }}
       >
+        <ParallaxBackground imgSource="/i-9.jpg" />
         <div className="flex h-[50%] sm:my-[4rem] my-20 mx-2 justify-end items-end ">
           <MainTitle
             textBig={

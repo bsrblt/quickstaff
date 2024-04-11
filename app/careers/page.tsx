@@ -8,6 +8,7 @@ import Button from "@/components/layout/Button";
 import AuthContext from "@/components/Ctx/AuthContext";
 import getInputClasses from "@/components/utils/inputClasses";
 import InputField from "@/components/layout/InputField";
+import ParallaxBackground from "@/components/layout/ParallaxBackground";
 
 const Careers = () => {
   const authCtx = useContext(AuthContext);
@@ -128,10 +129,11 @@ const Careers = () => {
     >
       <section
         className="flex flex-col w-full min-h-screen sm:bg-cover bg-no-repeat bg-fixed bg-center justify-start items-center"
-        style={{
-          backgroundImage: "url(/office4.jpg)",
-        }}
+        // style={{
+        //   backgroundImage: "url()",
+        // }}
       >
+        <ParallaxBackground imgSource="/office4.jpg" />
         {mainTitle}
         {cvForm}
         <div id="howitworks" className="block h-[4rem]" />
