@@ -95,7 +95,7 @@ const EventSetupForm: React.FC<EventSetupFormProps> = ({ onSubmit }) => {
           {startDateInputField}
           {endDateInputField}
         </div>
-        <div className="space-y-4">
+        <div className="space-y-4 text-white">
           <CitySelector
             selectedCity={selectedCity}
             inputClass={inputClass.selectorClass}
@@ -111,7 +111,7 @@ const EventSetupForm: React.FC<EventSetupFormProps> = ({ onSubmit }) => {
           />
         </div>
         <div className="space-y-4 md:w-[14rem]">
-          <div className="space-y-[0.91rem] sm:mt-0 mt-4 mb-2">
+          <div className="space-y-[0.91rem] sm:mt-0 mt-4 mb-2 text-white">
             <label
               htmlFor="collab"
               className="ml-[1px] sm:text-lg md:text-xl text-xl"
