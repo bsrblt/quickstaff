@@ -66,7 +66,7 @@ const NewsPostPage: React.FC = () => {
         // }}
       >
         <ParallaxBackground imgSource={`${backgroundImage}`} />
-        <div className="grid sm:w-[69%] w-11/12 justify-center gap-8 space-x-8 p-2 mt-14 fadeIn035">
+        <div className="grid xl:max-w-[69%] m-2 justify-center gap-8 space-x-8 p-2 mt-14 fadeIn035">
           <GlassCard>
             <div className="grid gap-8 bg-gray-200/60 rounded-xl">
               <h1 className="sm:text-3xl text-md backdrop-blur-sm p-2 fontpop-1 antialiased">
@@ -79,21 +79,21 @@ const NewsPostPage: React.FC = () => {
                 {content}
               </p>
             </div>
-            <div className="flex justify-center gap-2">
-              <div className="w-[16rem]">
+            <div className="sm:flex grid justify-center gap-2 w-[100%]">
+              <div className="md:w-[15rem] sm:[8rem]">
                 <Button
                   type="button"
-                  text="previous article"
+                  text="<< previous article"
                   onClick={prevArticleHandler}
                 ></Button>
               </div>
-              <Link href="/news" className="w-[16rem]">
+              <Link href="/news" className="md:w-[15rem] sm:[8rem]">
                 <Button type="button" text="back to news"></Button>
               </Link>
-              <div className="w-[16rem]">
+              <div className="md:w-[15rem] sm:[8rem]">
                 <Button
                   type="button"
-                  text="next article"
+                  text="next article >>"
                   onClick={nextArticleHandler}
                 ></Button>
               </div>
