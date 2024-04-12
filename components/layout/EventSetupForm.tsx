@@ -91,7 +91,7 @@ const EventSetupForm: React.FC<EventSetupFormProps> = ({ onSubmit }) => {
       onSubmit={submitHandler}
     >
       <section className="flex flex-col sm:flex-row md:gap-10 sm:gap-4">
-        <div className="space-y-4 mb-4">
+        <div className="space-y-4 mb-4 text-white">
           {startDateInputField}
           {endDateInputField}
         </div>
