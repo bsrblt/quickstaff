@@ -24,12 +24,9 @@ const ErrorPage: React.FC = () => {
   );
 
   return (
-    <main
-      id="parallaxBackground"
-      className="flex flex-col h-full items-center justify-center"
-    >
+    <main className="flex flex-col h-full items-center justify-center">
       <section
-        className="flex flex-col w-full min-h-screen bg-cover bg-fixed bg-center justify-start items-center relative"
+        className="flex flex-col w-full min-h-screen justify-start items-center relative"
         style={{
           backgroundImage:
             "linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3))",

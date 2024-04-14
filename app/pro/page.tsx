@@ -18,16 +18,8 @@ const cardTexts = {
 
 const WelcomePro = () => {
   return (
-    <main
-      id="parallaxBackground"
-      className="flex flex-col min-h-screen items-center justify-center "
-    >
-      <section
-        className="flex flex-col w-full h-screen bg-cover bg-fixed bg-center justify-start items-center"
-        // style={{
-        //   backgroundImage: "url(/chef1.jpg)",
-        // }}
-      >
+    <main className="flex flex-col min-h-screen items-center justify-center ">
+      <section className="flex flex-col w-full h-screen bg-cover bg-fixed bg-center justify-start items-center">
         <ParallaxBackground imgSource="/chef1.jpg" />
         <div
           id="maintitle"

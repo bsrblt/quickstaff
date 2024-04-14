@@ -61,6 +61,8 @@ const HireSection: React.FC<HireSectionProps> = ({
       className="flex flex-col w-full min-h-screen bg-cover bg-fixed bg-center justify-start items-center fadeIn"
       style={{
         animation: "fadeIn 0.1s ease-in-out",
+        backgroundImage:
+          "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.0))",
       }}
     >
       <ParallaxBackground imgSource={`${backgroundUrl}`} />
