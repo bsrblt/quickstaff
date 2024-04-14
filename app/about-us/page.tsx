@@ -8,12 +8,12 @@ const maintitle = (
   <div className="flex h-[10%] sm:my-[4rem] my-1 mx-2 justify-end items-end ">
     <MainTitle
       textBig={
-        <h1 className="text-white lg:text-[6rem] xl:text-[rem] md:text-7xl sm:text-6xl text-5xl font-bold drop-shadow-xl backdrop-blur-[2px] fontpop-4">
+        <h1 className="text-white lg:text-[6rem] xl:text-[rem] md:text-7xl sm:text-6xl text-5xl font-bold drop-shadow-xl fontpop-4">
           Welcome to <span className="text-color2 fontpop-1"> QuickStaff</span>!
         </h1>
       }
       textSmall={
-        <h1 className="text-white lg:text-[2.5rem] md:text-3xl text-xl font-bold  backdrop-blur-[2px] drop-shadow-xl mt-4 md:pb-[3.3rem] pb-[1.3rem] antialiased fontpop-2 tracking-tight pl-1 fontpop-4">
+        <h1 className="text-white lg:text-[2.5rem] md:text-3xl text-xl font-bold  drop-shadow-xl mt-4 md:pb-[3.3rem] pb-[1.3rem] antialiased fontpop-2 tracking-tight pl-1 fontpop-4">
           Your premier destination for all your event staffing needs.
         </h1>
       }
@@ -27,12 +27,7 @@ const AboutUs = () => {
       id="parallaxBackground"
       className="flex flex-col h-full items-center justify-center "
     >
-      <section
-        className="flex flex-col w-full min-h-screen bg-cover bg-fixed bg-center justify-start items-center"
-        // style={{
-        //   backgroundImage: "url()",
-        // }}
-      >
+      <section className="flex flex-col w-full min-h-screen bg-cover bg-fixed bg-center justify-start items-center">
         <ParallaxBackground imgSource="/office3.jpg" />
         {maintitle}
         <div className="px-2 pt-8 pb-3 xl:w-[67%] bg-color1/10">

@@ -82,6 +82,7 @@ const DashboardContent: React.FC = () => {
       setTimeout(() => {
         setSubmitted(false);
         setShowModal(false);
+        setCurrentStep(1);
       }, 1000);
     }, 1000);
   };

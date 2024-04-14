@@ -10,12 +10,12 @@ const ErrorPage: React.FC = () => {
     <div className="flex h-[10%] sm:my-[1rem] my-1 -ml-[1.8rem] sm:ml-0 px-10 justify-end items-end">
       <MainTitle
         textBig={
-          <h1 className="text-bubblegum lg:text-[6rem] xl:text-[rem] md:text-7xl sm:text-6xl text-5xl font-bold drop-shadow-xl fontpop-4 backdrop-blur-[6px]">
+          <h1 className="text-bubblegum lg:text-[6rem] xl:text-[rem] md:text-7xl sm:text-6xl text-5xl font-bold drop-shadow-xl fontpop-4">
             Oops!
           </h1>
         }
         textSmall={
-          <h1 className="text-gray-100 lg:text-[2.5rem] md:text-3xl text-xl font-bold backdrop-blur-[1px] drop-shadow-xl mt-4 md:pb-[1.7rem] pb-[1.3rem] antialiased fontpop-2 tracking-tight pl-1 fontpop-4">
+          <h1 className="text-gray-100 lg:text-[2.5rem] md:text-3xl text-xl font-bold drop-shadow-xl mt-4 md:pb-[1.7rem] pb-[1.3rem] antialiased fontpop-2 tracking-tight pl-1 fontpop-4">
             This wasn't supposed to happen.
           </h1>
         }

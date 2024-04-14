@@ -71,7 +71,7 @@ const Faq = () => {
           <div className="sm:-mt-10 sm:-mb-20 md:m-0 sm:px-3 -mx-3">
             <MainTitle
               textBig={
-                <h1 className="text-white lg:text-[6rem] xl:text-[rem] md:text-7xl text-6xl font-bold backdrop-blur-[2px] my-3 py-3 pt-[1rem] px-6 fontpop-2 antialiased">
+                <h1 className="text-white lg:text-[6rem] xl:text-[rem] md:text-7xl text-6xl font-bold my-3 py-3 pt-[1rem] px-6 fontpop-2 antialiased">
                   rest
                   <span className="text-bubblegum drop-shadow-xl fontpop-2 antialiased">
                     {" "}
@@ -82,7 +82,7 @@ const Faq = () => {
               textSmall={
                 <h1
                   id="choice"
-                  className="text-white lg:text-[2.5rem] md:text-3xl text-xl font-bold   backdrop-blur-[2px] m-1 mb-1 md:pb-[4rem] pb-[2.3rem] px-6 fontpop-2 antialiased"
+                  className="text-white lg:text-[2.5rem] md:text-3xl text-xl font-bold m-1 mb-1 md:pb-[4rem] pb-[2.3rem] px-6 fontpop-2 antialiased"
                 >
                   we've got the answers.
                 </h1>
@@ -116,9 +116,9 @@ const Faq = () => {
                     className="flex flex-col w-full h-16 items-center justify-center text-lg text-center fontpop-2 pb-1"
                   >
                     <div className="w-[100%]">
-                      <h1 className=" block sm:text-xl text-[0.95rem] font-bold text-center drop-shadow-lg text-gray-200 mt-3 fontpop-2 leading-relaxed">
+                      <h1 className=" block sm:text-xl text-[0.95rem] font-bold text-center drop-shadow-lg text-gray-200 mt-3 fontpop-3 leading-relaxed">
                         Not listed here?{" "}
-                        <span className="text-color1/100 backdrop-blur-[2px] fontpop-1">
+                        <span className="text-color1/100 fontpop-5">
                           Contact us
                         </span>{" "}
                         and we'll return as soon as possible.

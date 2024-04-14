@@ -10,7 +10,7 @@ const NewsPage: React.FC = () => {
     <div className="flex sm:my-[1rem] mx-3 justify-center items-center -mt-[1rem] sm:mb-3 mb-16 ">
       <MainTitle
         textBig={
-          <h1 className="text-silver lg:text-[6rem] xl:text-[rem] md:text-7xl sm:text-6xl text-5xl font-bold drop-shadow-xl fontpop-4 backdrop-blur-[6px] sm:mt-6 sm:mb-20">
+          <h1 className="text-silver lg:text-[6rem] xl:text-[rem] md:text-7xl sm:text-6xl text-5xl font-bold drop-shadow-xl fontpop-4 sm:mt-6 sm:mb-20">
             Latest <span className="text-color2 fontpop-1">News</span>
           </h1>
         }

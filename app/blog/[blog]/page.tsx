@@ -12,20 +12,20 @@ const BlogPostPage: React.FC = () => {
   return (
     <div className="h-full">
       <section
-        className="sticky top-0 min-h-screen flex flex-col bg-cover items-center justify-center text-black backdrop-blur-lg rounded-t-[6rem] border-t-4  "
+        className="sticky top-0 min-h-screen flex flex-col bg-cover items-center justify-center text-black rounded-t-[6rem] border-t-4  "
         style={{
           backgroundImage: `url(${backgroundImage})`,
         }}
       >
         <div className="grid sm:w-[69%] w-11/12 backdrop-blur-md justify-center gap-8 space-x-8 p-2 mt-14">
           <GlassCard>
-            <div className="grid gap-8 ">
-              <div className="sm:text-3xl text-md backdrop-blur-sm p-2 fontpop-1 antialiased">
+            <div className="grid gap-8  rounded-xl">
+              <div className="sm:text-3xl text-md bg-white/30 p-2 fontpop-1 antialiased  rounded-t-xl">
                 {title}
               </div>
               <p
                 id="blog-content"
-                className=" backdrop-blur-sm md:text-xl text-justify sm:text-lg text-sm  leading-tight sm:p-3 p-2 fontpop-1 antialiased"
+                className=" bg-white/30 md:text-xl text-justify sm:text-lg text-sm  leading-tight sm:p-3 p-2 fontpop-1 antialiased"
               >
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Perferendis repellat molestias perspiciatis maiores enim ex, a

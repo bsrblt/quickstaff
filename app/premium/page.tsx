@@ -15,27 +15,23 @@ const cardTexts = {
 
 const PremiumPage = () => {
   return (
-    <main
-      id="parallaxBackground"
-      className="flex flex-col min-h-screen items-center justify-center"
-    >
+    <main className="flex flex-col min-h-screen items-center justify-center">
       <section className="flex flex-col w-full min-h-screen bg-cover bg-fixed bg-center justify-start items-center">
         <ParallaxBackground imgSource="/alevtakil.jpg" />
         <div className="flex flex-col justify-center items-center">
           <MainTitle
             textBig={
-              <h1 className="text-white lg:text-[6rem] xl:text-[rem] md:text-7xl pt-[1rem] sm:text-6xl text-5xl mt-0 m-3 font-bold drop-shadow-xl backdrop-blur-[2px] fontpop-3">
+              <h1 className="text-gray-100 lg:text-[6rem] xl:text-[rem] md:text-7xl pt-[1rem] sm:text-6xl text-5xl mt-0 m-3 font-bold drop-shadow-xl fontpop-3">
                 Enjoy the{" "}
                 <span className="text-bubblegum/90 fontpop-4 ">privilege.</span>
               </h1>
             }
             textSmall={
-              <h1 className=" text-white lg:text-[2.5rem] md:text-3xl text-xl font-bold  backdrop-blur-[2px] drop-shadow-xl  m-3 md:pb-[4rem] pb-[2.3rem] antialiased fontpop-3 mt-6">
+              <h1 className=" text-white lg:text-[2.5rem] md:text-3xl text-xl font-bold drop-shadow-xl  m-3 md:pb-[4rem] pb-[2.3rem] antialiased fontpop-3 mt-6">
                 Get premium benefits today!
               </h1>
             }
           />
-
           <PremiumOptions />
           <div id="howitworks" className="block h-[4rem]"></div>
           <HowItWorks

@@ -13,7 +13,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ title, backgroundImage }) => {
 
   return (
     <div
-      className="sticky top-0 h-screen flex flex-col bg-cover bg-center items-center justify-center  backdrop-blur-lg rounded-t-[6rem] border-t-4  "
+      className="sticky top-0 h-screen flex flex-col bg-cover bg-center items-center justify-center rounded-t-[6rem] border-t-4  "
       style={{
         backgroundImage: `url(${backgroundImage})`,
       }}

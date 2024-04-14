@@ -60,8 +60,6 @@ const HireSection: React.FC<HireSectionProps> = ({
     <section
       className="flex flex-col w-full min-h-screen bg-cover bg-fixed bg-center justify-start items-center fadeIn"
       style={{
-        // backgroundImage: `url(${backgroundUrl})`,
-        // backgroundSize: "cover",
         animation: "fadeIn 0.1s ease-in-out",
       }}
     >
@@ -69,7 +67,7 @@ const HireSection: React.FC<HireSectionProps> = ({
       <div className="mx-3 md:w-[44rem] sm:w-full sm:px-4">
         <MainTitle
           textBig={
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5rem] font-bold drop-shadow-xl backdrop-blur-[4px] sm:mt-6 fontpop-4 mb-1 sm:mx-0 leading-10">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5rem] font-bold drop-shadow-xl sm:mt-6 fontpop-4 mb-1 sm:mx-0 leading-10">
               <span className="text-silver">
                 <ConditionalText type="roleaction" />
               </span>{" "}
@@ -77,7 +75,7 @@ const HireSection: React.FC<HireSectionProps> = ({
             </h1>
           }
           textSmall={
-            <h1 className="text-lg md:text-3xl text-gray-200 font-bold drop-shadow-xl px-[1px] backdrop-blur-[4px] fontpop-3 mt-2 md:mb-4 sm:-mb-[6rem]">
+            <h1 className="text-lg md:text-3xl text-gray-200 font-bold drop-shadow-xl px-[1px] fontpop-3 mt-2 md:mb-4 sm:-mb-[6rem]">
               Please choose your search details below:
             </h1>
           }

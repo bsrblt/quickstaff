@@ -19,7 +19,7 @@ const NewsItem: React.FC<NewsItemProps> = ({
 
   return (
     <div
-      className="sticky top-0 h-screen flex flex-col bg-cover bg-center items-center justify-center backdrop-blur-lg rounded-t-[6rem] border-t-8 border-l-2 border-r-2"
+      className="sticky top-0 h-screen flex flex-col bg-cover bg-center items-center justify-center rounded-t-[6rem] border-t-8 border-l-2 border-r-2"
       style={{
         backgroundImage: `url(${backgroundImage})`,
       }}

@@ -33,10 +33,7 @@ const Home = () => {
                   <div className="lg:text-[6rem] xl:text-[rem] md:text-7xl text-6xl font-bold my-1 pt-[1rem] px-1 drop-shadow-xl ">
                     <h1 className="text-white fontpop-2">
                       let
-                      <span className="text-bubblegum/80 backdrop-blur-[2px] fontpop-4">
-                        {" "}
-                        pros
-                      </span>
+                      <span className="text-bubblegum/80 fontpop-4"> pros</span>
                     </h1>
                     <h1 className="pb-1 text-white fontpop-2">handle it.</h1>
                   </div>
@@ -44,7 +41,7 @@ const Home = () => {
                 textSmall={
                   <h1
                     id="choice"
-                    className="lg:text-[2.5rem] md:text-3xl text-xl font-bold  drop-shadow-xl m-1 mb-1 md:pb-[4rem] pb-[2.3rem] fontpop-4 backdrop-blur-[2px] text-white"
+                    className="lg:text-[2.5rem] md:text-3xl text-xl font-bold  drop-shadow-xl m-1 mb-1 md:pb-[4rem] pb-[2.3rem] fontpop-4  text-white"
                   >
                     <p>Welcome to our online staff booking system.</p>
                   </h1>
@@ -57,7 +54,7 @@ const Home = () => {
             >
               <Suspense
                 fallback={
-                  <div className="min-w-[17rem] sm:min-w-[21rem] backdrop-blur-[8px] shadow-xl bg-white/30 p-4 my-2 rounded-xl">
+                  <div className="min-w-[17rem] sm:min-w-[21rem] shadow-xl bg-white/30 p-4 my-2 rounded-xl">
                     <h2 className="md:text-3xl drop-shadow-xl text-2xl md:my-2 font-bold text-center text-white fontpop-3">
                       loading
                     </h2>

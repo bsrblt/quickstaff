@@ -35,7 +35,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
 
   return (
     <div className="container sm:px-5 sm:py-24 sm:pt-32 sm:mx-auto flex flex-col ">
-      <div className="fixed lg:w-1/3 md:w-1/2 rounded-lg sm:p-10 pt-8 p-4 flex flex-col md:ml-auto w-full mt-12 md:mt-0 sm:relative z-5 shadow-2xl backdrop-blur-[8px] bg-white/30">
+      <div className="fixed lg:w-1/3 md:w-1/2 rounded-lg sm:p-10 pt-8 p-4 flex flex-col md:ml-auto w-full mt-12 md:mt-0 sm:relative z-5 shadow-2xl bg-white/90">
         <h2
           className="text-color1 sm:text-2xl text-xl px-[1px] sm:mb-1 cursor-pointer"
           onClick={toggleFormHandler}

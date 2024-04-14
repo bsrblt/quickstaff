@@ -24,9 +24,9 @@ const HowItWorks: React.FC<HowItWorksProps> = ({
 }) => {
   return (
     <section className="flex flex-col w-full justify-center items-center text-white space-y-8 bg-gradient-to-b from-color1/70">
-      <div className="sm:text-xl xl:w-[69%] sm:w-[90%] w-[90%] text-md space-y-8 backdrop-blur-[2px]">
+      <div className="sm:text-xl xl:w-[69%] sm:w-[90%] w-[90%] text-md space-y-8">
         <Link href="#howitworks">
-          <h1 className="backdrop-blur-sm block sm:text-5xl text-2xl font-bold text-center sm:my-10 my-5 cursor-pointer fontpop-3">
+          <h1 className="block sm:text-5xl text-2xl font-bold text-center sm:my-10 my-5 cursor-pointer fontpop-3">
             How does this work?
           </h1>
         </Link>

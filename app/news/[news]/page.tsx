@@ -59,27 +59,22 @@ const NewsPostPage: React.FC = () => {
 
   return (
     <div className="h-full ">
-      <section
-        className="sticky top-0 min-h-screen flex flex-col bg-cover bg-fixed items-center justify-center text-black backdrop-blur-lg rounded-t-[6rem] border-t-4  "
-        // style={{
-        //   backgroundPositionY: "50%",
-        // }}
-      >
+      <section className="sticky top-0 min-h-screen flex flex-col bg-cover bg-fixed items-center justify-center text-black rounded-t-[6rem] border-t-4  ">
         <ParallaxBackground imgSource={`${backgroundImage}`} />
         <div className="grid xl:max-w-[69%] m-2 justify-center gap-8 space-x-8 p-2 mt-14 fadeIn035">
           <GlassCard>
-            <div className="grid gap-8 bg-gray-200/60 rounded-xl">
-              <h1 className="sm:text-3xl text-md backdrop-blur-sm p-2 fontpop-1 antialiased">
+            <div className="grid gap-8 bg-gray-200/70 rounded-xl">
+              <h1 className="sm:text-3xl text-md p-2 bg-white/40 fontpop-1 antialiased">
                 {title}
               </h1>
               <p
                 id="blog-content"
-                className="backdrop-blur-sm md:text-xl text-justify sm:text-lg text-sm leading-tight sm:p-3 p-2 fontpop-1 antialiased"
+                className="md:text-xl text-justify sm:text-lg text-sm  bg-white/40  leading-tight sm:p-3 p-2 fontpop-1 antialiased"
               >
                 {content}
               </p>
             </div>
-            <div className="sm:flex grid justify-center gap-2 w-[100%]">
+            <div className="sm:flex grid justify-center gap-2 w-[100%] mb-2">
               <div className="md:w-[15rem] sm:[8rem]">
                 <Button
                   type="button"

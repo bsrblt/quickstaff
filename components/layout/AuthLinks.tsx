@@ -30,26 +30,29 @@ const AuthLinks: React.FC = () => {
     linkRoute = "/#choice";
   }
 
-  const loginImage =
-    !authCtx?.isLoggedInPro || !authCtx?.isLoggedInEmp ? (
-      <Image src={login} alt="login or signup" width={24} height={24} />
-    ) : (
-      <Image src={logout} alt="login or signup" width={24} height={24} />
-    );
+  const loginImage = (
+    <Image
+      src={!authCtx?.isLoggedInPro || !authCtx?.isLoggedInEmp ? login : logout}
+      alt="login or signup"
+      width={24}
+      height={24}
+    />
+  );
 
-  const loginText = (() => {
-    if (!authCtx?.isLoggedInPro && !authCtx?.isLoggedInEmp) {
-      return <>{"login/signup"}</>;
-    } else if (authCtx?.isLoggedInPro || authCtx?.isLoggedInEmp) {
-      return <>{"logout"}</>;
-    }
-  })();
+  const loginText = (
+    <>
+      {!authCtx?.isLoggedInPro && !authCtx?.isLoggedInEmp
+        ? "login/signup"
+        : "logout"}
+    </>
+  );
 
   const clickHandler: React.MouseEventHandler<HTMLDivElement> = (e) => {
     if (authCtx?.isLoggedInPro || authCtx?.isLoggedInEmp) {
       authCtx?.logout(e);
     }
   };
+
   return (
     <div className="flex items-center space-x-5" onClick={clickHandler}>
       <Link
