@@ -62,7 +62,7 @@ const HireSection: React.FC<HireSectionProps> = ({
       style={{
         animation: "fadeIn 0.1s ease-in-out",
         backgroundImage:
-          "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.0))",
+          "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.0))",
       }}
     >
       <ParallaxBackground imgSource={`${backgroundUrl}`} />
