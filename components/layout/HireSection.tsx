@@ -58,19 +58,47 @@ const HireSection: React.FC<HireSectionProps> = ({
   }, [jobs, selectedCity, selectedExp]);
 
   const onViewDetails = useCallback(
-    (details: string) => {
+    (details: string, index: number) => {
       setJobDetails(details);
+
+      setAppliedJobs((prevAppliedJobs) => {
+        const updatedAppliedJobs = [...prevAppliedJobs];
+        updatedAppliedJobs[index] = true;
+        return updatedAppliedJobs;
+      });
+
       toggleModal();
     },
     [toggleModal]
   );
 
-  const handleApply = (index: number) => {
-    const updatedAppliedJobs = [...appliedJobs];
-    updatedAppliedJobs[index] = true;
-    setAppliedJobs(updatedAppliedJobs);
-    toggleModal();
-  };
+  const handleApply = useCallback(
+    (index: number) => {
+      const updatedAppliedJobs = [...appliedJobs];
+      updatedAppliedJobs[index] = true;
+      setAppliedJobs(updatedAppliedJobs);
+
+      // Retrieve previously applied jobs for the current hireWord
+      const storedAppliedJobs = localStorage.getItem(`appliedJobs-${hireWord}`);
+      let mergedAppliedJobs = updatedAppliedJobs;
+      if (storedAppliedJobs) {
+        const prevAppliedJobs = JSON.parse(storedAppliedJobs);
+        // Merge previously applied jobs with newly applied jobs
+        mergedAppliedJobs = updatedAppliedJobs.map(
+          (value, idx) => value || prevAppliedJobs[idx]
+        );
+      }
+
+      // Store merged applied jobs back into localStorage
+      localStorage.setItem(
+        `appliedJobs-${hireWord}`,
+        JSON.stringify(mergedAppliedJobs)
+      );
+
+      toggleModal();
+    },
+    [appliedJobs, hireWord, toggleModal]
+  );
 
   const renderModalContent = useCallback(() => {
     return (
@@ -87,6 +115,13 @@ const HireSection: React.FC<HireSectionProps> = ({
       </div>
     );
   }, [jobDetails, handleApply, toggleModal, appliedJobs]);
+
+  useEffect(() => {
+    const storedAppliedJobs = localStorage.getItem(`appliedJobs-${hireWord}`);
+    if (storedAppliedJobs) {
+      setAppliedJobs(JSON.parse(storedAppliedJobs));
+    }
+  }, []);
 
   return (
     <section className="flex flex-col w-full min-h-screen bg-cover bg-fixed bg-center justify-start items-center fadeIn">

@@ -15,7 +15,7 @@ export interface Job {
 
 interface AvailableJobsProps {
   jobs: Job[];
-  onViewDetails: (details: string) => void;
+  onViewDetails: (details: string, index: number) => void;
   appliedJobs: boolean[];
 }
 
@@ -39,10 +39,10 @@ const AvailableJobs: React.FC<AvailableJobsProps> = ({
                     <div className="min-w-[11.4rem] mb-2 px-2 transition-all duration-300">
                       <Button
                         type="button"
-                        onClick={() => onViewDetails(job.details)}
+                        onClick={() => onViewDetails(job.details, index)}
                         disabled={appliedJobs[index]}
                       >
-                        {appliedJobs[index] ? "Applied" : "View details"}{" "}
+                        {appliedJobs[index] ? "Applied" : "View details"}
                       </Button>
                     </div>
                   </div>
