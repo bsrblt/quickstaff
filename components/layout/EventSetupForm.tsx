@@ -110,7 +110,7 @@ const EventSetupForm: React.FC<EventSetupFormProps> = ({ onSubmit }) => {
 
   return (
     <form
-      className="sm:grid backdop-blur-[6px] shadow-xl bg-color1/70 pt-3 sm:pb-1 pb-4 px-4  mb-1 rounded-xl sm:space-y-5 space-y-3 fontpop-3 md:w-[44rem] w-[95%]"
+      className="sm:grid backdop-blur-[6px] shadow-xl bg-color1/80 pt-3 sm:pb-1 pb-4 px-4  mb-1 rounded-xl sm:space-y-5 space-y-3 fontpop-3 md:w-[44rem] w-[95%]"
       onSubmit={submitHandler}
     >
       <section className="flex flex-col sm:flex-row md:gap-10 sm:gap-4">
@@ -129,6 +129,7 @@ const EventSetupForm: React.FC<EventSetupFormProps> = ({ onSubmit }) => {
               className={inputClass.dateInputClass}
               value={state.startDate}
               onChange={(e) => changeHandler(e, "startDate")}
+              min={new Date().toISOString().split("T")[0]}
             />
           </div>
           <div className="grid text-xl font-semibold text-white drop-shadow-xl">
@@ -145,6 +146,7 @@ const EventSetupForm: React.FC<EventSetupFormProps> = ({ onSubmit }) => {
               className={inputClass.dateInputClass}
               value={state.endDate}
               onChange={(e) => changeHandler(e, "endDate")}
+              min={new Date().toISOString().split("T")[0]}
             />
           </div>
         </div>

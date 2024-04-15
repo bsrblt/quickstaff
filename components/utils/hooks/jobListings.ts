@@ -8,6 +8,8 @@ const getJobs = (service: string) => {
       experience: "5-10 years",
       description:
         "Experienced manager needed to oversee event operations and coordinate staff in Istanbul.",
+      details:
+        "The manager will be responsible for overseeing all aspects of event operations in Istanbul from March 30, 2024, to April 30, 2024. This position requires a candidate with 5-10 years of relevant experience in event management. The manager will work closely with a team of event staff and coordinate their efforts to ensure the successful execution of the event.",
     },
     {
       jobTitle: "Chef",
@@ -17,8 +19,9 @@ const getJobs = (service: string) => {
       experience: "2-5 years",
       description:
         "Talented chef specializing in Turkish cuisine required for upcoming event in Istanbul.",
+      details:
+        "The chef will be responsible for creating and preparing authentic Turkish cuisine dishes for an upcoming event in Istanbul from April 15, 2024, to May 15, 2024. Candidates with 2-5 years of experience in culinary arts, particularly in Turkish cuisine, are encouraged to apply. This role may involve working independently in the kitchen, but collaboration with other kitchen staff may also be required.",
     },
-
     {
       jobTitle: "Manager",
       startDate: "04/01/2024",
@@ -27,6 +30,8 @@ const getJobs = (service: string) => {
       experience: "10+ years",
       description:
         "Seasoned manager with extensive event planning experience sought for a high-profile event in London.",
+      details:
+        "The manager will lead the planning and execution of a high-profile event in London from April 1, 2024, to May 1, 2024. This role requires a seasoned professional with over 10 years of experience in event management and planning. The manager will work closely with a team of event planners, coordinators, and vendors to ensure the seamless organization and execution of the event.",
     },
     {
       jobTitle: "Bartender",
@@ -36,8 +41,9 @@ const getJobs = (service: string) => {
       experience: "0-1 year",
       description:
         "Energetic and enthusiastic bartender wanted for a bustling event venue in London.",
+      details:
+        "The bartender will be responsible for creating and serving beverages at a bustling event venue in London from April 10, 2024, to May 10, 2024. This role is suitable for candidates with 0-1 year of bartending experience. The bartender will work as part of a team to ensure guests receive prompt and friendly service throughout the event.",
     },
-
     {
       jobTitle: "Waiter",
       startDate: "04/05/2024",
@@ -46,6 +52,8 @@ const getJobs = (service: string) => {
       experience: "2-5 years",
       description:
         "Experienced waiter needed to provide exceptional service at an upcoming event in Madrid.",
+      details:
+        "The waiter will provide exceptional service at an upcoming event in Madrid from April 5, 2024, to May 5, 2024. This role requires 2-5 years of experience in waitering. The waiter will work independently and as part of a team to ensure guests receive top-notch service throughout the event.",
     },
     {
       jobTitle: "Cleaner",
@@ -55,8 +63,9 @@ const getJobs = (service: string) => {
       experience: "0-1 year",
       description:
         "Detail-oriented cleaner required to maintain cleanliness and hygiene standards at event venues in Madrid.",
+      details:
+        "The cleaner will maintain cleanliness and hygiene standards at event venues in Madrid from April 20, 2024, to May 20, 2024. This role is suitable for detail-oriented candidates with 0-1 year of cleaning experience. The cleaner will work independently to ensure event venues are clean and presentable throughout the event.",
     },
-
     {
       jobTitle: "Chauffeur",
       startDate: "04/08/2024",
@@ -65,6 +74,8 @@ const getJobs = (service: string) => {
       experience: "5-10 years",
       description:
         "Experienced chauffeur familiar with the streets of Paris needed to transport VIPs for events.",
+      details:
+        "The chauffeur will transport VIPs for events in Paris from April 8, 2024, to May 8, 2024. This role requires 5-10 years of experience as a chauffeur. The chauffeur will work independently, ensuring the safe and timely transportation of VIPs to and from event venues.",
     },
     {
       jobTitle: "Performer",
@@ -74,6 +85,8 @@ const getJobs = (service: string) => {
       experience: "10+ years",
       description:
         "Dynamic performer (singer, musician, etc.) sought to entertain guests at various events in Paris.",
+      details:
+        "The performer will entertain guests at various events in Paris from April 25, 2024, to May 25, 2024. This role is suitable for dynamic performers with 10+ years of experience in singing, music, or other forms of entertainment. The performer will work independently, captivating audiences with their talent and stage presence.",
     },
     {
       jobTitle: "Manager",
@@ -83,6 +96,8 @@ const getJobs = (service: string) => {
       experience: "2-5 years",
       description:
         "Seeking a proactive manager to lead our event team in Istanbul and ensure smooth operations.",
+      details:
+        "The manager will lead the event team in Istanbul from April 10, 2024, to May 10, 2024. This role requires 2-5 years of experience in management. The manager will work with a team to ensure smooth operations, coordinating staff and resources to deliver successful events.",
     },
     {
       jobTitle: "Chef",
@@ -92,6 +107,8 @@ const getJobs = (service: string) => {
       experience: "5-10 years",
       description:
         "Experienced chef proficient in Mediterranean cuisine required for an upcoming event in Istanbul.",
+      details:
+        "The chef will prepare Mediterranean cuisine for an event in Istanbul from April 15, 2024, to May 15, 2024. This role is suitable for chefs with 5-10 years of experience. The chef will work both independently and collaboratively to create exquisite dishes that delight event attendees.",
     },
     {
       jobTitle: "Bartender",
@@ -101,6 +118,8 @@ const getJobs = (service: string) => {
       experience: "0-1 year",
       description:
         "Enthusiastic bartender needed to create and serve beverages at our event venue in Istanbul.",
+      details:
+        "The bartender will create and serve beverages at an event venue in Istanbul from April 20, 2024, to May 20, 2024. This role is suitable for enthusiastic candidates with 0-1 year of bartending experience. The bartender will work as part of a team to ensure guests enjoy their drinks throughout the event.",
     },
     {
       jobTitle: "Waiter",
@@ -110,6 +129,8 @@ const getJobs = (service: string) => {
       experience: "2-5 years",
       description:
         "Friendly and experienced waiter wanted to provide excellent customer service at events in Istanbul.",
+      details:
+        "The waiter will provide excellent customer service at events in Istanbul from April 25, 2024, to May 25, 2024. This role requires 2-5 years of waitering experience. The waiter will work independently and as part of a team, ensuring guests have a pleasant dining experience.",
     },
     {
       jobTitle: "Cleaner",
@@ -119,6 +140,8 @@ const getJobs = (service: string) => {
       experience: "0-1 year",
       description:
         "Detail-oriented cleaner required to maintain cleanliness and hygiene at our event venues in Istanbul.",
+      details:
+        "The cleaner will maintain cleanliness and hygiene at event venues in Istanbul from April 5, 2024, to May 5, 2024. This role is suitable for detail-oriented candidates with 0-1 year of cleaning experience. The cleaner will work independently, ensuring event venues are clean and presentable throughout the event.",
     },
     {
       jobTitle: "Chauffeur",
@@ -128,6 +151,8 @@ const getJobs = (service: string) => {
       experience: "10+ years",
       description:
         "Experienced chauffeur with knowledge of Istanbul streets needed for VIP transportation.",
+      details:
+        "The chauffeur will transport VIPs in Istanbul from April 12, 2024, to May 12, 2024. This role requires 10+ years of chauffeur experience. The chauffeur will work independently, ensuring VIPs are transported safely and comfortably to their destinations.",
     },
     {
       jobTitle: "Performer",
@@ -137,687 +162,391 @@ const getJobs = (service: string) => {
       experience: "5-10 years",
       description:
         "Versatile performer (singer, musician, etc.) wanted to entertain guests at events in Istanbul.",
+      details:
+        "The performer will entertain guests at events in Istanbul from April 18, 2024, to May 18, 2024. This role is suitable for versatile performers with 5-10 years of experience in singing, music, or other forms of entertainment. The performer will captivate audiences with their talent and stage presence.",
     },
     {
       jobTitle: "Technician",
-      startDate: "04/22/2024",
-      endDate: "05/22/2024",
-      location: "Istanbul",
+      startDate: "04/10/2024",
+      endDate: "05/10/2024",
+      location: "Madrid",
+      experience: "5-10 years",
+      description:
+        "Skilled technician needed to manage audiovisual equipment at events in Madrid.",
+      details:
+        "The technician will manage audiovisual equipment at events in Madrid from April 10, 2024, to May 10, 2024. This role requires 5-10 years of experience in technical support. The technician will work independently to ensure the smooth operation of audiovisual equipment throughout the events.",
+    },
+    {
+      jobTitle: "Manager",
+      startDate: "04/15/2024",
+      endDate: "05/15/2024",
+      location: "Paris",
+      experience: "10+ years",
+      description:
+        "Experienced manager sought to oversee event operations in Paris.",
+      details:
+        "The manager will oversee event operations in Paris from April 15, 2024, to May 15, 2024. This role requires over 10 years of experience in event management. The manager will work with a team to ensure the successful execution of events, coordinating staff and resources as needed.",
+    },
+    {
+      jobTitle: "Performer",
+      startDate: "04/20/2024",
+      endDate: "05/20/2024",
+      location: "London",
       experience: "2-5 years",
       description:
-        "Skilled technician needed to handle sound and lighting setup for events in Istanbul.",
+        "Talented performer needed to entertain guests at events in London.",
+      details:
+        "The performer will entertain guests at events in London from April 20, 2024, to May 20, 2024. This role is suitable for performers with 2-5 years of experience in singing, music, or other forms of entertainment. The performer will captivate audiences with their talent and stage presence.",
     },
     {
-      jobTitle: "Technician",
-      startDate: "04/28/2024",
-      endDate: "05/28/2024",
+      jobTitle: "Cleaner",
+      startDate: "04/25/2024",
+      endDate: "05/25/2024",
       location: "Istanbul",
       experience: "0-1 year",
       description:
-        "Entry-level technician wanted to assist with event setup and maintenance in Istanbul.",
+        "Detail-oriented cleaner required to maintain cleanliness and hygiene at event venues in Istanbul.",
+      details:
+        "The cleaner will maintain cleanliness and hygiene at event venues in Istanbul from April 25, 2024, to May 25, 2024. This role is suitable for detail-oriented candidates with 0-1 year of cleaning experience. The cleaner will work independently, ensuring event venues are clean and presentable throughout the event.",
     },
     {
-      jobTitle: "Technician",
-      startDate: "05/01/2024",
-      endDate: "06/01/2024",
-      location: "Istanbul",
+      jobTitle: "Waiter",
+      startDate: "04/30/2024",
+      endDate: "05/30/2024",
+      location: "Madrid",
       experience: "10+ years",
       description:
-        "Experienced technician specializing in AV setup and troubleshooting needed for events in Istanbul.",
+        "Experienced waiter wanted to provide exceptional service at events in Madrid.",
+      details:
+        "The waiter will provide exceptional service at events in Madrid from April 30, 2024, to May 30, 2024. This role requires over 10 years of experience in waitering. The waiter will work independently and as part of a team, ensuring guests have a pleasant dining experience.",
     },
 
     {
+      jobTitle: "Chef",
+      startDate: "04/10/2024",
+      endDate: "05/10/2024",
+      location: "Paris",
+      experience: "5-10 years",
+      description:
+        "Experienced chef needed to prepare gourmet cuisine for events in Paris.",
+      details:
+        "The chef will prepare gourmet cuisine for events in Paris from April 10, 2024, to May 10, 2024. This role requires 5-10 years of experience in culinary arts. The chef will work independently and collaboratively to create exquisite dishes that meet the standards of the events.",
+    },
+    {
+      jobTitle: "Waiter",
+      startDate: "04/15/2024",
+      endDate: "05/15/2024",
+      location: "London",
+      experience: "2-5 years",
+      description:
+        "Friendly and experienced waiter wanted to provide excellent service at events in London.",
+      details:
+        "The waiter will provide excellent service at events in London from April 15, 2024, to May 15, 2024. This role is suitable for candidates with 2-5 years of waitering experience. The waiter will work independently and as part of a team to ensure guests have a memorable experience.",
+    },
+    {
+      jobTitle: "Bartender",
+      startDate: "04/20/2024",
+      endDate: "05/20/2024",
+      location: "Madrid",
+      experience: "0-1 year",
+      description:
+        "Enthusiastic bartender needed to create cocktails at events in Madrid.",
+      details:
+        "The bartender will create cocktails at events in Madrid from April 20, 2024, to May 20, 2024. This role is suitable for enthusiastic candidates with 0-1 year of bartending experience. The bartender will work as part of a team to ensure guests enjoy their drinks throughout the events.",
+    },
+    {
       jobTitle: "Manager",
+      startDate: "04/25/2024",
+      endDate: "05/25/2024",
+      location: "Istanbul",
+      experience: "10+ years",
+      description:
+        "Experienced manager sought to oversee event operations in Istanbul.",
+      details:
+        "The manager will oversee event operations in Istanbul from April 25, 2024, to May 25, 2024. This role requires over 10 years of experience in event management. The manager will work with a team to ensure the successful execution of events, coordinating staff and resources as needed.",
+    },
+    {
+      jobTitle: "Performer",
+      startDate: "04/30/2024",
+      endDate: "05/30/2024",
+      location: "Paris",
+      experience: "10+ years",
+      description:
+        "Experienced performer wanted to entertain guests at events in Paris.",
+      details:
+        "The performer will entertain guests at events in Paris from April 30, 2024, to May 30, 2024. This role requires over 10 years of experience in performing arts. The performer will captivate audiences with their talent and stage presence.",
+    },
+    {
+      jobTitle: "Technician",
       startDate: "04/05/2024",
       endDate: "05/05/2024",
       location: "London",
-      experience: "5-10 years",
+      experience: "0-1 year",
       description:
-        "Dynamic manager sought to lead event planning and execution in the vibrant city of London.",
+        "Entry-level technician needed to assist with audiovisual setup at events in London.",
+      details:
+        "The technician will assist with audiovisual setup at events in London from April 5, 2024, to May 5, 2024. This role is suitable for entry-level candidates with 0-1 year of experience in technical support. The technician will work under the guidance of senior staff to ensure the smooth operation of audiovisual equipment.",
     },
-
     {
-      jobTitle: "Waiter",
-      startDate: "04/08/2024",
-      endDate: "05/08/2024",
+      jobTitle: "Cleaner",
+      startDate: "04/10/2024",
+      endDate: "05/10/2024",
       location: "Madrid",
       experience: "2-5 years",
       description:
-        "Experienced waiter required to provide exceptional service at events in the heart of Madrid.",
+        "Experienced cleaner required to maintain cleanliness at event venues in Madrid.",
+      details:
+        "The cleaner will maintain cleanliness at event venues in Madrid from April 10, 2024, to May 10, 2024. This role is suitable for candidates with 2-5 years of cleaning experience. The cleaner will work independently, ensuring event venues are clean and presentable throughout the events.",
     },
-
     {
       jobTitle: "Chauffeur",
-      startDate: "04/12/2024",
-      endDate: "05/12/2024",
-      location: "Paris",
+      startDate: "04/15/2024",
+      endDate: "05/15/2024",
+      location: "Istanbul",
       experience: "5-10 years",
       description:
-        "Experienced chauffeur needed to navigate the streets of Paris and ensure VIP transportation.",
+        "Experienced chauffeur needed to transport guests to and from events in Istanbul.",
+      details:
+        "The chauffeur will transport guests to and from events in Istanbul from April 15, 2024, to May 15, 2024. This role requires 5-10 years of experience as a chauffeur. The chauffeur will work independently, ensuring guests are transported safely and comfortably.",
     },
-
     {
       jobTitle: "Manager",
+      startDate: "04/20/2024",
+      endDate: "05/20/2024",
+      location: "Paris",
+      experience: "2-5 years",
+      description: "Dynamic manager needed to coordinate events in Paris.",
+      details:
+        "The manager will coordinate events in Paris from April 20, 2024, to May 20, 2024. This role is suitable for candidates with 2-5 years of experience in event management. The manager will work with a team to ensure the successful execution of events, overseeing logistics and coordinating staff as needed.",
+    },
+    {
+      jobTitle: "Performer",
+      startDate: "04/25/2024",
+      endDate: "05/25/2024",
+      location: "London",
+      experience: "5-10 years",
+      description:
+        "Versatile performer wanted to entertain guests at events in London.",
+      details:
+        "The performer will entertain guests at events in London from April 25, 2024, to May 25, 2024. This role is suitable for versatile performers with 5-10 years of experience in singing, music, or other forms of entertainment. The performer will captivate audiences with their talent and stage presence.",
+    },
+    {
+      jobTitle: "Chef",
+      startDate: "04/10/2024",
+      endDate: "05/10/2024",
+      location: "Madrid",
+      experience: "2-5 years",
+      description:
+        "Experienced chef needed to create culinary delights for events in Madrid.",
+      details:
+        "The chef will create culinary delights for events in Madrid from April 10, 2024, to May 10, 2024. This role requires 2-5 years of experience in culinary arts. The chef will work independently and collaboratively to deliver high-quality dishes that satisfy event attendees.",
+    },
+    {
+      jobTitle: "Waiter",
+      startDate: "04/15/2024",
+      endDate: "05/15/2024",
+      location: "Paris",
+      experience: "0-1 year",
+      description:
+        "Enthusiastic waiter wanted to provide exceptional service at events in Paris.",
+      details:
+        "The waiter will provide exceptional service at events in Paris from April 15, 2024, to May 15, 2024. This role is suitable for enthusiastic candidates with 0-1 year of waitering experience. The waiter will work independently and as part of a team to ensure guests have a memorable experience.",
+    },
+    {
+      jobTitle: "Bartender",
+      startDate: "04/20/2024",
+      endDate: "05/20/2024",
+      location: "London",
+      experience: "5-10 years",
+      description:
+        "Experienced bartender needed to craft cocktails at events in London.",
+      details:
+        "The bartender will craft cocktails at events in London from April 20, 2024, to May 20, 2024. This role requires 5-10 years of bartending experience. The bartender will work independently and as part of a team to ensure guests enjoy high-quality beverages throughout the events.",
+    },
+    {
+      jobTitle: "Manager",
+      startDate: "04/25/2024",
+      endDate: "05/25/2024",
+      location: "Istanbul",
+      experience: "10+ years",
+      description:
+        "Seasoned manager sought to lead event operations in Istanbul.",
+      details:
+        "The manager will lead event operations in Istanbul from April 25, 2024, to May 25, 2024. This role requires over 10 years of experience in event management. The manager will work with a team to ensure the successful execution of events, overseeing logistics and coordinating staff as needed.",
+    },
+    {
+      jobTitle: "Performer",
       startDate: "04/30/2024",
       endDate: "05/30/2024",
-      location: "Istanbul",
+      location: "Madrid",
       experience: "10+ years",
       description:
-        "Experienced manager with a proven track record in event planning and team leadership sought for Istanbul events.",
+        "Experienced performer wanted to entertain guests at events in Madrid.",
+      details:
+        "The performer will entertain guests at events in Madrid from April 30, 2024, to May 30, 2024. This role requires over 10 years of experience in performing arts. The performer will captivate audiences with their talent and stage presence.",
     },
     {
-      jobTitle: "Chef",
-      startDate: "05/05/2024",
-      endDate: "06/05/2024",
-      location: "Istanbul",
-      experience: "10+ years",
-      description:
-        "Highly skilled chef specializing in fusion cuisine required for prestigious events in Istanbul.",
-    },
-    {
-      jobTitle: "Bartender",
-      startDate: "05/10/2024",
-      endDate: "06/10/2024",
+      jobTitle: "Technician",
+      startDate: "04/05/2024",
+      endDate: "05/05/2024",
       location: "Istanbul",
       experience: "2-5 years",
       description:
-        "Talented bartender wanted to craft innovative cocktails at our events in Istanbul.",
-    },
-    {
-      jobTitle: "Waiter",
-      startDate: "05/15/2024",
-      endDate: "06/15/2024",
-      location: "Istanbul",
-      experience: "5-10 years",
-      description:
-        "Experienced waiter needed to provide exceptional service and enhance guest experience in Istanbul.",
+        "Skilled technician needed to manage audiovisual equipment at events in Istanbul.",
+      details:
+        "The technician will manage audiovisual equipment at events in Istanbul from April 5, 2024, to May 5, 2024. This role requires 2-5 years of experience in technical support. The technician will work independently to ensure the smooth operation of audiovisual equipment throughout the events.",
     },
     {
       jobTitle: "Cleaner",
-      startDate: "05/20/2024",
-      endDate: "06/20/2024",
-      location: "Istanbul",
-      experience: "2-5 years",
+      startDate: "04/10/2024",
+      endDate: "05/10/2024",
+      location: "London",
+      experience: "0-1 year",
       description:
-        "Dedicated cleaner required to maintain pristine event spaces in Istanbul.",
+        "Detail-oriented cleaner required to maintain cleanliness at event venues in London.",
+      details:
+        "The cleaner will maintain cleanliness at event venues in London from April 10, 2024, to May 10, 2024. This role is suitable for detail-oriented candidates with 0-1 year of cleaning experience. The cleaner will work independently, ensuring event venues are clean and presentable throughout the events.",
     },
     {
       jobTitle: "Chauffeur",
-      startDate: "05/25/2024",
-      endDate: "06/25/2024",
-      location: "Istanbul",
-      experience: "0-1 year",
+      startDate: "04/15/2024",
+      endDate: "05/15/2024",
+      location: "Paris",
+      experience: "5-10 years",
       description:
-        "Reliable chauffeur needed for safe and efficient transportation of guests in Istanbul.",
+        "Experienced chauffeur needed to transport guests for events in Paris.",
+      details:
+        "The chauffeur will transport guests for events in Paris from April 15, 2024, to May 15, 2024. This role requires 5-10 years of experience as a chauffeur. The chauffeur will work independently, ensuring guests are transported safely and comfortably.",
+    },
+    {
+      jobTitle: "Manager",
+      startDate: "04/20/2024",
+      endDate: "05/20/2024",
+      location: "Madrid",
+      experience: "2-5 years",
+      description: "Proactive manager wanted to coordinate events in Madrid.",
+      details:
+        "The manager will coordinate events in Madrid from April 20, 2024, to May 20, 2024. This role is suitable for candidates with 2-5 years of experience in event management. The manager will work with a team to ensure the successful execution of events, overseeing logistics and coordinating staff as needed.",
     },
     {
       jobTitle: "Performer",
-      startDate: "06/01/2024",
-      endDate: "07/01/2024",
-      location: "Istanbul",
-      experience: "10+ years",
-      description:
-        "Versatile performer sought to captivate audiences with their talent at events in Istanbul.",
-    },
-    {
-      jobTitle: "Technician",
-      startDate: "06/05/2024",
-      endDate: "07/05/2024",
+      startDate: "04/25/2024",
+      endDate: "05/25/2024",
       location: "Istanbul",
       experience: "5-10 years",
       description:
-        "Skilled technician needed to ensure flawless execution of audiovisual setups in Istanbul.",
-    },
-    {
-      jobTitle: "Technician",
-      startDate: "06/10/2024",
-      endDate: "07/10/2024",
-      location: "Istanbul",
-      experience: "2-5 years",
-      description:
-        "Technical expert wanted to provide support for event production needs in Istanbul.",
-    },
-    {
-      jobTitle: "Technician",
-      startDate: "06/15/2024",
-      endDate: "07/15/2024",
-      location: "Istanbul",
-      experience: "0-1 year",
-      description:
-        "Entry-level technician wanted to assist with setup and teardown of event equipment in Istanbul.",
-    },
-
-    {
-      jobTitle: "Manager",
-      startDate: "05/01/2024",
-      endDate: "06/01/2024",
-      location: "London",
-      experience: "5-10 years",
-      description:
-        "Experienced manager needed to oversee event logistics and ensure client satisfaction in London.",
-    },
-
-    {
-      jobTitle: "Waiter",
-      startDate: "05/08/2024",
-      endDate: "06/08/2024",
-      location: "Madrid",
-      experience: "5-10 years",
-      description:
-        "Seasoned waiter required to deliver impeccable service at events hosted in Madrid.",
-    },
-
-    {
-      jobTitle: "Chauffeur",
-      startDate: "05/12/2024",
-      endDate: "06/12/2024",
-      location: "Paris",
-      experience: "10+ years",
-      description:
-        "Experienced chauffeur needed to provide luxurious transportation services for VIPs in Paris.",
-    },
-    {
-      jobTitle: "Manager",
-      startDate: "06/20/2024",
-      endDate: "07/20/2024",
-      location: "Istanbul",
-      experience: "0-1 year",
-      description:
-        "We are seeking an energetic and ambitious individual to join our team as a junior manager for events in Istanbul.",
+        "Versatile performer wanted to entertain guests at events in Istanbul.",
+      details:
+        "The performer will entertain guests at events in Istanbul from April 25, 2024, to May 25, 2024. This role is suitable for versatile performers with 5-10 years of experience in singing, music, or other forms of entertainment. The performer will captivate audiences with their talent and stage presence.",
     },
     {
       jobTitle: "Chef",
-      startDate: "06/25/2024",
-      endDate: "07/25/2024",
-      location: "Istanbul",
+      startDate: "04/10/2024",
+      endDate: "05/10/2024",
+      location: "Madrid",
       experience: "2-5 years",
       description:
-        "Dynamic chef needed to bring creativity and culinary expertise to our events in Istanbul.",
-    },
-    {
-      jobTitle: "Bartender",
-      startDate: "07/01/2024",
-      endDate: "08/01/2024",
-      location: "Istanbul",
-      experience: "5-10 years",
-      description:
-        "Experienced bartender wanted to curate a diverse selection of drinks for our guests in Istanbul.",
+        "Experienced chef needed to create exquisite dishes for events in Madrid.",
+      details:
+        "The chef will be responsible for creating exquisite dishes for events in Madrid from April 10, 2024, to May 10, 2024. This role requires 2-5 years of experience in culinary arts. The chef will work independently and collaboratively to deliver high-quality cuisine.",
     },
     {
       jobTitle: "Waiter",
-      startDate: "07/05/2024",
-      endDate: "08/05/2024",
-      location: "Istanbul",
-      experience: "10+ years",
-      description:
-        "Highly skilled waiter needed to provide VIP service and ensure guest satisfaction in Istanbul.",
-    },
-    {
-      jobTitle: "Cleaner",
-      startDate: "07/10/2024",
-      endDate: "08/10/2024",
-      location: "Istanbul",
-      experience: "5-10 years",
-      description:
-        "Experienced cleaner required to maintain high standards of cleanliness at our event venues in Istanbul.",
-    },
-    {
-      jobTitle: "Chauffeur",
-      startDate: "07/15/2024",
-      endDate: "08/15/2024",
-      location: "Istanbul",
-      experience: "2-5 years",
-      description:
-        "Reliable chauffeur needed to provide transportation services for guests and clients in Istanbul.",
-    },
-    {
-      jobTitle: "Performer",
-      startDate: "07/20/2024",
-      endDate: "08/20/2024",
-      location: "Istanbul",
+      startDate: "04/15/2024",
+      endDate: "05/15/2024",
+      location: "Paris",
       experience: "0-1 year",
       description:
-        "Talented performer sought to entertain audiences with their unique skills at events in Istanbul.",
-    },
-    {
-      jobTitle: "Technician",
-      startDate: "07/25/2024",
-      endDate: "08/25/2024",
-      location: "Istanbul",
-      experience: "10+ years",
-      description:
-        "Expert technician needed to manage technical aspects of events and ensure smooth operation in Istanbul.",
-    },
-    {
-      jobTitle: "Technician",
-      startDate: "08/01/2024",
-      endDate: "09/01/2024",
-      location: "Istanbul",
-      experience: "5-10 years",
-      description:
-        "Skilled technician required to provide technical support and troubleshooting for events in Istanbul.",
-    },
-    {
-      jobTitle: "Technician",
-      startDate: "08/05/2024",
-      endDate: "09/05/2024",
-      location: "Istanbul",
-      experience: "2-5 years",
-      description:
-        "Detail-oriented technician wanted to ensure seamless execution of audiovisual setups in Istanbul.",
-    },
-
-    {
-      jobTitle: "Manager",
-      startDate: "06/30/2024",
-      endDate: "07/30/2024",
-      location: "London",
-      experience: "2-5 years",
-      description:
-        "We are seeking a dynamic manager to join our team and oversee event planning and execution in London.",
-    },
-    {
-      jobTitle: "Chef",
-      startDate: "07/05/2024",
-      endDate: "08/05/2024",
-      location: "London",
-      experience: "5-10 years",
-      description:
-        "Experienced chef wanted to lead culinary operations and menu development for events in London.",
+        "Enthusiastic waiter wanted to provide exceptional service at events in Paris.",
+      details:
+        "The waiter will provide exceptional service at events in Paris from April 15, 2024, to May 15, 2024. This role is suitable for enthusiastic individuals with 0-1 year of waitering experience. The waiter will work diligently to ensure guests have a memorable dining experience.",
     },
     {
       jobTitle: "Bartender",
-      startDate: "07/10/2024",
-      endDate: "08/10/2024",
+      startDate: "04/20/2024",
+      endDate: "05/20/2024",
       location: "London",
-      experience: "0-1 year",
+      experience: "5-10 years",
       description:
-        "We are looking for a passionate bartender to join our team and deliver exceptional service in London.",
+        "Experienced bartender needed to craft cocktails at events in London.",
+      details:
+        "The bartender will craft cocktails at events in London from April 20, 2024, to May 20, 2024. This role requires 5-10 years of bartending experience. The bartender will work independently and collaboratively to ensure guests enjoy high-quality beverages.",
     },
     {
-      jobTitle: "Waiter",
-      startDate: "07/15/2024",
-      endDate: "08/15/2024",
-      location: "London",
-      experience: "2-5 years",
-      description:
-        "Experienced waiter required to provide attentive service and ensure guest satisfaction in London.",
-    },
-    {
-      jobTitle: "Cleaner",
-      startDate: "07/20/2024",
-      endDate: "08/20/2024",
-      location: "London",
+      jobTitle: "Manager",
+      startDate: "04/25/2024",
+      endDate: "05/25/2024",
+      location: "Istanbul",
       experience: "10+ years",
       description:
-        "Experienced cleaner needed to maintain cleanliness and hygiene standards at our event venues in London.",
-    },
-    {
-      jobTitle: "Chauffeur",
-      startDate: "07/25/2024",
-      endDate: "08/25/2024",
-      location: "London",
-      experience: "2-5 years",
-      description:
-        "Reliable chauffeur needed to provide transportation services for clients and guests in London.",
+        "Experienced manager sought to oversee event operations in Istanbul.",
+      details:
+        "The manager will oversee event operations in Istanbul from April 25, 2024, to May 25, 2024. This role requires over 10 years of experience in event management. The manager will lead a team to ensure successful event execution.",
     },
     {
       jobTitle: "Performer",
-      startDate: "08/01/2024",
-      endDate: "09/01/2024",
-      location: "London",
-      experience: "5-10 years",
-      description:
-        "Dynamic performer wanted to entertain audiences with their unique talents at events in London.",
-    },
-    {
-      jobTitle: "Technician",
-      startDate: "08/05/2024",
-      endDate: "09/05/2024",
-      location: "London",
-      experience: "0-1 year",
-      description:
-        "Entry-level technician wanted to assist with technical setup and support for events in London.",
-    },
-    {
-      jobTitle: "Technician",
-      startDate: "08/10/2024",
-      endDate: "09/10/2024",
-      location: "London",
-      experience: "10+ years",
-      description:
-        "Expert technician needed to manage complex technical setups and ensure event success in London.",
-    },
-    {
-      jobTitle: "Technician",
-      startDate: "08/15/2024",
-      endDate: "09/15/2024",
-      location: "London",
-      experience: "5-10 years",
-      description:
-        "Skilled technician required to handle audiovisual setup and equipment maintenance in London.",
-    },
-
-    {
-      jobTitle: "Manager",
-      startDate: "07/01/2024",
-      endDate: "08/01/2024",
+      startDate: "04/30/2024",
+      endDate: "05/30/2024",
       location: "Madrid",
       experience: "10+ years",
       description:
-        "Experienced manager sought to lead event planning and execution for high-profile events in Madrid.",
+        "Dynamic performer wanted to entertain guests at events in Madrid.",
+      details:
+        "The performer will entertain guests at events in Madrid from April 30, 2024, to May 30, 2024. This role requires over 10 years of experience in performing arts. The performer will captivate audiences with their talent and charisma.",
     },
-
     {
-      jobTitle: "Manager",
-      startDate: "07/05/2024",
-      endDate: "08/05/2024",
-      location: "Paris",
-      experience: "5-10 years",
-      description:
-        "We are seeking a seasoned manager to oversee event operations and ensure client satisfaction in Paris.",
-    },
-
-    {
-      jobTitle: "Manager",
-      startDate: "08/20/2024",
-      endDate: "09/20/2024",
+      jobTitle: "Technician",
+      startDate: "04/05/2024",
+      endDate: "05/05/2024",
       location: "Istanbul",
-      experience: "5-10 years",
+      experience: "2-5 years",
       description:
-        "Experienced manager needed to oversee event logistics and team coordination in Istanbul.",
-    },
-    {
-      jobTitle: "Chef",
-      startDate: "08/25/2024",
-      endDate: "09/25/2024",
-      location: "Istanbul",
-      experience: "0-1 year",
-      description:
-        "Enthusiastic chef wanted to bring fresh ideas and culinary flair to our events in Istanbul.",
-    },
-    {
-      jobTitle: "Bartender",
-      startDate: "09/01/2024",
-      endDate: "10/01/2024",
-      location: "Istanbul",
-      experience: "5-10 years",
-      description:
-        "Experienced bartender needed to create memorable drinking experiences for guests in Istanbul.",
-    },
-    {
-      jobTitle: "Waiter",
-      startDate: "09/05/2024",
-      endDate: "10/05/2024",
-      location: "Istanbul",
-      experience: "10+ years",
-      description:
-        "Seasoned waiter required to provide exceptional service and elevate guest experience in Istanbul.",
+        "Skilled technician needed to manage audiovisual equipment at events in Istanbul.",
+      details:
+        "The technician will manage audiovisual equipment at events in Istanbul from April 5, 2024, to May 5, 2024. This role requires 2-5 years of experience in technical support. The technician will ensure seamless operation of audiovisual systems.",
     },
     {
       jobTitle: "Cleaner",
-      startDate: "09/10/2024",
-      endDate: "10/10/2024",
-      location: "Istanbul",
-      experience: "2-5 years",
-      description:
-        "Detail-oriented cleaner needed to ensure our event spaces in Istanbul are immaculate.",
-    },
-    {
-      jobTitle: "Chauffeur",
-      startDate: "09/15/2024",
-      endDate: "10/15/2024",
-      location: "Istanbul",
-      experience: "5-10 years",
-      description:
-        "Experienced chauffeur required to provide reliable transportation services for VIPs in Istanbul.",
-    },
-    {
-      jobTitle: "Performer",
-      startDate: "09/20/2024",
-      endDate: "10/20/2024",
-      location: "Istanbul",
-      experience: "2-5 years",
-      description:
-        "Talented performer sought to entertain and engage audiences at events in Istanbul.",
-    },
-    {
-      jobTitle: "Technician",
-      startDate: "09/25/2024",
-      endDate: "10/25/2024",
-      location: "Istanbul",
-      experience: "10+ years",
-      description:
-        "Expert technician needed to manage technical aspects and ensure flawless execution of events in Istanbul.",
-    },
-    {
-      jobTitle: "Technician",
-      startDate: "10/01/2024",
-      endDate: "11/01/2024",
-      location: "Istanbul",
-      experience: "0-1 year",
-      description:
-        "We are seeking an entry-level technician to join our team and assist with event setups in Istanbul.",
-    },
-    {
-      jobTitle: "Technician",
-      startDate: "10/05/2024",
-      endDate: "11/05/2024",
-      location: "Istanbul",
-      experience: "5-10 years",
-      description:
-        "Skilled technician wanted to manage audiovisual setups and technical equipment for events in Istanbul.",
-    },
-
-    {
-      jobTitle: "Manager",
-      startDate: "08/30/2024",
-      endDate: "09/30/2024",
+      startDate: "04/10/2024",
+      endDate: "05/10/2024",
       location: "London",
-      experience: "10+ years",
-      description:
-        "Experienced manager sought to lead our event team and ensure successful outcomes in London.",
-    },
-
-    {
-      jobTitle: "Manager",
-      startDate: "09/01/2024",
-      endDate: "10/01/2024",
-      location: "Madrid",
-      experience: "2-5 years",
-      description:
-        "Dynamic manager wanted to oversee event planning and execution for diverse events in Madrid.",
-    },
-
-    {
-      jobTitle: "Manager",
-      startDate: "09/05/2024",
-      endDate: "10/05/2024",
-      location: "Paris",
       experience: "0-1 year",
       description:
-        "We are seeking a motivated individual to join our team as a junior manager for events in Paris.",
-    },
-
-    {
-      jobTitle: "Chef",
-      startDate: "09/10/2024",
-      endDate: "10/10/2024",
-      location: "Madrid",
-      experience: "5-10 years",
-      description:
-        "Experienced chef needed to lead our kitchen team and create exceptional culinary experiences for events in Madrid.",
-    },
-    {
-      jobTitle: "Bartender",
-      startDate: "09/15/2024",
-      endDate: "10/15/2024",
-      location: "Madrid",
-      experience: "2-5 years",
-      description:
-        "Creative bartender wanted to craft innovative cocktails and provide excellent customer service in Madrid.",
-    },
-    {
-      jobTitle: "Waiter",
-      startDate: "09/20/2024",
-      endDate: "10/20/2024",
-      location: "Madrid",
-      experience: "0-1 year",
-      description:
-        "We are seeking enthusiastic individuals to join our team as waiters and deliver outstanding service at events in Madrid.",
-    },
-    {
-      jobTitle: "Cleaner",
-      startDate: "09/25/2024",
-      endDate: "10/25/2024",
-      location: "Madrid",
-      experience: "5-10 years",
-      description:
-        "Detail-oriented cleaner required to maintain cleanliness and hygiene standards at our event venues in Madrid.",
+        "Detail-oriented cleaner needed to maintain cleanliness at event venues in London.",
+      details:
+        "The cleaner will maintain cleanliness at event venues in London from April 10, 2024, to May 10, 2024. This role is suitable for detail-oriented individuals with 0-1 year of cleaning experience. The cleaner will ensure venues are tidy and presentable.",
     },
     {
       jobTitle: "Chauffeur",
-      startDate: "10/01/2024",
-      endDate: "11/01/2024",
-      location: "Madrid",
-      experience: "10+ years",
+      startDate: "04/15/2024",
+      endDate: "05/15/2024",
+      location: "Paris",
+      experience: "5-10 years",
       description:
-        "Experienced chauffeur needed to provide safe and reliable transportation services for VIPs in Madrid.",
+        "Experienced chauffeur needed to provide transportation for guests in Paris.",
+      details:
+        "The chauffeur will provide transportation for guests in Paris from April 15, 2024, to May 15, 2024. This role requires 5-10 years of experience as a chauffeur. The chauffeur will ensure safe and comfortable travel for clients.",
+    },
+    {
+      jobTitle: "Manager",
+      startDate: "04/20/2024",
+      endDate: "05/20/2024",
+      location: "Madrid",
+      experience: "2-5 years",
+      description: "Proactive manager needed to coordinate events in Madrid.",
+      details:
+        "The manager will coordinate events in Madrid from April 20, 2024, to May 20, 2024. This role is suitable for individuals with 2-5 years of experience in event management. The manager will oversee event logistics and team coordination.",
     },
     {
       jobTitle: "Performer",
-      startDate: "10/05/2024",
-      endDate: "11/05/2024",
-      location: "Madrid",
+      startDate: "04/25/2024",
+      endDate: "05/25/2024",
+      location: "Istanbul",
       experience: "5-10 years",
       description:
-        "Versatile performer sought to entertain and engage audiences with their talent at events in Madrid.",
-    },
-    {
-      jobTitle: "Technician",
-      startDate: "10/10/2024",
-      endDate: "11/10/2024",
-      location: "Madrid",
-      experience: "0-1 year",
-      description:
-        "Entry-level technician wanted to assist with technical setup and support for events in Madrid.",
-    },
-    {
-      jobTitle: "Technician",
-      startDate: "10/15/2024",
-      endDate: "11/15/2024",
-      location: "Madrid",
-      experience: "2-5 years",
-      description:
-        "Skilled technician required to handle audiovisual setups and technical equipment for events in Madrid.",
-    },
-    {
-      jobTitle: "Technician",
-      startDate: "10/20/2024",
-      endDate: "11/20/2024",
-      location: "Madrid",
-      experience: "10+ years",
-      description:
-        "Expert technician needed to manage complex technical setups and ensure event success in Madrid.",
-    },
-    {
-      jobTitle: "Technician",
-      startDate: "10/25/2024",
-      endDate: "11/25/2024",
-      location: "Madrid",
-      experience: "5-10 years",
-      description:
-        "Experienced technician wanted to provide technical support and troubleshooting for events in Madrid.",
-    },
-    {
-      jobTitle: "Chef",
-      startDate: "09/30/2024",
-      endDate: "10/30/2024",
-      location: "Paris",
-      experience: "10+ years",
-      description:
-        "Renowned chef sought to lead our culinary team and deliver exceptional dining experiences for events in Paris.",
-    },
-    {
-      jobTitle: "Bartender",
-      startDate: "10/05/2024",
-      endDate: "11/05/2024",
-      location: "Paris",
-      experience: "5-10 years",
-      description:
-        "Creative bartender wanted to craft artisanal cocktails and elevate the bar experience at events in Paris.",
-    },
-    {
-      jobTitle: "Waiter",
-      startDate: "10/10/2024",
-      endDate: "11/10/2024",
-      location: "Paris",
-      experience: "2-5 years",
-      description:
-        "Experienced waiter required to provide exceptional service and ensure guest satisfaction at events in Paris.",
-    },
-    {
-      jobTitle: "Cleaner",
-      startDate: "10/15/2024",
-      endDate: "11/15/2024",
-      location: "Paris",
-      experience: "0-1 year",
-      description:
-        "Detail-oriented cleaner wanted to maintain cleanliness and hygiene standards at our event venues in Paris.",
-    },
-    {
-      jobTitle: "Chauffeur",
-      startDate: "10/20/2024",
-      endDate: "11/20/2024",
-      location: "Paris",
-      experience: "5-10 years",
-      description:
-        "Experienced chauffeur needed to provide luxury transportation services for VIPs in Paris.",
-    },
-    {
-      jobTitle: "Performer",
-      startDate: "10/25/2024",
-      endDate: "11/25/2024",
-      location: "Paris",
-      experience: "2-5 years",
-      description:
-        "Talented performer wanted to entertain and engage audiences with their unique talents at events in Paris.",
-    },
-    {
-      jobTitle: "Technician",
-      startDate: "10/30/2024",
-      endDate: "11/30/2024",
-      location: "Paris",
-      experience: "10+ years",
-      description:
-        "Expert technician needed to manage technical setups and ensure flawless execution of events in Paris.",
-    },
-    {
-      jobTitle: "Technician",
-      startDate: "11/05/2024",
-      endDate: "12/05/2024",
-      location: "Paris",
-      experience: "5-10 years",
-      description:
-        "Skilled technician required to handle audiovisual setups and equipment maintenance for events in Paris.",
-    },
-    {
-      jobTitle: "Technician",
-      startDate: "11/10/2024",
-      endDate: "12/10/2024",
-      location: "Paris",
-      experience: "2-5 years",
-      description:
-        "Experienced technician wanted to provide technical support and troubleshooting for events in Paris.",
-    },
-    {
-      jobTitle: "Technician",
-      startDate: "11/15/2024",
-      endDate: "12/15/2024",
-      location: "Paris",
-      experience: "0-1 year",
-      description:
-        "Entry-level technician wanted to assist with technical setup and support for events in Paris.",
+        "Versatile performer wanted to entertain guests at events in Istanbul.",
+      details:
+        "The performer will entertain guests at events in Istanbul from April 25, 2024, to May 25, 2024. This role is suitable for versatile performers with 5-10 years of experience in various forms of entertainment. The performer will engage and captivate the audience.",
     },
   ];
   const filteredJobs = jobListings.filter(

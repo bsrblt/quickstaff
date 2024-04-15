@@ -11,6 +11,7 @@ interface InputFieldProps {
   value: string | undefined;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   className: string;
+  min?: string;
 }
 const InputField: React.FC<InputFieldProps> = ({
   type,
