@@ -78,18 +78,15 @@ const HireSection: React.FC<HireSectionProps> = ({
       updatedAppliedJobs[index] = true;
       setAppliedJobs(updatedAppliedJobs);
 
-      // Retrieve previously applied jobs for the current hireWord
       const storedAppliedJobs = localStorage.getItem(`appliedJobs-${hireWord}`);
       let mergedAppliedJobs = updatedAppliedJobs;
       if (storedAppliedJobs) {
         const prevAppliedJobs = JSON.parse(storedAppliedJobs);
-        // Merge previously applied jobs with newly applied jobs
         mergedAppliedJobs = updatedAppliedJobs.map(
           (value, idx) => value || prevAppliedJobs[idx]
         );
       }
 
-      // Store merged applied jobs back into localStorage
       localStorage.setItem(
         `appliedJobs-${hireWord}`,
         JSON.stringify(mergedAppliedJobs)

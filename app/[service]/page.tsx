@@ -4,16 +4,17 @@ import HireSection from "@/components/layout/HireSection";
 import { useSearchParams } from "next/navigation";
 import getJobs from "@/components/utils/hooks/jobListings";
 import ErrorPage from "../not-found";
+import { Job } from "@/components/layout/AvailableJobs";
 
-interface Job {
-  jobTitle: string;
-  startDate: string;
-  endDate: string;
-  location: string;
-  experience: string;
-  details: string;
-  description: string;
-}
+// interface Job {
+//   jobTitle: string;
+//   startDate: string;
+//   endDate: string;
+//   location: string;
+//   experience: string;
+//   details: string;
+//   description: string;
+// }
 
 const ServicePage: React.FC = () => {
   const searchParams = useSearchParams();

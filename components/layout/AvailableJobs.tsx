@@ -4,8 +4,8 @@ import Button from "./Button";
 
 export interface Job {
   jobTitle: string;
-  startDate: string;
-  endDate: string;
+  startDate?: string;
+  endDate?: string;
   location: string;
   experience: string;
   description: string;
