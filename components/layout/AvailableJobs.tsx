@@ -32,7 +32,7 @@ const AvailableJobs: React.FC<AvailableJobsProps> = ({
           {jobs.length > 0 ? (
             jobs.map((job, index) => (
               <GlassCard key={index}>
-                <div className="bg-color1/20 rounded-xl p-3">
+                <div className="bg-color1/30 rounded-xl p-3">
                   <div className="sm:flex justify-between items-center sm:space-x-5">
                     <p className="text-white fontpop-3 sm:text-xl text-md ml-2">
                       {job.description}

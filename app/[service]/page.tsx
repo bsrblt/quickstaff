@@ -2,9 +2,11 @@
 import React, { useState, useEffect } from "react";
 import HireSection from "@/components/layout/HireSection";
 import { useSearchParams } from "next/navigation";
-import getJobs from "@/components/utils/hooks/jobListings";
 import ErrorPage from "../not-found";
 import { Job } from "@/components/layout/AvailableJobs";
+import getJobs from "@/components/utils/jobListings";
+import { Staff } from "@/components/layout/AvailableStaff";
+import getStaff from "@/components/utils/workerListings";
 
 const ServicePage: React.FC = () => {
   const searchParams = useSearchParams();
@@ -12,6 +14,7 @@ const ServicePage: React.FC = () => {
   const [selectedCity, setSelectedCity] = useState<string>("");
   const [selectedExp, setSelectedExp] = useState<string>("");
   const [jobs, setJobs] = useState<Job[]>([]);
+  const [staff, setStaff] = useState<Staff[]>([]);
 
   const services = [
     "chef",
@@ -31,7 +34,9 @@ const ServicePage: React.FC = () => {
 
   useEffect(() => {
     const fetchedJobs = getJobs(service);
+    const fetchedStaff = getStaff(service);
     setJobs(fetchedJobs);
+    setStaff(fetchedStaff);
   }, [service]);
 
   const handleFormSubmit = (city: string, exp: string) => {
@@ -46,6 +51,7 @@ const ServicePage: React.FC = () => {
       selectedCity={selectedCity}
       selectedExp={selectedExp}
       jobs={jobs}
+      staffList={staff}
       onFormSubmit={handleFormSubmit}
     />
   );
