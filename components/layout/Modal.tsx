@@ -1,12 +1,12 @@
 import React, { useMemo, forwardRef, useRef, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import Button from "./Button";
 
 interface ModalProps {
   showModal: boolean;
   renderModalContent: JSX.Element | null | undefined;
   toggleModal: () => void;
   modalPanelTitle: string;
+  onCancel?: () => void;
 }
 
 const Modal: React.ForwardRefRenderFunction<HTMLDivElement, ModalProps> = ({
@@ -48,7 +48,9 @@ const Modal: React.ForwardRefRenderFunction<HTMLDivElement, ModalProps> = ({
               : "sm:h-auto sm:w-[25rem] mx-3"
           }`}
         >
-          <h2 className="mb-4 text-xl font-semibold">{modalPanelTitle}</h2>
+          <h2 className="mb-4 text-2xl font-semibold text-color2">
+            {modalPanelTitle}
+          </h2>
           {renderModalContent}
         </div>
       </div>

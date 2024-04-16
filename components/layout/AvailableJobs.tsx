@@ -16,13 +16,14 @@ export interface Job {
 interface AvailableJobsProps {
   jobs: Job[];
   onViewDetails: (details: string, index: number) => void;
-  appliedJobs: boolean[];
+  appliedJobIndices: (boolean | number)[];
+  buttonText?: string;
 }
 
 const AvailableJobs: React.FC<AvailableJobsProps> = ({
   jobs,
   onViewDetails,
-  appliedJobs,
+  appliedJobIndices,
 }) => {
   return (
     <div className="grid items-center justify-center my-4">
@@ -32,7 +33,7 @@ const AvailableJobs: React.FC<AvailableJobsProps> = ({
             jobs.map((job, index) => (
               <GlassCard key={index}>
                 <div className="bg-color1/20 rounded-xl p-3">
-                  <div className="sm:flex justify-between items-center sm:space-x-5 ">
+                  <div className="sm:flex justify-between items-center sm:space-x-5">
                     <p className="text-white fontpop-3 sm:text-xl text-md ml-2">
                       {job.description}
                     </p>
@@ -40,9 +41,11 @@ const AvailableJobs: React.FC<AvailableJobsProps> = ({
                       <Button
                         type="button"
                         onClick={() => onViewDetails(job.details, index)}
-                        disabled={appliedJobs[index]}
+                        disabled={appliedJobIndices.includes(index)}
                       >
-                        {appliedJobs[index] ? "Applied" : "View details"}
+                        {appliedJobIndices.includes(index)
+                          ? "Applied"
+                          : "View details"}
                       </Button>
                     </div>
                   </div>

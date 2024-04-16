@@ -6,22 +6,13 @@ import getJobs from "@/components/utils/hooks/jobListings";
 import ErrorPage from "../not-found";
 import { Job } from "@/components/layout/AvailableJobs";
 
-// interface Job {
-//   jobTitle: string;
-//   startDate: string;
-//   endDate: string;
-//   location: string;
-//   experience: string;
-//   details: string;
-//   description: string;
-// }
-
 const ServicePage: React.FC = () => {
   const searchParams = useSearchParams();
   const service = searchParams.get("s") || "";
   const [selectedCity, setSelectedCity] = useState<string>("");
   const [selectedExp, setSelectedExp] = useState<string>("");
   const [jobs, setJobs] = useState<Job[]>([]);
+
   const services = [
     "chef",
     "waiter",

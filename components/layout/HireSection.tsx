@@ -2,10 +2,10 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import AvailableJobs, { Job } from "./AvailableJobs";
 import EventSetupForm from "./EventSetupForm";
 import MainTitle from "./MainTitle";
-import ConditionalText from "./ConditionalText";
 import ParallaxBackground from "./ParallaxBackground";
 import Modal from "./Modal";
 import Button from "./Button";
+import ConditionalText from "./ConditionalText";
 
 interface HireSectionProps {
   backgroundUrl: string;
@@ -28,9 +28,11 @@ const HireSection: React.FC<HireSectionProps> = ({
   const [filteredJobs, setFilteredJobs] = useState<Job[]>(jobs);
   const [showModal, setShowModal] = useState(false);
   const [jobDetails, setJobDetails] = useState("");
-  const [appliedJobs, setAppliedJobs] = useState<boolean[]>(
-    Array(jobs.length).fill(false)
-  );
+  const [appliedJobIndex, setAppliedJobIndex] = useState<number | null>(null);
+  const [appliedJobIndices, setAppliedJobIndices] = useState<number[]>(() => {
+    const storedIndices = localStorage.getItem(`appliedJobIndices-${hireWord}`);
+    return storedIndices ? JSON.parse(storedIndices) : [];
+  });
 
   const toggleModal = useCallback(() => {
     setShowModal((prev) => !prev);
@@ -57,82 +59,51 @@ const HireSection: React.FC<HireSectionProps> = ({
     setFilteredJobs(filtered);
   }, [jobs, selectedCity, selectedExp]);
 
-  const onViewDetails = useCallback(
-    (details: string, index: number) => {
-      setJobDetails(details);
-
-      setAppliedJobs((prevAppliedJobs) => {
-        const updatedAppliedJobs = [...prevAppliedJobs];
-        updatedAppliedJobs[index] = true;
-        return updatedAppliedJobs;
-      });
-
-      toggleModal();
-    },
-    [toggleModal]
-  );
-
-  const handleApply = useCallback(
-    (index: number) => {
-      const updatedAppliedJobs = [...appliedJobs];
-      updatedAppliedJobs[index] = true;
-      setAppliedJobs(updatedAppliedJobs);
-
-      const storedAppliedJobs = localStorage.getItem(`appliedJobs-${hireWord}`);
-      let mergedAppliedJobs = updatedAppliedJobs;
-      if (storedAppliedJobs) {
-        const prevAppliedJobs = JSON.parse(storedAppliedJobs);
-        mergedAppliedJobs = updatedAppliedJobs.map(
-          (value, idx) => value || prevAppliedJobs[idx]
+  const handleApply = useCallback(() => {
+    if (appliedJobIndex !== null) {
+      const updatedJobs = [...filteredJobs];
+      updatedJobs[appliedJobIndex].hasApplied = true;
+      setFilteredJobs(updatedJobs);
+      setAppliedJobIndices((prevIndices) => {
+        const newIndices = [...prevIndices, appliedJobIndex];
+        localStorage.setItem(
+          `appliedJobIndices-${hireWord}`,
+          JSON.stringify(newIndices)
         );
-      }
-
-      localStorage.setItem(
-        `appliedJobs-${hireWord}`,
-        JSON.stringify(mergedAppliedJobs)
-      );
-
+        return newIndices;
+      });
+      setAppliedJobIndex(null);
       toggleModal();
-    },
-    [appliedJobs, hireWord, toggleModal]
-  );
+    }
+  }, [appliedJobIndex, filteredJobs, toggleModal, hireWord]);
+
+  const handleCancel = useCallback(() => {
+    setAppliedJobIndex(null);
+    toggleModal();
+  }, [toggleModal]);
 
   const renderModalContent = useCallback(() => {
     return (
-      <div className="grid gap-4 font-semibold text-color2 sm:text-md text-justify">
-        <section>
-          <p>{jobDetails}</p>
-          <Button
-            type="button"
-            text="Apply"
-            onClick={() => handleApply(appliedJobs.indexOf(false))}
-          />
-          <Button type="button" text="Cancel" onClick={toggleModal} />
-        </section>
+      <div className="grid font-semibold text-color2 sm:text-md text-justify">
+        <p className="py-4">{jobDetails}</p>
+        <Button type="button" text="Apply" onClick={handleApply} />
+        <Button type="button" text="Cancel" onClick={handleCancel} />
       </div>
     );
-  }, [jobDetails, handleApply, toggleModal, appliedJobs]);
-
-  useEffect(() => {
-    const storedAppliedJobs = localStorage.getItem(`appliedJobs-${hireWord}`);
-    if (storedAppliedJobs) {
-      setAppliedJobs(JSON.parse(storedAppliedJobs));
-    }
-  }, []);
+  }, [jobDetails, handleApply, handleCancel]);
 
   return (
     <section className="flex flex-col w-full min-h-screen bg-cover bg-fixed bg-center justify-start items-center fadeIn">
-      <ParallaxBackground imgSource={`${backgroundUrl}`} />
-      <div className="text-color2">
-        <Modal
-          ref={ref}
-          showModal={showModal}
-          modalPanelTitle="Job Details"
-          renderModalContent={renderModalContent()}
-          toggleModal={toggleModal}
-        />
-      </div>
-      <div className="mx-3 md:w-[44rem] sm:w-full sm:px-4">
+      <ParallaxBackground imgSource={backgroundUrl} />
+      <Modal
+        ref={ref}
+        showModal={showModal}
+        modalPanelTitle="Job Details"
+        renderModalContent={renderModalContent()}
+        toggleModal={toggleModal}
+        onCancel={handleCancel}
+      />
+      <div id="maintitle" className="mx-3 md:w-[44rem] sm:w-full sm:px-4">
         <MainTitle
           textBig={
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5rem] font-bold drop-shadow-xl fontpop-4 mb-1 leading-10">
@@ -152,8 +123,12 @@ const HireSection: React.FC<HireSectionProps> = ({
       <EventSetupForm onSubmit={onFormSubmit} />
       <AvailableJobs
         jobs={filteredJobs}
-        onViewDetails={onViewDetails}
-        appliedJobs={appliedJobs}
+        onViewDetails={(details: string, index: number) => {
+          setJobDetails(details);
+          setAppliedJobIndex(index);
+          toggleModal();
+        }}
+        appliedJobIndices={appliedJobIndices}
       />
     </section>
   );
