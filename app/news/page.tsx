@@ -24,7 +24,7 @@ const NewsPage: React.FC = () => {
       className="flex flex-col w-full min-h-screen bg-cover bg-fixed bg-center justify-start items-center mt-2"
       style={{
         backgroundImage:
-          "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5))",
+          "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6))",
       }}
     >
       <ParallaxBackground imgSource="/news.jpg" />

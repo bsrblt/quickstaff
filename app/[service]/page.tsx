@@ -37,12 +37,8 @@ const ServicePage: React.FC = () => {
     const fetchedStaff = getStaff(service);
     setJobs(fetchedJobs);
     setStaff(fetchedStaff);
+    window.scrollTo(0, 0);
   }, [service]);
-
-  const handleFormSubmit = (city: string, exp: string) => {
-    setSelectedCity(city);
-    setSelectedExp(exp);
-  };
 
   return (
     <HireSection
@@ -50,9 +46,10 @@ const ServicePage: React.FC = () => {
       hireWord={service}
       selectedCity={selectedCity}
       selectedExp={selectedExp}
+      start=""
+      end=""
       jobs={jobs}
       staffList={staff}
-      onFormSubmit={handleFormSubmit}
     />
   );
 };

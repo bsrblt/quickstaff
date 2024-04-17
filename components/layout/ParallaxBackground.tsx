@@ -17,6 +17,8 @@ const ParallaxBackground: React.FC<ParallaxBackgroundProps> = ({
           top: 0,
           left: 0,
           position: "fixed",
+          backgroundImage:
+            "linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3))",
         } as CSSProperties
       }
     >
@@ -32,6 +34,8 @@ const ParallaxBackground: React.FC<ParallaxBackgroundProps> = ({
             minHeight: "100%",
             minWidth: "100%",
             height: "auto",
+            backgroundImage:
+              "linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3))",
           } as CSSProperties
         }
       />

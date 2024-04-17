@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React, {
   useState,
   useEffect,
@@ -20,9 +21,10 @@ interface HireSectionProps {
   hireWord: string;
   selectedCity: string;
   selectedExp: string;
+  start: string;
+  end: string;
   jobs: Job[];
   staffList?: Staff[];
-  onFormSubmit: (city: string, exp: string) => void;
 }
 
 const HireSection: React.FC<HireSectionProps> = ({
@@ -30,12 +32,14 @@ const HireSection: React.FC<HireSectionProps> = ({
   hireWord,
   selectedCity,
   selectedExp,
+  start,
+  end,
   jobs,
   staffList = [],
-  onFormSubmit,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const authCtx = useContext(AuthContext);
+  const [showEventSetupForm, setShowEventSetupForm] = useState(true);
   const [filteredJobs, setFilteredJobs] = useState<Job[]>(jobs);
   const [filteredStaff, setFilteredStaff] = useState<Staff[]>(staffList);
   const [showModal, setShowModal] = useState(false);
@@ -63,6 +67,11 @@ const HireSection: React.FC<HireSectionProps> = ({
     setShowModal((prev) => !prev);
   }, []);
 
+  const toggleEventSetupForm = () => {
+    setShowEventSetupForm((prev) => !prev);
+  };
+
+  const submitHandler = () => setShowEventSetupForm(false);
   useEffect(() => {
     let filteredJobsList = jobs;
 
@@ -155,33 +164,67 @@ const HireSection: React.FC<HireSectionProps> = ({
     toggleModal();
   }, [toggleModal]);
 
-  const renderModalContent = useCallback(() => {
-    return (
-      <div className="grid font-semibold text-color2 sm:text-md text-justify">
-        {authCtx?.isLoggedInPro ? (
-          <p className="py-4">{jobDetails}</p>
-        ) : (
-          <textarea
-            className="border border-color1 rounded-xl p-2"
-            placeholder="We'll send an SMS to their phone including your event details. Enter any additional info here if necessary."
-            name=""
-            id=""
-            cols={30}
-            rows={8}
-          ></textarea>
-        )}
-        <Button
-          type="button"
-          text={`${authCtx?.isLoggedInPro ? "Apply" : "Send Message"}`}
-          onClick={authCtx?.isLoggedInPro ? handleApply : handleContactStaff}
-        />
-        <Button type="button" text="Cancel" onClick={handleCancel} />
-      </div>
-    );
-  }, [jobDetails, handleApply, handleContactStaff, handleCancel, authCtx]);
+  const renderModalContent = useCallback(
+    (index: number) => {
+      return (
+        <div className="grid font-semibold text-color2 sm:text-md text-justify">
+          {authCtx?.isLoggedInPro ? (
+            <p className="py-4">{jobDetails}</p>
+          ) : (
+            <textarea
+              className="border border-color1 rounded-xl p-2"
+              placeholder="We'll send an SMS to their phone including your event details. Enter any additional info here if necessary."
+              name=""
+              id=""
+              cols={30}
+              rows={8}
+            ></textarea>
+          )}
+          <Button
+            type="button"
+            text={`${
+              authCtx?.isLoggedInPro && !appliedJobIndices.includes(index)
+                ? "Apply"
+                : authCtx?.isLoggedInPro && appliedJobIndices.includes(index)
+                ? "Applied"
+                : authCtx?.isLoggedInEmp &&
+                  !contactedStaffIndices.includes(index)
+                ? "Send Message"
+                : "Message Sent"
+            }`}
+            onClick={authCtx?.isLoggedInPro ? handleApply : handleContactStaff}
+            disabled={
+              (authCtx?.isLoggedInPro && appliedJobIndices.includes(index)) ||
+              (authCtx?.isLoggedInEmp && contactedStaffIndices.includes(index))
+            }
+          />
+          <Button type="button" text="Cancel" onClick={handleCancel} />
+        </div>
+      );
+    },
+    [
+      jobDetails,
+      handleApply,
+      handleContactStaff,
+      handleCancel,
+      authCtx,
+      appliedJobIndices,
+      contactedStaffIndices,
+    ]
+  );
+
+  const ModalContentWrapper: React.FC<{ index: number }> = ({ index }) => {
+    return renderModalContent(index);
+  };
 
   return (
-    <section className="flex flex-col w-full min-h-screen bg-cover bg-fixed bg-center justify-start items-center fadeIn">
+    <section
+      className="flex flex-col w-full min-h-screen bg-cover bg-fixed bg-center justify-start items-center fadeIn"
+      style={{
+        backgroundImage:
+          "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1))",
+      }}
+    >
       <ParallaxBackground imgSource={backgroundUrl} />
       <Modal
         ref={ref}
@@ -189,14 +232,19 @@ const HireSection: React.FC<HireSectionProps> = ({
         modalPanelTitle={`${
           authCtx?.isLoggedInPro ? "Job Details" : "Job Details (optional)"
         }`}
-        renderModalContent={renderModalContent()}
+        renderModalContent={
+          <ModalContentWrapper
+            index={appliedJobIndex || contactedStaffIndex || 0}
+          />
+        }
         toggleModal={toggleModal}
         onCancel={handleCancel}
+        appliedJobIndices={appliedJobIndices}
       />
-      <div id="maintitle" className="mx-3 md:w-[44rem] sm:w-full sm:px-4">
+      <div id="maintitle" className="md:w-[45rem] sm:w-full sm:px-4 mx-3">
         <MainTitle
           textBig={
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5rem] font-bold drop-shadow-xl fontpop-4 mb-1 leading-10">
+            <h1 className="text-6xl md:text-7xl lg:text-[5rem] font-bold drop-shadow-xl fontpop-4 mb-1 leading-2">
               <span className="text-silver">
                 <ConditionalText type="roleaction" />
               </span>{" "}
@@ -205,12 +253,45 @@ const HireSection: React.FC<HireSectionProps> = ({
           }
           textSmall={
             <h1 className="text-lg md:text-3xl text-gray-200 font-bold drop-shadow-xl px-[1px] fontpop-3 mt-2 md:mb-4 sm:-mb-[6rem]">
-              Please choose your search terms below:
+              Browse and filter the list in line with your needs.
             </h1>
           }
         />
       </div>
-      <EventSetupForm onSubmit={onFormSubmit} />
+      <div
+        id="content"
+        className="flex flex-col md:w-[44rem] w-[93%] bg-silver/70 rounded-xl"
+      >
+        <div className="flex justify-between items-center">
+          <h1 className="text-white text-start md:text-2xl text-xl fontpop-3 p-3 mx-[0.35rem]">
+            {authCtx?.isLoggedInPro ? "Available Jobs" : "Available Staff"}
+          </h1>
+          <div
+            id="fltr"
+            className="md:w-[14rem] w-[11rem] mb-2 px-5 py-2 md:text-md text-sm z-10"
+          >
+            <Button
+              type="button"
+              text={showEventSetupForm ? "Hide Filters" : "Show Filters"}
+              onClick={() => {
+                toggleEventSetupForm();
+              }}
+            />
+          </div>
+        </div>
+        <motion.div
+          initial={{ height: 0, opacity: 0, y: -100 }}
+          animate={{
+            height: showEventSetupForm ? "auto" : 0,
+            opacity: showEventSetupForm ? 1 : 0,
+            y: showEventSetupForm ? 0 : -80,
+          }}
+          transition={{ duration: 0.5 }}
+          style={{ overflow: "hidden" }}
+        >
+          <EventSetupForm onSubmit={submitHandler} />
+        </motion.div>
+      </div>
       {authCtx?.isLoggedInPro ? (
         <AvailableJobs
           jobs={filteredJobs}
@@ -220,6 +301,7 @@ const HireSection: React.FC<HireSectionProps> = ({
             toggleModal();
           }}
           appliedJobIndices={appliedJobIndices}
+          renderModalContent={(index: number) => renderModalContent(index)}
         />
       ) : authCtx?.isLoggedInEmp ? (
         <AvailableStaff
@@ -229,6 +311,7 @@ const HireSection: React.FC<HireSectionProps> = ({
             toggleModal();
           }}
           contactedStaffIndices={contactedStaffIndices}
+          renderModalContent={(index: number) => renderModalContent(index)}
         />
       ) : null}
     </section>

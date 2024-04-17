@@ -24,6 +24,7 @@ const CitySelector: React.FC<CitySelectorProps> = ({
           value={selectedCity}
           onChange={onChange}
           className={inputClass}
+          required
         >
           <option value="default">- select -</option>
           <option value="Istanbul">Istanbul</option>

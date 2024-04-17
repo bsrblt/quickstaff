@@ -85,7 +85,7 @@ const NewsPostPage: React.FC = () => {
               <Link href="/news" className="md:w-[15rem] sm:[8rem]">
                 <Button type="button" text="back to news"></Button>
               </Link>
-              <div className="md:w-[15rem] sm:[8rem]">
+              <div className="md:w-[15rem] sm:[8rem] ">
                 <Button
                   type="button"
                   text="next article >>"

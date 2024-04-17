@@ -13,8 +13,8 @@ interface State {
   endDate: string;
   selectedCity: string;
   selectedExp: string;
-  checkbox1: boolean;
-  checkbox2: boolean;
+  checkboxSolo: boolean;
+  checkboxTeamwork: boolean;
 }
 
 type Action =
@@ -22,16 +22,16 @@ type Action =
   | { type: "setEndDate"; payload: string }
   | { type: "setSelectedCity"; payload: string }
   | { type: "setSelectedExp"; payload: string }
-  | { type: "setCheckbox1"; payload: boolean }
-  | { type: "setCheckbox2"; payload: boolean };
+  | { type: "setcheckboxSolo"; payload: boolean }
+  | { type: "setcheckboxTeamwork"; payload: boolean };
 
 const initialState: State = {
   startDate: "",
   endDate: "",
   selectedCity: "default",
   selectedExp: "",
-  checkbox1: false,
-  checkbox2: false,
+  checkboxSolo: false,
+  checkboxTeamwork: false,
 };
 
 const reducer = (state: State, action: Action): State => {
@@ -44,17 +44,17 @@ const reducer = (state: State, action: Action): State => {
       return { ...state, selectedCity: action.payload };
     case "setSelectedExp":
       return { ...state, selectedExp: action.payload };
-    case "setCheckbox1":
-      return { ...state, checkbox1: action.payload };
-    case "setCheckbox2":
-      return { ...state, checkbox2: action.payload };
+    case "setcheckboxSolo":
+      return { ...state, checkboxSolo: action.payload };
+    case "setcheckboxTeamwork":
+      return { ...state, checkboxTeamwork: action.payload };
     default:
       return state;
   }
 };
 
 interface EventSetupFormProps {
-  onSubmit: (startDate: string, endDate: string, selectedCity: string) => void;
+  onSubmit: ({}) => void;
 }
 
 const EventSetupForm: React.FC<EventSetupFormProps> = ({ onSubmit }) => {
@@ -65,12 +65,25 @@ const EventSetupForm: React.FC<EventSetupFormProps> = ({ onSubmit }) => {
 
   const submitHandler = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Start Date:", state.startDate);
-    console.log("End Date:", state.endDate);
-    console.log("City:", state.selectedCity);
+    console.log({
+      Start: state.startDate,
+      End: state.endDate,
+      City: state.selectedCity,
+      Experience: state.selectedExp,
+      Solo: state.checkboxSolo,
+      Teamwork: state.checkboxTeamwork,
+    });
+    const formData = {
+      Start: state.startDate,
+      End: state.endDate,
+      City: state.selectedCity,
+      Experience: state.selectedExp,
+      Solo: state.checkboxSolo,
+      Teamwork: state.checkboxTeamwork,
+    };
     !(authCtx?.isLoggedInEmp || authCtx?.isLoggedInPro)
       ? router.replace("/employer/login")
-      : onSubmit(state.startDate, state.endDate, state.selectedCity);
+      : onSubmit(formData);
   };
 
   const changeHandler = (
@@ -100,22 +113,22 @@ const EventSetupForm: React.FC<EventSetupFormProps> = ({ onSubmit }) => {
 
   const checkboxChangeHandler = (
     e: ChangeEvent<HTMLInputElement>,
-    type: "checkbox1" | "checkbox2"
+    type: "checkboxSolo" | "checkboxTeamwork"
   ) => {
     dispatch({
-      type: type === "checkbox1" ? "setCheckbox1" : "setCheckbox2",
+      type: type === "checkboxSolo" ? "setcheckboxSolo" : "setcheckboxTeamwork",
       payload: e.target.checked,
     });
   };
 
   return (
     <form
-      className="sm:grid backdop-blur-[6px] shadow-xl bg-color1/70 pt-3 sm:pb-1 pb-4 px-4  mb-1 rounded-xl sm:space-y-5 space-y-3 fontpop-3 md:w-[44rem] w-[95%]"
+      className="sm:grid -z-10 shadow-xl justify-start items-center bg-color2/70 pt-3 sm:pb-1 pb-4 px-4 rounded-b-xl sm:space-y-5 space-y-3 fontpop-3 w-[100%] text-white"
       onSubmit={submitHandler}
     >
-      <section className="flex flex-col sm:flex-row md:gap-10 sm:gap-4">
-        <div className="space-y-4 mb-4 text-white">
-          <div className="grid text-xl font-semibold text-white drop-shadow-xl">
+      <section className="flex flex-col sm:flex-row md:gap-[1.25rem] sm:gap-4">
+        <div id="dateinputs" className="space-y-4 mb-4 md:w-[14rem]">
+          <div className="grid text-xl font-semibold  drop-shadow-xl">
             <label
               htmlFor="startdate"
               className="block ml-[2px] font-normal sm:text-lg md:text-xl text-md"
@@ -129,10 +142,9 @@ const EventSetupForm: React.FC<EventSetupFormProps> = ({ onSubmit }) => {
               className={inputClass.dateInputClass}
               value={state.startDate}
               onChange={(e) => changeHandler(e, "startDate")}
-              min={new Date().toISOString().split("T")[0]}
             />
           </div>
-          <div className="grid text-xl font-semibold text-white drop-shadow-xl">
+          <div className="grid text-xl font-semibold  drop-shadow-xl">
             <label
               htmlFor="enddate"
               className="block ml-[2px] font-normal  sm:text-lg md:text-xl text-md"
@@ -146,11 +158,10 @@ const EventSetupForm: React.FC<EventSetupFormProps> = ({ onSubmit }) => {
               className={inputClass.dateInputClass}
               value={state.endDate}
               onChange={(e) => changeHandler(e, "endDate")}
-              min={new Date().toISOString().split("T")[0]}
             />
           </div>
         </div>
-        <div className="space-y-4 text-white">
+        <div id="selectors" className="space-y-4  md:w-[13.8rem] ">
           <CitySelector
             selectedCity={state.selectedCity}
             inputClass={inputClass.selectorClass}
@@ -165,8 +176,8 @@ const EventSetupForm: React.FC<EventSetupFormProps> = ({ onSubmit }) => {
             onChange={(e) => changeHandler(e, "selectedExp")}
           />
         </div>
-        <div className="space-y-4 md:w-[14rem]">
-          <div className="space-y-[0.91rem] sm:mt-0 mt-4 mb-2 text-white">
+        <div className="space-y-4 md:w-[14rem] ">
+          <div id="checkboxes" className="space-y-[0.91rem] sm:mt-0 mt-4 mb-2 ">
             <label
               htmlFor="collab"
               className="ml-[1px] sm:text-lg md:text-xl text-xl"
@@ -175,18 +186,22 @@ const EventSetupForm: React.FC<EventSetupFormProps> = ({ onSubmit }) => {
             </label>
             <Checkbox
               id="solo checkbox"
-              checkbox={state.checkbox1}
-              onChangeCheck={(e) => checkboxChangeHandler(e, "checkbox1")}
+              checkbox={state.checkboxSolo}
+              onChangeCheck={(e) => checkboxChangeHandler(e, "checkboxSolo")}
               checkboxText="Solo"
             />
             <Checkbox
               id="team checkbox"
-              checkbox={state.checkbox2}
-              onChangeCheck={(e) => checkboxChangeHandler(e, "checkbox2")}
+              checkbox={state.checkboxTeamwork}
+              onChangeCheck={(e) =>
+                checkboxChangeHandler(e, "checkboxTeamwork")
+              }
               checkboxText="Teamwork"
             />
           </div>
-          <Button type="submit" text="Submit" />
+          <div className="text-lg md:w-[11.4rem]">
+            <Button type="submit" text="Submit" />
+          </div>
         </div>
       </section>
     </form>

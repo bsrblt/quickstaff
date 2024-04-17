@@ -26,7 +26,7 @@ const ExpSelector: React.FC<ExpSelectorProps> = ({
         onChange={onChange}
         className={inputClass}
       >
-        <option value="">{`${notChosenText}`}</option>
+        <option value="any">{`${notChosenText}`}</option>
         <option value="0-1 year">0-1 year</option>
         <option value="2-5 years">2-5 years</option>
         <option value="5-10 years">5-10 years</option>

@@ -1,7 +1,7 @@
 "use client";
 import React, { useContext } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import AuthContext from "../Ctx/AuthContext";
 import login from "../../public/login.svg";
 import logout from "../../public/logout.svg";
@@ -9,6 +9,7 @@ import Image from "next/image";
 
 const AuthLinks: React.FC = () => {
   const pathname = usePathname();
+  const router = useRouter();
   const authCtx = useContext(AuthContext);
 
   let linkRoute;
@@ -50,6 +51,7 @@ const AuthLinks: React.FC = () => {
   const clickHandler: React.MouseEventHandler<HTMLDivElement> = (e) => {
     if (authCtx?.isLoggedInPro || authCtx?.isLoggedInEmp) {
       authCtx?.logout(e);
+      router.push("/");
     }
   };
 

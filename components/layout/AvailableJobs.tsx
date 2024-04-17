@@ -13,11 +13,49 @@ export interface Job {
   hasApplied?: boolean;
 }
 
+interface JobCardProps {
+  job: Job;
+  index: number;
+  onViewDetails: (details: string, index: number) => void;
+  applied: boolean;
+}
+
+const JobCard: React.FC<JobCardProps> = ({
+  job,
+  index,
+  onViewDetails,
+  applied,
+}) => {
+  return (
+    <div
+      className={`bg-${
+        applied ? "color2/30" : "color1/40"
+      } rounded-xl p-3 cursor-pointer`}
+      onClick={() => onViewDetails(job.details, index)}
+    >
+      <div className="sm:flex justify-between items-center sm:space-x-5">
+        <p
+          className={`text-${
+            applied ? "gray-300" : "white"
+          } fontpop-3 sm:text-xl text-md ml-2`}
+        >
+          {job.description}
+        </p>
+        <div className="min-w-[11.4rem] mb-2 px-2 transition-all duration-300">
+          <Button type="button" disabled={applied}>
+            {applied ? "Applied" : "View details"}
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 interface AvailableJobsProps {
   jobs: Job[];
   onViewDetails: (details: string, index: number) => void;
-  appliedJobIndices: (boolean | number)[];
-  buttonText?: string;
+  appliedJobIndices: number[];
+  renderModalContent: (index: number) => JSX.Element;
 }
 
 const AvailableJobs: React.FC<AvailableJobsProps> = ({
@@ -27,29 +65,17 @@ const AvailableJobs: React.FC<AvailableJobsProps> = ({
 }) => {
   return (
     <div className="grid items-center justify-center my-4">
-      <section className="flex mt-5 px-3 justify-center">
+      <section className="flex px-3 justify-center">
         <div className="space-y-4 md:w-[44rem]">
           {jobs.length > 0 ? (
             jobs.map((job, index) => (
               <GlassCard key={index}>
-                <div className="bg-color1/30 rounded-xl p-3">
-                  <div className="sm:flex justify-between items-center sm:space-x-5">
-                    <p className="text-white fontpop-3 sm:text-xl text-md ml-2">
-                      {job.description}
-                    </p>
-                    <div className="min-w-[11.4rem] mb-2 px-2 transition-all duration-300">
-                      <Button
-                        type="button"
-                        onClick={() => onViewDetails(job.details, index)}
-                        disabled={appliedJobIndices.includes(index)}
-                      >
-                        {appliedJobIndices.includes(index)
-                          ? "Applied"
-                          : "View details"}
-                      </Button>
-                    </div>
-                  </div>
-                </div>
+                <JobCard
+                  index={index}
+                  job={job}
+                  onViewDetails={onViewDetails}
+                  applied={appliedJobIndices.includes(index)}
+                />
               </GlassCard>
             ))
           ) : (

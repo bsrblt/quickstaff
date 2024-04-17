@@ -7,6 +7,7 @@ interface ModalProps {
   toggleModal: () => void;
   modalPanelTitle: string;
   onCancel?: () => void;
+  appliedJobIndices: number[];
 }
 
 const Modal: React.ForwardRefRenderFunction<HTMLDivElement, ModalProps> = ({

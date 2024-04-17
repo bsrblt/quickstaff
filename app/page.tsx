@@ -23,7 +23,13 @@ const cardTexts = {
 const Home = () => {
   return (
     <main className="">
-      <section className="relative max-w-screen h-full bg-center bg-no-repeat justify-center items-center fadeIn005 overflow-hidden ">
+      <section
+        className="relative max-w-screen h-full bg-center bg-no-repeat justify-center items-center fadeIn005 overflow-hidden "
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3))",
+        }}
+      >
         <ParallaxBackground imgSource="/jj.jpg" />
         <div className="min-h-screen relative">
           <div className="sticky sm:top-10 flex flex-col h-screen mt-[6rem] items-center">
